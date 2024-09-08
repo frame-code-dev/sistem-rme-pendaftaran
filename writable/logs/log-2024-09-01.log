@@ -1,1050 +1,0 @@
-INFO - 2024-09-01 12:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:24:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:24:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:25:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:29:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:29:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:30:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:30:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:31:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 12:57:03 --> ErrorException: Undefined variable $title
-[Method: GET, Route: consent/create/1]
-in APPPATH\Views\general-consent\create.php on line 11.
- 1 APPPATH\Views\general-consent\create.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 11)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(27): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 12:57:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:58:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 12:59:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:02:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:02:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:03:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 13:03:17 --> ErrorException: Undefined array key "tgl_lahir"
-[Method: GET, Route: consent/create/1]
-in APPPATH\Views\general-consent\create.php on line 149.
- 1 APPPATH\Views\general-consent\create.php(149): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tgl_lahir"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 149)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 13:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 13:03:18 --> ErrorException: Undefined array key "tgl_lahir"
-[Method: GET, Route: consent/create/1]
-in APPPATH\Views\general-consent\create.php on line 149.
- 1 APPPATH\Views\general-consent\create.php(149): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tgl_lahir"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 149)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 13:03:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 13:03:18 --> ErrorException: Undefined array key "tgl_lahir"
-[Method: GET, Route: consent/create/1]
-in APPPATH\Views\general-consent\create.php on line 149.
- 1 APPPATH\Views\general-consent\create.php(149): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tgl_lahir"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 149)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 13:03:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 13:03:18 --> ErrorException: Undefined array key "tgl_lahir"
-[Method: GET, Route: consent/create/1]
-in APPPATH\Views\general-consent\create.php on line 149.
- 1 APPPATH\Views\general-consent\create.php(149): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tgl_lahir"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 149)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 13:03:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 13:03:18 --> ErrorException: Undefined array key "tgl_lahir"
-[Method: GET, Route: consent/create/1]
-in APPPATH\Views\general-consent\create.php on line 149.
- 1 APPPATH\Views\general-consent\create.php(149): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tgl_lahir"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 149)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 13:03:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 13:03:18 --> ErrorException: Undefined array key "tgl_lahir"
-[Method: GET, Route: consent/create/1]
-in APPPATH\Views\general-consent\create.php on line 149.
- 1 APPPATH\Views\general-consent\create.php(149): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tgl_lahir"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 149)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 13:03:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 13:03:19 --> ErrorException: Undefined array key "tgl_lahir"
-[Method: GET, Route: consent/create/1]
-in APPPATH\Views\general-consent\create.php on line 149.
- 1 APPPATH\Views\general-consent\create.php(149): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tgl_lahir"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 149)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 13:04:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:06:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:07:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:07:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:08:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:09:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:09:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:11:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:12:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:13:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:13:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:13:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:14:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:14:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:17:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:18:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:20:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:22:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:22:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:22:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:23:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:23:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:24:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:31:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:36:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:39:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:39:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:41:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:53:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:53:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:55:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 13:58:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:00:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:03:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:04:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:04:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:09:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:17:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:20:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:37:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 14:37:16 --> ErrorException: Undefined property: CodeIgniter\View\View::$request
-[Method: GET, Route: consent/create/1]
-in APPPATH\Views\general-consent\create.php on line 354.
- 1 APPPATH\Views\general-consent\create.php(354): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\View\\View::$request', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 354)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 14:37:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 14:37:53 --> ErrorException: Undefined variable $id
-[Method: GET, Route: consent/create/1]
-in APPPATH\Views\general-consent\create.php on line 357.
- 1 APPPATH\Views\general-consent\create.php(357): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 357)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 14:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 14:40:08 --> ErrorException: Trying to access array offset on value of type null
-[Method: GET, Route: consent/create/pdf/1]
-in APPPATH\Views\general-consent\create.php on line 46.
- 1 APPPATH\Views\general-consent\create.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 46)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('pdf', '1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 14:40:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:41:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:41:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:41:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:42:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:42:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:42:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:46:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:47:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:48:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:49:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:52:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:52:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:56:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:59:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 14:59:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 15:07:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 15:07:55 --> ErrorException: Undefined variable $request
-[Method: GET, Route: consent/create/1]
-in APPPATH\Views\general-consent\create.php on line 352.
- 1 APPPATH\Views\general-consent\create.php(352): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $request', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php', 352)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 15:09:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 15:09:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 15:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 15:11:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 15:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 15:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:39:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:40:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:41:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:42:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 17:42:27 --> TypeError: site_url(): Argument #2 ($scheme) must be of type ?string, array given, called in D:\Dev\Projects\sistem_rme_pendaftaran\app\Views\general-consent\create.php on line 352
-[Method: GET, Route: consent/create/1]
-in SYSTEMPATH\Helpers\url_helper.php on line 33.
- 1 APPPATH\Views\general-consent\create.php(352): site_url('consent/pdf', [])
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 17:42:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:43:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:49:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:50:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:51:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:54:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:55:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:56:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:56:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:56:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:57:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:58:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:58:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 17:59:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:00:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:00:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:00:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:01:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:02:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:03:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:03:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:03:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:05:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:05:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 18:05:28 --> Exception: CodeIgniter Vite package is installed, but not initialized. did you run "php spark vite:init" ?
-[Method: GET, Route: consent/create/1]
-in VENDORPATH\mihatori\codeignitervite\src\Decorator.php on line 16.
- 1 SYSTEMPATH\View\ViewDecoratorTrait.php(34): Mihatori\CodeigniterVite\Decorator::decorate('<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
-    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-        <ul class="space-y-2 font-medium">
-            <h5 class="text-gray-500 font-bold uppercase dark:text-gray-400 px-3">MENU</h5>
-            <li>
-                <a href="http://localhost:8080/index.php/dashboard" class="flex items-center p-3 text-gray-900 text-gray-900 dark:text-white hover:bg-blue-900 dark:hover:bg-gray-700 group">
-                <svg class="w-5 h-5 text-gray-900 transition duration-75 dark:text-blue-900 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5Zm16 14a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2ZM4 13a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6Zm16-2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6Z"/>
-                </svg>
-                <span class="ms-3 text-gray-900 group-hover:text-white">Dashboard</span>
-                </a>
-            </li>
-            <hr>
-            <li>
-                <button type="button" class="flex text-gray-900 items-center w-full p-3 text-base  transition duration-75 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700" aria-controls="data-master" data-collapse-toggle="data-master">
-                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 8H4m0-2v13a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-5.032a1 1 0 0 1-.768-.36l-1.9-2.28a1 1 0 0 0-.768-.36H5a1 1 0 0 0-1 1Z"/>
-                    </svg>
-                    <span class="flex-1 ms-3 text-gray-500 group-hover:text-white text-left rtl:text-right whitespace-nowrap">Data Master</span>
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                    </svg>
-                </button>
-                <ul id="data-master" class="hidden py-2 space-y-2">
-                    <li>
-                        <a href="http://localhost:8080/index.php/master-data/petugas" class="flex items-center w-full p-2 text-gray-500 transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Data Petugas 
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/index.php/master-data/diagnosa" class="flex items-center w-full p-2 text-gray-500  transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Data Diagnosa 
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/index.php/master-data/obat" class="flex items-center w-full p-2 text-gray-500  transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Data Obat 
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <hr>
-            <li>
-                <a href="http://localhost:8080/index.php/pendaftaran" class="flex items-center p-3 text-gray-900 dark:text-white hover:bg-blue-900 dark:hover:bg-gray-700 group">
-                    <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-blue-900 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9V4a1 1 0 0 0-1-1H8.914a1 1 0 0 0-.707.293L4.293 7.207A1 1 0 0 0 4 7.914V20a1 1 0 0 0 1 1h4M9 3v4a1 1 0 0 1-1 1H4m11 6v4m-2-2h4m3 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/>
-                    </svg>
-                    <span class="ms-3 text-gray-500 group-hover:text-white">Pendaftaran</span>
-                </a>
-            </li>
-            <hr>
-            <li>
-                <a href="" class="flex items-center p-3 text-gray-900 dark:text-white hover:bg-blue-900 dark:hover:bg-gray-700 group">
-                    <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-blue-900 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9V4a1 1 0 0 0-1-1H8.914a1 1 0 0 0-.707.293L4.293 7.207A1 1 0 0 0 4 7.914V20a1 1 0 0 0 1 1h4M9 3v4a1 1 0 0 1-1 1H4m11 6v4m-2-2h4m3 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/>
-                    </svg>
-                    <span class="ms-3 text-gray-500 group-hover:text-white">Pemeriksaan</span>
-                </a>
-            </li>
-            <hr>
-            <li>
-                <a href="" class="flex items-center p-3 text-gray-900 dark:text-white hover:bg-blue-900 dark:hover:bg-gray-700 group">
-                    <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-blue-900 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9V4a1 1 0 0 0-1-1H8.914a1 1 0 0 0-.707.293L4.293 7.207A1 1 0 0 0 4 7.914V20a1 1 0 0 0 1 1h4M9 3v4a1 1 0 0 1-1 1H4m11 6v4m-2-2h4m3 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/>
-                    </svg>
-                    <span class="ms-3 text-gray-500 group-hover:text-white">Pemeriksaan Lab</span>
-                </a>
-            </li>
-            <hr>
-            
-            <li>
-                <button type="button" class="flex items-center w-full p-3 text-base text-gray-900 transition duration-75 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700" aria-controls="rekam-medis" data-collapse-toggle="rekam-medis">
-                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 8H4m0-2v13a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-5.032a1 1 0 0 1-.768-.36l-1.9-2.28a1 1 0 0 0-.768-.36H5a1 1 0 0 0-1 1Z"/>
-                    </svg>
-                    <span class="flex-1 ms-3 text-gray-500 group-hover:text-white text-left rtl:text-right whitespace-nowrap">Rekam Medis</span>
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                    </svg>
-                </button>
-                <ul id="rekam-medis" class="hidden py-2 space-y-2">
-                    <li>
-                        <a href="" class="flex items-center w-full p-2 text-gray-500  transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Riwayat Pelayanan 
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="flex items-center w-full p-2 text-gray-500  transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Laporan Kunjungan 
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="flex items-center w-full p-2 text-gray-500  transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Laporan 10 Besar Penyakit 
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <hr> 
-           
-        </ul>
-    </div>
-</aside>')
- 2 SYSTEMPATH\View\View.php(255): CodeIgniter\View\View->decorateOutput('<aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
-    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-        <ul class="space-y-2 font-medium">
-            <h5 class="text-gray-500 font-bold uppercase dark:text-gray-400 px-3">MENU</h5>
-            <li>
-                <a href="http://localhost:8080/index.php/dashboard" class="flex items-center p-3 text-gray-900 text-gray-900 dark:text-white hover:bg-blue-900 dark:hover:bg-gray-700 group">
-                <svg class="w-5 h-5 text-gray-900 transition duration-75 dark:text-blue-900 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5Zm16 14a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2ZM4 13a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6Zm16-2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6Z"/>
-                </svg>
-                <span class="ms-3 text-gray-900 group-hover:text-white">Dashboard</span>
-                </a>
-            </li>
-            <hr>
-            <li>
-                <button type="button" class="flex text-gray-900 items-center w-full p-3 text-base  transition duration-75 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700" aria-controls="data-master" data-collapse-toggle="data-master">
-                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 8H4m0-2v13a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-5.032a1 1 0 0 1-.768-.36l-1.9-2.28a1 1 0 0 0-.768-.36H5a1 1 0 0 0-1 1Z"/>
-                    </svg>
-                    <span class="flex-1 ms-3 text-gray-500 group-hover:text-white text-left rtl:text-right whitespace-nowrap">Data Master</span>
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                    </svg>
-                </button>
-                <ul id="data-master" class="hidden py-2 space-y-2">
-                    <li>
-                        <a href="http://localhost:8080/index.php/master-data/petugas" class="flex items-center w-full p-2 text-gray-500 transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Data Petugas 
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/index.php/master-data/diagnosa" class="flex items-center w-full p-2 text-gray-500  transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Data Diagnosa 
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://localhost:8080/index.php/master-data/obat" class="flex items-center w-full p-2 text-gray-500  transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Data Obat 
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <hr>
-            <li>
-                <a href="http://localhost:8080/index.php/pendaftaran" class="flex items-center p-3 text-gray-900 dark:text-white hover:bg-blue-900 dark:hover:bg-gray-700 group">
-                    <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-blue-900 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9V4a1 1 0 0 0-1-1H8.914a1 1 0 0 0-.707.293L4.293 7.207A1 1 0 0 0 4 7.914V20a1 1 0 0 0 1 1h4M9 3v4a1 1 0 0 1-1 1H4m11 6v4m-2-2h4m3 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/>
-                    </svg>
-                    <span class="ms-3 text-gray-500 group-hover:text-white">Pendaftaran</span>
-                </a>
-            </li>
-            <hr>
-            <li>
-                <a href="" class="flex items-center p-3 text-gray-900 dark:text-white hover:bg-blue-900 dark:hover:bg-gray-700 group">
-                    <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-blue-900 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9V4a1 1 0 0 0-1-1H8.914a1 1 0 0 0-.707.293L4.293 7.207A1 1 0 0 0 4 7.914V20a1 1 0 0 0 1 1h4M9 3v4a1 1 0 0 1-1 1H4m11 6v4m-2-2h4m3 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/>
-                    </svg>
-                    <span class="ms-3 text-gray-500 group-hover:text-white">Pemeriksaan</span>
-                </a>
-            </li>
-            <hr>
-            <li>
-                <a href="" class="flex items-center p-3 text-gray-900 dark:text-white hover:bg-blue-900 dark:hover:bg-gray-700 group">
-                    <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-blue-900 group-hover:text-white dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9V4a1 1 0 0 0-1-1H8.914a1 1 0 0 0-.707.293L4.293 7.207A1 1 0 0 0 4 7.914V20a1 1 0 0 0 1 1h4M9 3v4a1 1 0 0 1-1 1H4m11 6v4m-2-2h4m3 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/>
-                    </svg>
-                    <span class="ms-3 text-gray-500 group-hover:text-white">Pemeriksaan Lab</span>
-                </a>
-            </li>
-            <hr>
-            
-            <li>
-                <button type="button" class="flex items-center w-full p-3 text-base text-gray-900 transition duration-75 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700" aria-controls="rekam-medis" data-collapse-toggle="rekam-medis">
-                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 8H4m0-2v13a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-5.032a1 1 0 0 1-.768-.36l-1.9-2.28a1 1 0 0 0-.768-.36H5a1 1 0 0 0-1 1Z"/>
-                    </svg>
-                    <span class="flex-1 ms-3 text-gray-500 group-hover:text-white text-left rtl:text-right whitespace-nowrap">Rekam Medis</span>
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-                    </svg>
-                </button>
-                <ul id="rekam-medis" class="hidden py-2 space-y-2">
-                    <li>
-                        <a href="" class="flex items-center w-full p-2 text-gray-500  transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Riwayat Pelayanan 
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="flex items-center w-full p-2 text-gray-500  transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Laporan Kunjungan 
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="flex items-center w-full p-2 text-gray-500  transition duration-75 pl-11 group hover:bg-blue-900 dark:text-white dark:hover:bg-gray-700">
-                            <svg class="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75 group-hover:text-white dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10 16 4-4-4-4"/>
-                            </svg>
-                            <span class="group-hover:text-white">
-                                Laporan 10 Besar Penyakit 
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <hr> 
-           
-        </ul>
-    </div>
-</aside>')
- 3 SYSTEMPATH\View\View.php(487): CodeIgniter\View\View->render('layouts/components/sidebar', null, true)
- 4 APPPATH\Views\layouts\app.php(24): CodeIgniter\View\View->include('layouts/components/sidebar')
- 5 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\layouts\\app.php')
- 6 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 7 SYSTEMPATH\View\View.php(250): CodeIgniter\View\View->render('layouts/app', [], true)
- 8 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/create', [], true)
- 9 APPPATH\Controllers\GeneralConsentController.php(28): view('general-consent/create', [...])
-10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->index('1')
-11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
-12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
-13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-16 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 18:05:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:08:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:09:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 18:09:00 --> ErrorException: Undefined variable $data
-[Method: GET, Route: consent/pdf]
-in APPPATH\Views\general-consent\pdf.php on line 25.
- 1 APPPATH\Views\general-consent\pdf.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\pdf.php', 25)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\pdf.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/pdf', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(41): view('general-consent/pdf', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->pdf()
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 18:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:11:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 18:11:33 --> ErrorException: Undefined array key "alamat"
-[Method: GET, Route: consent/pdf]
-in APPPATH\Views\general-consent\pdf.php on line 30.
- 1 APPPATH\Views\general-consent\pdf.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "alamat"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\pdf.php', 30)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\pdf.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/pdf', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(41): view('general-consent/pdf', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->pdf()
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 18:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:12:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:12:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:12:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:13:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 18:16:09 --> ErrorException: Undefined array key "tanggal_lahir"
-[Method: GET, Route: consent/pdf]
-in APPPATH\Views\general-consent\pdf.php on line 26.
- 1 APPPATH\Views\general-consent\pdf.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tanggal_lahir"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\pdf.php', 26)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\pdf.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/pdf', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(41): view('general-consent/pdf', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->pdf()
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 18:16:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 18:16:18 --> ErrorException: Undefined array key "tanggal_lahir"
-[Method: GET, Route: consent/pdf]
-in APPPATH\Views\general-consent\pdf.php on line 26.
- 1 APPPATH\Views\general-consent\pdf.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tanggal_lahir"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\pdf.php', 26)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\general-consent\\pdf.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('general-consent/pdf', [], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(41): view('general-consent/pdf', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->pdf()
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 18:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 18:18:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:16:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:16:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:17:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:17:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:21:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:22:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:24:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:24:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:26:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:26:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:28:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:29:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:29:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:30:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:30:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:30:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:33:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 19:58:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 20:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-09-01 20:29:51 --> mysqli_sql_exception: Table 'db_pendaftaran_rme.generalconsents' doesn't exist in D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
-Stack trace:
-#0 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `ge...', 0)
-#1 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ge...')
-#2 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ge...')
-#3 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ge...', Array, false)
-#4 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
-#5 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
-#6 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
-#7 D:\Dev\Projects\sistem_rme_pendaftaran\app\Controllers\GeneralConsentController.php(104): CodeIgniter\Model->insert(Array)
-#8 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\GeneralConsentController->store('1')
-#9 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
-#10 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#11 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
-#12 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-#13 D:\Dev\Projects\sistem_rme_pendaftaran\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-#14 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Dev\\Projects...')
-#15 {main}
-CRITICAL - 2024-09-01 20:29:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_pendaftaran_rme.generalconsents' doesn't exist
-[Method: POST, Route: consent/create/store/1]
-in SYSTEMPATH\Database\BaseConnection.php on line 688.
- 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `generalconsents` (`pasien_id`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `alamat_lengkap`, `no_hp`, `status_hubungan_pasien`, `privasi_khusus`, `permintaan_privasi_khusus`, `akses_keluarga`, `cara_bayar`, `jenis_perawatan`, `signature_penanggung`, `signature_petugas`, `created_at`) VALUES (:pasien_id:, :nama_lengkap:, :tempat_lahir:, :tanggal_lahir:, :alamat_lengkap:, :no_hp:, :status_hubungan_pasien:, :privasi_khusus:, :permintaan_privasi_khusus:, :akses_keluarga:, :cara_bayar:, :jenis_perawatan:, :signature_penanggung:, :signature_petugas:, :created_at:)', [...], false)
- 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
- 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
- 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
- 5 APPPATH\Controllers\GeneralConsentController.php(104): CodeIgniter\Model->insert([...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->store('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-CRITICAL - 2024-09-01 20:29:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_pendaftaran_rme.generalconsents' doesn't exist
-in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
- 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `generalconsents` (`pasien_id`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `alamat_lengkap`, `no_hp`, `status_hubungan_pasien`, `privasi_khusus`, `permintaan_privasi_khusus`, `akses_keluarga`, `cara_bayar`, `jenis_perawatan`, `signature_penanggung`, `signature_petugas`, `created_at`) VALUES (\'1\', \'Consequat Culpa ame\', \'Cupiditate quia eius\', \'2024-10-10\', \'asfafa\', \'089516325685\', \'ayah\', \'mengijinkan\', \'\', \'mengijinkan\', \'tunai\', \'rawat jalan\', \'‰PNG\\r\\n\\Z\\n\\0\\0\\0\\rIHDR\\0\\0,\\0\\0\\0–\\0\\0\\0d[µÒ\\0\\0\\0sRGB\\0®Îé\\0\\0\\raIDATx^í½«>GÇOÀ\\"E„)b-	X(X$QÑF,L!©ÿÓH,„Ÿ\\"‚\\"¢)­4U\\n\\niÒˆ¦³‹IPÁ\\"… ÷ËÝÉ=¿É>÷Ù}föìÌÎgár_žyÛÏ™ýÞ3g^öã‚\\0 Ð	{:i\\\'Í„\\0 `\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`µÛ>efÏ™ÙCf¦ŸuýÝÌ^wM~ÄÌ>˜Ò|iJ§4)Ý÷Û½=Zõ¬õÌ¶Ì!ú¢™=if÷W¨èE3{¾B9& Xû›!‰”¾×¾þcf¯](åA`/Ö^äÍ4„»c×ß·¼°ñ–t);”\\09÷‡•ýñ¡Rüé%3{ËÌÞ›r(†¥¡¢¾§x–¾+~õ¯)­b[ò¨~ênIù?¹Ï-R+ê@°ê3½­D\\rûäU%Ññi¿u%bšæ—´Jeþ-Ë¨2}Iaä@‹¬«HL~gfŸÍª“7õƒJ¢ò«iV1U!ñûrÌíQb XÛr–PÉ£š¨×ô~ž6³—³[Á¶ÛÚ–Òw @§ÞzZC%±ò—bL?»úCÍõQªK11?Ì”×V³Žm(Q*V@°V[\\\\B‘U\\n¤o!\\"y\\0_ÁúG´“$èŽ\\0‚UÏdsžŽJWÐ[D«öõÆL\\\\Lq+Å¯¸ p8V¹IO\\rÿ$\\ZŠSm!TªSAö|\\rWÍ¸X9J€@eVP	††dþ’@¥%\\ne¥Ïçž«3yrª—‡%€`]nÚ|Á–qªÔÊ¹µVúL‹G?qù­}@°ÖÛi.VµåðÏ·ðÔ\\nyâVëíHŽ	 XëŒöc3{ÁeÙzøç[wj(È†u6$uÇ¬eÆ›rGÅoÌì©¬¹š$nµÌ†¤:\\0ë¼óaØŸÍì™fÿnk†Ú\\0í/ìwÞ~¤8:üicÎyU{ÆŠr‹%z¹•e¬yNŠýÜ-ÊŒ\\nªßf5?+=]Ö›H	 Xœ{V:Sêñ†€yËü–¼«Šo“\\0‚u·]äYÉ“ñ‰?Ý€X©•V›Ï­\\n$€`ÝÀž[_ÕŠXå‚ÕR»»+UN\\0Áºéùlàžö¹~™<,­ý’`qA`8ÖµÉuÀž†‚éj5F¤!+\\\'1÷˜rÃ‰\\0‚u}âßÀÌÑÂ<h”Àè‚•‹o™i´£Ò,ˆÀÈ‚•Åc„`¶&¶8£‹\\\'\\n›U°æ6·d_cüü}…Ê«¿é>õê/}Ÿ{µ˜.ý¬þ^ö\\\'lúŒØÙ\\Z‹v£\\nÖ»fö #Ú“XI|ôõ¥M:GVh7	W³ôE/†xoÖ´Ž+?ïm3{¸!ûû‡?yFzŸá7.hãÍìcS¾$$~H8çu­­Æ×¡¼-lcZ{¤ï„Àˆ‚•¿ÕfÏ}yé<øô\\Zú4”[Ó}$DúÒ«êu¥ß“@óxæ2µ§DÐ^¼:	õù57BZœ#0¢`åGï±æêÔvNÙë3Óf¦$J[Ç•’`ÉÓ{v\\Z‚®±&1Î=c|^‘Àˆ‚•¯hßC°rÑÌ=#ÅˆÒð*‰SE³•üúþu3ûü$¤>ðŸ*ØÓ{-ºI2·I`DÁÊÅbS;5—<•÷Íì;SìçÜð­Í^tÓ*±”\\\'æ/¼¬Ö­ÖQûF¬_˜Ù·öØ›7·,5)\\ró’ ÝgfL‚–þ6\\\'lþo>žå½·ˆ®™Ç÷ð`#î“:v 0¢`å^À¯È:õòÕ­»€_Oõï«\\n?U¸4@¿¤}ù\\Z7†…K¨‘fkÎ»Ù‹ƒ„ëe3{l‘µbå‹DOÍ>žjM¾lÁŠ±Ûµìõ î	·Å-9iÎ¯HOÁö¿šÙ;f¦¡aº´h4]ù¢Íôû©-8úû½ÙÂÙ5ö¸m©ÊA°ÖÐ$í*#\\nÖÜ¶œ–Ã‘{ý¼¸¥Ÿý›yÒöž%Ê¯ÿÒ?…t±k	=Ò,\\"0¢`	Ìÿ2:=mÍYdØÊ‰üz,Dm© ù	4© ¡&{+êèÅ*X~YlÌLVyOOâõ¤ÛF¤¯z£¼ÚÛ.?ÌTº7Íì·S†¹-Eå­¥„.	Œ*XùâQÃõº¯ÿgà¹&Ñ’°ù­?çVÎK°$|dæ[¬4~x«Ïô7Åý´—ò/ÙisËB”_Þ_>$O‹xS}~Ù‰fœ¹	Œ*XùâQý7ÿf ÷£Vå×`-]ßæ‡›2môÖI\\Z©sb¶7G<ó`Œ*XOOË	î×ÌìkÁìX÷\\\\K½Ö4cz§aá\\"öÜ‹G,aö÷=¶ç›:¤ºšÙýSM5ûÖföÕé0ï=¯¹¡\\\\\\ZÆ©-Z¢íO~¨çgBU^JŸ–‹èwÿscë}UHgØ¢’šj‹ömY¦¬¥Ã—-Ûs„²S–2Áš\\rÞ‚uc”‘YÔèš~Áhép°F{(ã€F~Hó¥\\r--í±«yÁ\\Z¹_õh»nÚ<rÇÊ—6ŒÌ¢F‡M<^× I³F~Hó¥\\rÌø\\\\þø#{àx9Grž!0²`å› Ÿ¹Zœø\\n=f5´7S/£øÑUn­Åâ‚À&F,õ3…,\\\\ßÅ|ÜŠ¡àz~äXI`tÁ:µd%Æa“û8 “Ãvƒ¸]°|K{ÄáZFÀ³Ã;]ÆŒT…F¬<Ž…—°¬CyÏŠ]Ë˜‘ªÑ‹Ó1×w\\"/Vx¥ëù‘£€Àè‚%tþÔ)>7MR€õ°Y/9á°0¸±xÖõár­t±­d¾ú˜•fïcpü3;tÖµùßÍ^Ê@,ëîÇ‚aàÐ2ÑÎÍ#X×¶È½,’åiáAÜ=df­U;Ïî-A°nÌžoÕahhÆ²!e¡Ý›F°nl£C\\r}üáp#\\r«vŸÛa[†`Ýmz?¦OÞ6³‡ìZ®NådéÂ€ Õ[F°>j™\\\\´F\\Z\\ZÊ»”g•ÞpƒXµúäÚ.kÞðoLooÑ§£LáçbE€}PQhù¶¬yëä+àîi V-?¥´íCÖéÎ\\rz0]>Ùptqæñï˜\\0‚uÚx#xùú³Q†¿?²c7ÁºÝþù}$/±\\ZûÙïòî¬ófóÛRŽâ VçíNŠ	 Xçr´\\0|¾¢_1+ÀÇ6¤ó};@°– ÀÿÄÌ¾»,k3©ò˜œ\\ZF€½óÐ%¬%”®Óä§“öt,°†€wÜ‚PÝ\\\'….·=)!€`­3„ÿžrö°\\n^bõª™Ýçnµ\\\'±]g!Rš\\0‚µÞ¼=ê·õ3ûñªõF\\\'G¬Ëì¿æ¾ÅÀuÞÆ÷ÌìqÄê2ƒ“«\\rÖåvÈ½•¤¡–ÄkÏ·¹cr®_ngr6D\\0Á*3†fŸÍÎÐ’\\\'óË«b÷xe{>›©»cs™ÉÝ«Üòh4§YDI(^\\n.Õ­6øÃÕ<«rûRBC¬zÆÐlÜÍì‰á’p¼>y;ú¹Æ%qúž™}eF¨T>ËjP¦Œ¦ XõÍ1·@Ó×¢™:y_p¶4æ•<¨äQÍµ^‚¨åµ„±>!J„À…¬Á-È&Kñ­|¨8—U‚•¾ôùƒS\\"ÅÃ$Réë¶jªF!Iß¬íí\\\'±‘xéŒtýü3{ bµ\\Zj*ØŽGU*EµI\\0ÁÚÇ.^Ä–x`y+SLl™È}ˆQ+®bVÝ 	Xj<°÷\\\'¯ÉÏüùac-§$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@V lª‚\\0Ê XeüÈ\\r@°aS PF\\0Á*ãGn@ \\0‚›ª \\02V?rC\\0¬@ØT”@°Êø‘$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@V lª‚\\0Ê XeüÈ\\r@°aS PF\\0Á*ãGn@ \\0‚›ª \\02V?rC\\0¬@ØT”@°Êø‘$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@ÿ/¨è¦PÎ§\\n\\0\\0\\0\\0IEND®B`‚\', \'‰PNG\\r\\n\\Z\\n\\0\\0\\0\\rIHDR\\0\\0,\\0\\0\\0–\\0\\0\\0d[µÒ\\0\\0\\0sRGB\\0®Îé\\0\\0?IDATx^íOèÙÇŸ©!4…š\\"†R”Ä„²°3š™²SÄ+djH’4Š%²@,”…l…ˆ‘	åï÷Í}úžÏ™s?÷¹÷s?Ÿçsî}Ýúõùþ¾ŸsÏ}îë9÷ý=ç9Ï9÷ã€\\0 Ð	;:±3!\\0‚E#€\\0º!€`uã*…\\0,Ú\\0 Ð\\r«Wa( €`Ñ \\0n XÝ¸\\nC!\\0‹6\\0tC\\0ÁêÆU\\n X´@ V7®ÂP@\\0Á¢\\r@\\0Ý@°ºq†B\\0m\\0è†\\0‚Õ«0@°h€@7¬n\\\\…¡€\\0‚E€\\0º!€`uã*…\\0,Ú\\0 Ð\\r«Wa( €`Ñ \\0n XÝ¸\\nC!\\0‹6\\0tC\\0ÁêÆU\\n X´@ V7®ÂP@\\0Á¢\\r@\\0Ý@°n]õ3{Kå¹{Íì…fös3{ÍˆW¿7|§Ï²¬ê+_ÿyš™=afwš™Êè÷þïû7u©/ÛMCÂP\\\\‚\\0‚õ‘ú™=÷Àƒ×xüFü>of_,x\\ZÅ °m{¬Ï6zT×èí²÷õk4› p){,\\rí$VõMÌmfŸ)†d\\Zžõùú¿Ê—¿÷Ÿ}ˆ§ÿß=TøÒáÓËŒ\\r9ëa¥z^×¥ž®sUö&X\\Zþ}zˆ•Žøœ™}09v$áÒ¿ûÍì\\r#‚ê6KßšlïU5dŒÙ=	Vk¨ÿµWêj°7AýV_A~ì†À^ë»Y¾‡ÍìcyZÃÀ÷Wö~mè‘ut˜\\nåö X­]Ã)\\r{;ÔËúq“ý{ðao~ÂÞ3ØCcÿOÅNÃ¨žóœ4³ÇŠ{ÚƒÏÔü©¶7[oìê‘(éÓšÙ}½9©²·ì1Jx‰cuîPÌØº`)U@ñ+?4Ôpp£ÌŒWöú·.”äYÆã4³IŠÃ\\ZÞ¤Ž.l]°äõ°Ê6ª¿4ü›r’ŸçKvâGžKUžÿ[3ûÔ¤,ÍpË›º?¾‡@Wö XcížAîsqºkXë§ß·’K§¼f/®u­¿˜™lÔÑ{<nŠ%ßCà€ÀK¢£^ÉñYÚ\\\\Î)Zå$Âü·Ôœ·A{iðŠeifmégï½ÈÌî13\\rÿ\\Z†cÊåzg£mœk¸†`mðAä–bö\\"X>¼“¸hÙËØ!a’i›Ñu¸X›«g#ý¼µgðÊë0Ckã”Ú=	–»Í—¼èóÕ7³†¿¾Ð0n,?«žmlõž˜W¼¬<´P¹Þcë”æS^Á:…$çvI`‚5×Qï2³G‹“ÆÖJ\\0%Xå®ÿ4³·­˜U_\\nÖ5¯ƒœË˜ò@°Žcª{V*}lfnlh¨Ü¯5ÒÊa)9X¡&N¡-@°Ž{³µqŠÙ‡Íì½Uµk\\rßÈÁÚÒÓÇ½Ì&0õðÍ®pC\\\'œHo	Ý\\Z©e¾ÛPcãVbhôãœZ¢†µâYºÒÇÍL1±¥‡§4hgÔç/­„ó Ð+kÜsõ.s‡u­š®VæpÍi7e<m®-s®CY\\\\-«íšV°=Ú»*k<–e/Ñ™Œ/mZbËÕ6Bƒ@”\\0‚Õ&Õ\\Z.]·\\\'ÑÒ0°•\\r¯«K¸\\"/–`†0Úª)·YVÛµõ‚é5rž|;šz›c·@CÅoöÚM¢>Ê]\\\'ðÛfInì\\Z~›Îï«mˆ×\\\\øÆ›Ý Þmf/?â%œþtèyi9Ñ5/É)Wxqœ3ž\\\\<‰\\0‚õäFq®]J•¥®ÞÕÜ]#þmfÐç¦fÆ¯ÊýÁî=²ì(:Ìå‘„À,Ö“qÕ÷¥±+¯yÍímþef_ÞöSïç5ËñÂ>„=&LSÕüÁÌÞÜ,qª.¾‡\\0o\\\\i´5÷LŸ+_l­ »½\\rZ[à¼*Ð6]°¼7³†€MÅÙf5‹¬9¤^jçm€\\0=¬C\\\'ÖÃÁS‡_­÷!êŠ_1³÷L¼½G=½o˜ÙÓÿt“|úì‘vçâ§ø‘¶ÇÑgäí@.RÚ¹¢\\\\¸mÞ~=•WoLõµê9µ§\\Zµ‡r&€`:·Þ\\"æ”žAk»™¹ËsþffzÁ…²G\\"$QÐ¡ÇÄÁË«¬ŠÿìAr‰Šÿ¯¶oß+ìw7/oýÉPïXp]÷þ‰b+g]âTñšI±-@°½»ÖpP³€­\\ZÎÜ¶•¼Úz¬‹–zHS¦ÙÇ;ƒ\\rºj.yél-Øk¤†M§ØV	 X‡ž-‡pK0	†fëMûæö¬Æ–õh(ù¦#Ñ“T_<£ç¤êž03‰™†’ê=­ñê°–àÒÞ¶ª$º/\\ZÐ!èßû¾ÏY¨<&Tª]±ªGfø³^8ý3{Êp~k\\r¡Ç ÞÜ³þïÕ0³6­Ž…ùPrÆ-ü¯hKt‰cÍ¥HùÖaƒ(<G…¦Õ“P­zÐ=æmvµX©—§YÃ—4ë˜Húõõ©:´\\r´Ç›ôéùT²=2”ôzÔóÙÈHrh½€<S°4óª¤Ýg÷ïÃÞÈ½D}H¹3@°Æ+\\Zp×ÌÝ³Šj–&MJD¾cfz3ŽðÖ.\\r­t	¿®Î=¶?ý±æTf­»ùïZ=±R[iõKl³kl¶ÖïiÉðÿŒ%U@°N¬zØóø‘´ƒ)¡(ßXîwU_C½‰Iù°)kI`<úd”=2ý<–¾ Ô›óadý>ÈÖ¤AÔ†¥åê^ÞX=Ñ?PKíà¼ X·—d¸×b\\"¡¹/˜ÿäW®w†hmÎ7ÖC˜Ì_¡ÉTáB¦_j¢AB&ŽåïË~6$Ç®mÇX}-±ÒÅ\\\'Õ+.wÐÈêý]ŠÅ&®ƒ`V”M=ìñáÜ\\\'\\\'‚íz°5£X&Y{#Ï5ôVæ4z	˜îMùbåÑ\\nê¯‘¥_ÛÖùÝìˆñŠA\\\\ËW²Eã•sîŸ²g }(Ïpé««rIK7¡’\\\'qÖ7U.Ÿùó°/VX÷s¦â(žcµtÖ.xãSjÆÝlx2ÿôl}·{Ž¨µf(Õ«RïªôÕÜMeKÙƒÔ}Ì™ÎòÁf®‹`6$Ö5å;ÝÕø2#¶s©F\\\\ï-VÆŠ\\\\„Ë¸ØX¿.ïÅú¬¥ÿß‡¢êÝ•q¾¿šÙ3ªŽ$òzÊÈƒÈJ êCi\\"åò©KqÝåu¬[·×•çÆ4ô—÷ËÕ>ZSJ1(=8‘5Su]ë÷K—;¹øèóþ!Á{8ú‹“qø£™ý`ˆ]y\\ZCÉ]Â£C1Ä×\\rñ¸è[»çäì]«Ÿº°Á:tS¤+Xþù1Ò\\0²ƒæO-Sµ}Ë­‘ôž•X+Xú®%äeYå¨¹pÝ3dëkØ÷<3{ê©†Ï8Ë=äÎ_Á\\Z¬S¦¹õ}!¸MÌ)×9Yç\\n­‰‰ujÎ¯¥µú ßªZ€`:¶|°–\\nÉØÎ¢Ú³ýa3{¬jK{øë,×pL½ -K‚ö[ºÿ‹ß‚µž`µÒ¼örèWÎîé¯³ø<jf/+ÞTÎxÖ1©ÖÐ‡ˆ­²b]~¯\\0¹†Ÿºî+‡%N­	©µ•c¥â`úc³åøãÅiê‚Ö!¡_½€hë˜P©ö=ô ¦ÚYß×Ùüc\\Z*(ÿE3{_7µ5¬CjØâÛO	–\\Zø7‹…ÉuÛ`¸°§e,ø¿»ëì.¬C‡yvô±¡ÚTJ5Fr|:k*˜|Ö¡<­alß)%AÛ÷\\\\Bµt§„üÖ€¸rÖ­ƒÊ|!­9{høJ³~cKoTDAÛÜü°Æ.WÞ\\\\0¹¬[þõ®	SžYºïÕT½|Œ@°æ–„Ê‡~4,@à‚¬[ØÙéco•A¨.Ø0¹Z¬C*šÂÖU~øî™çÜÍ“–		 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	üÜXµP¬\\0\\0\\0\\0IEND®B`‚\', \'2024-09-01 20:29:51\')')
- 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `generalconsents` (`pasien_id`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `alamat_lengkap`, `no_hp`, `status_hubungan_pasien`, `privasi_khusus`, `permintaan_privasi_khusus`, `akses_keluarga`, `cara_bayar`, `jenis_perawatan`, `signature_penanggung`, `signature_petugas`, `created_at`) VALUES (\'1\', \'Consequat Culpa ame\', \'Cupiditate quia eius\', \'2024-10-10\', \'asfafa\', \'089516325685\', \'ayah\', \'mengijinkan\', \'\', \'mengijinkan\', \'tunai\', \'rawat jalan\', \'‰PNG\\r\\n\\Z\\n\\0\\0\\0\\rIHDR\\0\\0,\\0\\0\\0–\\0\\0\\0d[µÒ\\0\\0\\0sRGB\\0®Îé\\0\\0\\raIDATx^í½«>GÇOÀ\\"E„)b-	X(X$QÑF,L!©ÿÓH,„Ÿ\\"‚\\"¢)­4U\\n\\niÒˆ¦³‹IPÁ\\"… ÷ËÝÉ=¿É>÷Ù}föìÌÎgár_žyÛÏ™ýÞ3g^öã‚\\0 Ð	{:i\\\'Í„\\0 `\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`µÛ>efÏ™ÙCf¦ŸuýÝÌ^wM~ÄÌ>˜Ò|iJ§4)Ý÷Û½=Zõ¬õÌ¶Ì!ú¢™=if÷W¨èE3{¾B9& Xû›!‰”¾×¾þcf¯](åA`/Ö^äÍ4„»c×ß·¼°ñ–t);”\\09÷‡•ýñ¡Rüé%3{ËÌÞ›r(†¥¡¢¾§x–¾+~õ¯)­b[ò¨~ênIù?¹Ï-R+ê@°ê3½­D\\rûäU%Ññi¿u%bšæ—´Jeþ-Ë¨2}Iaä@‹¬«HL~gfŸÍª“7õƒJ¢ò«iV1U!ñûrÌíQb XÛr–PÉ£š¨×ô~ž6³—³[Á¶ÛÚ–Òw @§ÞzZC%±ò—bL?»úCÍõQªK11?Ì”×V³Žm(Q*V@°V[\\\\B‘U\\n¤o!\\"y\\0_ÁúG´“$èŽ\\0‚UÏdsžŽJWÐ[D«öõÆL\\\\Lq+Å¯¸ p8V¹IO\\rÿ$\\ZŠSm!TªSAö|\\rWÍ¸X9J€@eVP	††dþ’@¥%\\ne¥Ïçž«3yrª—‡%€`]nÚ|Á–qªÔÊ¹µVúL‹G?qù­}@°ÖÛi.VµåðÏ·ðÔ\\nyâVëíHŽ	 XëŒöc3{ÁeÙzøç[wj(È†u6$uÇ¬eÆ›rGÅoÌì©¬¹š$nµÌ†¤:\\0ë¼óaØŸÍì™fÿnk†Ú\\0í/ìwÞ~¤8:üicÎyU{ÆŠr‹%z¹•e¬yNŠýÜ-ÊŒ\\nªßf5?+=]Ö›H	 Xœ{V:Sêñ†€yËü–¼«Šo“\\0‚u·]äYÉ“ñ‰?Ý€X©•V›Ï­\\n$€`ÝÀž[_ÕŠXå‚ÕR»»+UN\\0Áºéùlàžö¹~™<,­ý’`qA`8ÖµÉuÀž†‚éj5F¤!+\\\'1÷˜rÃ‰\\0‚u}âßÀÌÑÂ<h”Àè‚•‹o™i´£Ò,ˆÀÈ‚•Åc„`¶&¶8£‹\\\'\\n›U°æ6·d_cüü}…Ê«¿é>õê/}Ÿ{µ˜.ý¬þ^ö\\\'lúŒØÙ\\Z‹v£\\nÖ»fö #Ú“XI|ôõ¥M:GVh7	W³ôE/†xoÖ´Ž+?ïm3{¸!ûû‡?yFzŸá7.hãÍìcS¾$$~H8çu­­Æ×¡¼-lcZ{¤ï„Àˆ‚•¿ÕfÏ}yé<øô\\Zú4”[Ó}$DúÒ«êu¥ß“@óxæ2µ§DÐ^¼:	õù57BZœ#0¢`åGï±æêÔvNÙë3Óf¦$J[Ç•’`ÉÓ{v\\Z‚®±&1Î=c|^‘Àˆ‚•¯hßC°rÑÌ=#ÅˆÒð*‰SE³•üúþu3ûü$¤>ðŸ*ØÓ{-ºI2·I`DÁÊÅbS;5—<•÷Íì;SìçÜð­Í^tÓ*±”\\\'æ/¼¬Ö­ÖQûF¬_˜Ù·öØ›7·,5)\\ró’ ÝgfL‚–þ6\\\'lþo>žå½·ˆ®™Ç÷ð`#î“:v 0¢`å^À¯È:õòÕ­»€_Oõï«\\n?U¸4@¿¤}ù\\Z7†…K¨‘fkÎ»Ù‹ƒ„ëe3{l‘µbå‹DOÍ>žjM¾lÁŠ±Ûµìõ î	·Å-9iÎ¯HOÁö¿šÙ;f¦¡aº´h4]ù¢Íôû©-8úû½ÙÂÙ5ö¸m©ÊA°ÖÐ$í*#\\nÖÜ¶œ–Ã‘{ý¼¸¥Ÿý›yÒöž%Ê¯ÿÒ?…t±k	=Ò,\\"0¢`	Ìÿ2:=mÍYdØÊ‰üz,Dm© ù	4© ¡&{+êèÅ*X~YlÌLVyOOâõ¤ÛF¤¯z£¼ÚÛ.?ÌTº7Íì·S†¹-Eå­¥„.	Œ*XùâQÃõº¯ÿgà¹&Ñ’°ù­?çVÎK°$|dæ[¬4~x«Ïô7Åý´—ò/ÙisËB”_Þ_>$O‹xS}~Ù‰fœ¹	Œ*XùâQý7ÿf ÷£Vå×`-]ßæ‡›2môÖI\\Z©sb¶7G<ó`Œ*XOOË	î×ÌìkÁìX÷\\\\K½Ö4cz§aá\\"öÜ‹G,aö÷=¶ç›:¤ºšÙýSM5ûÖföÕé0ï=¯¹¡\\\\\\ZÆ©-Z¢íO~¨çgBU^JŸ–‹èwÿscë}UHgØ¢’šj‹ömY¦¬¥Ã—-Ûs„²S–2Áš\\rÞ‚uc”‘YÔèš~Áhép°F{(ã€F~Hó¥\\r--í±«yÁ\\Z¹_õh»nÚ<rÇÊ—6ŒÌ¢F‡M<^× I³F~Hó¥\\rÌø\\\\þø#{àx9Grž!0²`å› Ÿ¹Zœø\\n=f5´7S/£øÑUn­Åâ‚À&F,õ3…,\\\\ßÅ|ÜŠ¡àz~äXI`tÁ:µd%Æa“û8 “Ãvƒ¸]°|K{ÄáZFÀ³Ã;]ÆŒT…F¬<Ž…—°¬CyÏŠ]Ë˜‘ªÑ‹Ó1×w\\"/Vx¥ëù‘£€Àè‚%tþÔ)>7MR€õ°Y/9á°0¸±xÖõár­t±­d¾ú˜•fïcpü3;tÖµùßÍ^Ê@,ëîÇ‚aàÐ2ÑÎÍ#X×¶È½,’åiáAÜ=df­U;Ïî-A°nÌžoÕahhÆ²!e¡Ý›F°nl£C\\r}üáp#\\r«vŸÛa[†`Ýmz?¦OÞ6³‡ìZ®NådéÂ€ Õ[F°>j™\\\\´F\\Z\\ZÊ»”g•ÞpƒXµúäÚ.kÞðoLooÑ§£LáçbE€}PQhù¶¬yëä+àîi V-?¥´íCÖéÎ\\rz0]>Ùptqæñï˜\\0‚uÚx#xùú³Q†¿?²c7ÁºÝþù}$/±\\ZûÙïòî¬ófóÛRŽâ VçíNŠ	 Xçr´\\0|¾¢_1+ÀÇ6¤ó};@°– ÀÿÄÌ¾»,k3©ò˜œ\\ZF€½óÐ%¬%”®Óä§“öt,°†€wÜ‚PÝ\\\'….·=)!€`­3„ÿžrö°\\n^bõª™Ýçnµ\\\'±]g!Rš\\0‚µÞ¼=ê·õ3ûñªõF\\\'G¬Ëì¿æ¾ÅÀuÞÆ÷ÌìqÄê2ƒ“«\\rÖåvÈ½•¤¡–ÄkÏ·¹cr®_ngr6D\\0Á*3†fŸÍÎÐ’\\\'óË«b÷xe{>›©»cs™ÉÝ«Üòh4§YDI(^\\n.Õ­6øÃÕ<«rûRBC¬zÆÐlÜÍì‰á’p¼>y;ú¹Æ%qúž™}eF¨T>ËjP¦Œ¦ XõÍ1·@Ó×¢™:y_p¶4æ•<¨äQÍµ^‚¨åµ„±>!J„À…¬Á-È&Kñ­|¨8—U‚•¾ôùƒS\\"ÅÃ$Réë¶jªF!Iß¬íí\\\'±‘xéŒtýü3{ bµ\\Zj*ØŽGU*EµI\\0ÁÚÇ.^Ä–x`y+SLl™È}ˆQ+®bVÝ 	Xj<°÷\\\'¯ÉÏüùac-§$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@V lª‚\\0Ê XeüÈ\\r@°aS PF\\0Á*ãGn@ \\0‚›ª \\02V?rC\\0¬@ØT”@°Êø‘$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@V lª‚\\0Ê XeüÈ\\r@°aS PF\\0Á*ãGn@ \\0‚›ª \\02V?rC\\0¬@ØT”@°Êø‘$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@ÿ/¨è¦PÎ§\\n\\0\\0\\0\\0IEND®B`‚\', \'‰PNG\\r\\n\\Z\\n\\0\\0\\0\\rIHDR\\0\\0,\\0\\0\\0–\\0\\0\\0d[µÒ\\0\\0\\0sRGB\\0®Îé\\0\\0?IDATx^íOèÙÇŸ©!4…š\\"†R”Ä„²°3š™²SÄ+djH’4Š%²@,”…l…ˆ‘	åï÷Í}úžÏ™s?÷¹÷s?Ÿçsî}Ýúõùþ¾ŸsÏ}îë9÷ý=ç9Ï9÷ã€\\0 Ð	;:±3!\\0‚E#€\\0º!€`uã*…\\0,Ú\\0 Ð\\r«Wa( €`Ñ \\0n XÝ¸\\nC!\\0‹6\\0tC\\0ÁêÆU\\n X´@ V7®ÂP@\\0Á¢\\r@\\0Ý@°ºq†B\\0m\\0è†\\0‚Õ«0@°h€@7¬n\\\\…¡€\\0‚E€\\0º!€`uã*…\\0,Ú\\0 Ð\\r«Wa( €`Ñ \\0n XÝ¸\\nC!\\0‹6\\0tC\\0ÁêÆU\\n X´@ V7®ÂP@\\0Á¢\\r@\\0Ý@°n]õ3{Kå¹{Íì…fös3{ÍˆW¿7|§Ï²¬ê+_ÿyš™=afwš™Êè÷þïû7u©/ÛMCÂP\\\\‚\\0‚õ‘ú™=÷Àƒ×xüFü>of_,x\\ZÅ °m{¬Ï6zT×èí²÷õk4› p){,\\rí$VõMÌmfŸ)†d\\Zžõùú¿Ê—¿÷Ÿ}ˆ§ÿß=TøÒáÓËŒ\\r9ëa¥z^×¥ž®sUö&X\\Zþ}zˆ•Žøœ™}09v$áÒ¿ûÍì\\r#‚ê6KßšlïU5dŒÙ=	Vk¨ÿµWêj°7AýV_A~ì†À^ë»Y¾‡ÍìcyZÃÀ÷Wö~mè‘ut˜\\nåö X­]Ã)\\r{;ÔËúq“ý{ðao~ÂÞ3ØCcÿOÅNÃ¨žóœ4³ÇŠ{ÚƒÏÔü©¶7[oìê‘(éÓšÙ}½9©²·ì1Jx‰cuîPÌØº`)U@ñ+?4Ôpp£ÌŒWöú·.”äYÆã4³IŠÃ\\ZÞ¤Ž.l]°äõ°Ê6ª¿4ü›r’ŸçKvâGžKUžÿ[3ûÔ¤,ÍpË›º?¾‡@Wö XcížAîsqºkXë§ß·’K§¼f/®u­¿˜™lÔÑ{<nŠ%ßCà€ÀK¢£^ÉñYÚ\\\\Î)Zå$Âü·Ôœ·A{iðŠeifmégï½ÈÌî13\\rÿ\\Z†cÊåzg£mœk¸†`mðAä–bö\\"X>¼“¸hÙËØ!a’i›Ñu¸X›«g#ý¼µgðÊë0Ckã”Ú=	–»Í—¼èóÕ7³†¿¾Ð0n,?«žmlõž˜W¼¬<´P¹Þcë”æS^Á:…$çvI`‚5×Qï2³G‹“ÆÖJ\\0%Xå®ÿ4³·­˜U_\\nÖ5¯ƒœË˜ò@°Žcª{V*}lfnlh¨Ü¯5ÒÊa)9X¡&N¡-@°Ž{³µqŠÙ‡Íì½Uµk\\rßÈÁÚÒÓÇ½Ì&0õðÍ®pC\\\'œHo	Ý\\Z©e¾ÛPcãVbhôãœZ¢†µâYºÒÇÍL1±¥‡§4hgÔç/­„ó Ð+kÜsõ.s‡u­š®VæpÍi7e<m®-s®CY\\\\-«íšV°=Ú»*k<–e/Ñ™Œ/mZbËÕ6Bƒ@”\\0‚Õ&Õ\\Z.]·\\\'ÑÒ0°•\\r¯«K¸\\"/–`†0Úª)·YVÛµõ‚é5rž|;šz›c·@CÅoöÚM¢>Ê]\\\'ðÛfInì\\Z~›Îï«mˆ×\\\\øÆ›Ý Þmf/?â%œþtèyi9Ñ5/É)Wxqœ3ž\\\\<‰\\0‚õäFq®]J•¥®ÞÕÜ]#þmfÐç¦fÆ¯ÊýÁî=²ì(:Ìå‘„À,Ö“qÕ÷¥±+¯yÍímþef_ÞöSïç5ËñÂ>„=&LSÕüÁÌÞÜ,qª.¾‡\\0o\\\\i´5÷LŸ+_l­ »½\\rZ[à¼*Ð6]°¼7³†€MÅÙf5‹¬9¤^jçm€\\0=¬C\\\'ÖÃÁS‡_­÷!êŠ_1³÷L¼½G=½o˜ÙÓÿt“|úì‘vçâ§ø‘¶ÇÑgäí@.RÚ¹¢\\\\¸mÞ~=•WoLõµê9µ§\\Zµ‡r&€`:·Þ\\"æ”žAk»™¹ËsþffzÁ…²G\\"$QÐ¡ÇÄÁË«¬ŠÿìAr‰Šÿ¯¶oß+ìw7/oýÉPïXp]÷þ‰b+g]âTñšI±-@°½»ÖpP³€­\\ZÎÜ¶•¼Úz¬‹–zHS¦ÙÇ;ƒ\\rºj.yél-Øk¤†M§ØV	 X‡ž-‡pK0	†fëMûæö¬Æ–õh(ù¦#Ñ“T_<£ç¤êž03‰™†’ê=­ñê°–àÒÞ¶ª$º/\\ZÐ!èßû¾ÏY¨<&Tª]±ªGfø³^8ý3{Êp~k\\r¡Ç ÞÜ³þïÕ0³6­Ž…ùPrÆ-ü¯hKt‰cÍ¥HùÖaƒ(<G…¦Õ“P­zÐ=æmvµX©—§YÃ—4ë˜Húõõ©:´\\r´Ç›ôéùT²=2”ôzÔóÙÈHrh½€<S°4óª¤Ýg÷ïÃÞÈ½D}H¹3@°Æ+\\Zp×ÌÝ³Šj–&MJD¾cfz3ŽðÖ.\\r­t	¿®Î=¶?ý±æTf­»ùïZ=±R[iõKl³kl¶ÖïiÉðÿŒ%U@°N¬zØóø‘´ƒ)¡(ßXîwU_C½‰Iù°)kI`<úd”=2ý<–¾ Ô›óadý>ÈÖ¤AÔ†¥åê^ÞX=Ñ?PKíà¼ X·—d¸×b\\"¡¹/˜ÿäW®w†hmÎ7ÖC˜Ì_¡ÉTáB¦_j¢AB&ŽåïË~6$Ç®mÇX}-±ÒÅ\\\'Õ+.wÐÈêý]ŠÅ&®ƒ`V”M=ìñáÜ\\\'\\\'‚íz°5£X&Y{#Ï5ôVæ4z	˜îMùbåÑ\\nê¯‘¥_ÛÖùÝìˆñŠA\\\\ËW²Eã•sîŸ²g }(Ïpé««rIK7¡’\\\'qÖ7U.Ÿùó°/VX÷s¦â(žcµtÖ.xãSjÆÝlx2ÿôl}·{Ž¨µf(Õ«RïªôÕÜMeKÙƒÔ}Ì™ÎòÁf®‹`6$Ö5å;ÝÕø2#¶s©F\\\\ï-VÆŠ\\\\„Ë¸ØX¿.ïÅú¬¥ÿß‡¢êÝ•q¾¿šÙ3ªŽ$òzÊÈƒÈJ êCi\\"åò©KqÝåu¬[·×•çÆ4ô—÷ËÕ>ZSJ1(=8‘5Su]ë÷K—;¹øèóþ!Á{8ú‹“qø£™ý`ˆ]y\\ZCÉ]Â£C1Ä×\\rñ¸è[»çäì]«Ÿº°Á:tS¤+Xþù1Ò\\0²ƒæO-Sµ}Ë­‘ôž•X+Xú®%äeYå¨¹pÝ3dëkØ÷<3{ê©†Ï8Ë=äÎ_Á\\Z¬S¦¹õ}!¸MÌ)×9Yç\\n­‰‰ujÎ¯¥µú ßªZ€`:¶|°–\\nÉØÎ¢Ú³ýa3{¬jK{øë,×pL½ -K‚ö[ºÿ‹ß‚µž`µÒ¼örèWÎîé¯³ø<jf/+ÞTÎxÖ1©ÖÐ‡ˆ­²b]~¯\\0¹†Ÿºî+‡%N­	©µ•c¥â`úc³åøãÅiê‚Ö!¡_½€hë˜P©ö=ô ¦ÚYß×Ùüc\\Z*(ÿE3{_7µ5¬CjØâÛO	–\\Zø7‹…ÉuÛ`¸°§e,ø¿»ëì.¬C‡yvô±¡ÚTJ5Fr|:k*˜|Ö¡<­alß)%AÛ÷\\\\Bµt§„üÖ€¸rÖ­ƒÊ|!­9{høJ³~cKoTDAÛÜü°Æ.WÞ\\\\0¹¬[þõ®	SžYºïÕT½|Œ@°æ–„Ê‡~4,@à‚¬[ØÙéco•A¨.Ø0¹Z¬C*šÂÖU~øî™çÜÍ“–		 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	üÜXµP¬\\0\\0\\0\\0IEND®B`‚\', \'2024-09-01 20:29:51\')')
- 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `generalconsents` (`pasien_id`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `alamat_lengkap`, `no_hp`, `status_hubungan_pasien`, `privasi_khusus`, `permintaan_privasi_khusus`, `akses_keluarga`, `cara_bayar`, `jenis_perawatan`, `signature_penanggung`, `signature_petugas`, `created_at`) VALUES (:pasien_id:, :nama_lengkap:, :tempat_lahir:, :tanggal_lahir:, :alamat_lengkap:, :no_hp:, :status_hubungan_pasien:, :privasi_khusus:, :permintaan_privasi_khusus:, :akses_keluarga:, :cara_bayar:, :jenis_perawatan:, :signature_penanggung:, :signature_petugas:, :created_at:)', [...], false)
- 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
- 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
- 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
- 7 APPPATH\Controllers\GeneralConsentController.php(104): CodeIgniter\Model->insert([...])
- 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->store('1')
- 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
-10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
-11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-14 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-CRITICAL - 2024-09-01 20:29:51 --> [Caused by] mysqli_sql_exception: Table 'db_pendaftaran_rme.generalconsents' doesn't exist
-in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
- 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `generalconsents` (`pasien_id`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `alamat_lengkap`, `no_hp`, `status_hubungan_pasien`, `privasi_khusus`, `permintaan_privasi_khusus`, `akses_keluarga`, `cara_bayar`, `jenis_perawatan`, `signature_penanggung`, `signature_petugas`, `created_at`) VALUES (\'1\', \'Consequat Culpa ame\', \'Cupiditate quia eius\', \'2024-10-10\', \'asfafa\', \'089516325685\', \'ayah\', \'mengijinkan\', \'\', \'mengijinkan\', \'tunai\', \'rawat jalan\', \'‰PNG\\r\\n\\Z\\n\\0\\0\\0\\rIHDR\\0\\0,\\0\\0\\0–\\0\\0\\0d[µÒ\\0\\0\\0sRGB\\0®Îé\\0\\0\\raIDATx^í½«>GÇOÀ\\"E„)b-	X(X$QÑF,L!©ÿÓH,„Ÿ\\"‚\\"¢)­4U\\n\\niÒˆ¦³‹IPÁ\\"… ÷ËÝÉ=¿É>÷Ù}föìÌÎgár_žyÛÏ™ýÞ3g^öã‚\\0 Ð	{:i\\\'Í„\\0 `\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`µÛ>efÏ™ÙCf¦ŸuýÝÌ^wM~ÄÌ>˜Ò|iJ§4)Ý÷Û½=Zõ¬õÌ¶Ì!ú¢™=if÷W¨èE3{¾B9& Xû›!‰”¾×¾þcf¯](åA`/Ö^äÍ4„»c×ß·¼°ñ–t);”\\09÷‡•ýñ¡Rüé%3{ËÌÞ›r(†¥¡¢¾§x–¾+~õ¯)­b[ò¨~ênIù?¹Ï-R+ê@°ê3½­D\\rûäU%Ññi¿u%bšæ—´Jeþ-Ë¨2}Iaä@‹¬«HL~gfŸÍª“7õƒJ¢ò«iV1U!ñûrÌíQb XÛr–PÉ£š¨×ô~ž6³—³[Á¶ÛÚ–Òw @§ÞzZC%±ò—bL?»úCÍõQªK11?Ì”×V³Žm(Q*V@°V[\\\\B‘U\\n¤o!\\"y\\0_ÁúG´“$èŽ\\0‚UÏdsžŽJWÐ[D«öõÆL\\\\Lq+Å¯¸ p8V¹IO\\rÿ$\\ZŠSm!TªSAö|\\rWÍ¸X9J€@eVP	††dþ’@¥%\\ne¥Ïçž«3yrª—‡%€`]nÚ|Á–qªÔÊ¹µVúL‹G?qù­}@°ÖÛi.VµåðÏ·ðÔ\\nyâVëíHŽ	 XëŒöc3{ÁeÙzøç[wj(È†u6$uÇ¬eÆ›rGÅoÌì©¬¹š$nµÌ†¤:\\0ë¼óaØŸÍì™fÿnk†Ú\\0í/ìwÞ~¤8:üicÎyU{ÆŠr‹%z¹•e¬yNŠýÜ-ÊŒ\\nªßf5?+=]Ö›H	 Xœ{V:Sêñ†€yËü–¼«Šo“\\0‚u·]äYÉ“ñ‰?Ý€X©•V›Ï­\\n$€`ÝÀž[_ÕŠXå‚ÕR»»+UN\\0Áºéùlàžö¹~™<,­ý’`qA`8ÖµÉuÀž†‚éj5F¤!+\\\'1÷˜rÃ‰\\0‚u}âßÀÌÑÂ<h”Àè‚•‹o™i´£Ò,ˆÀÈ‚•Åc„`¶&¶8£‹\\\'\\n›U°æ6·d_cüü}…Ê«¿é>õê/}Ÿ{µ˜.ý¬þ^ö\\\'lúŒØÙ\\Z‹v£\\nÖ»fö #Ú“XI|ôõ¥M:GVh7	W³ôE/†xoÖ´Ž+?ïm3{¸!ûû‡?yFzŸá7.hãÍìcS¾$$~H8çu­­Æ×¡¼-lcZ{¤ï„Àˆ‚•¿ÕfÏ}yé<øô\\Zú4”[Ó}$DúÒ«êu¥ß“@óxæ2µ§DÐ^¼:	õù57BZœ#0¢`åGï±æêÔvNÙë3Óf¦$J[Ç•’`ÉÓ{v\\Z‚®±&1Î=c|^‘Àˆ‚•¯hßC°rÑÌ=#ÅˆÒð*‰SE³•üúþu3ûü$¤>ðŸ*ØÓ{-ºI2·I`DÁÊÅbS;5—<•÷Íì;SìçÜð­Í^tÓ*±”\\\'æ/¼¬Ö­ÖQûF¬_˜Ù·öØ›7·,5)\\ró’ ÝgfL‚–þ6\\\'lþo>žå½·ˆ®™Ç÷ð`#î“:v 0¢`å^À¯È:õòÕ­»€_Oõï«\\n?U¸4@¿¤}ù\\Z7†…K¨‘fkÎ»Ù‹ƒ„ëe3{l‘µbå‹DOÍ>žjM¾lÁŠ±Ûµìõ î	·Å-9iÎ¯HOÁö¿šÙ;f¦¡aº´h4]ù¢Íôû©-8úû½ÙÂÙ5ö¸m©ÊA°ÖÐ$í*#\\nÖÜ¶œ–Ã‘{ý¼¸¥Ÿý›yÒöž%Ê¯ÿÒ?…t±k	=Ò,\\"0¢`	Ìÿ2:=mÍYdØÊ‰üz,Dm© ù	4© ¡&{+êèÅ*X~YlÌLVyOOâõ¤ÛF¤¯z£¼ÚÛ.?ÌTº7Íì·S†¹-Eå­¥„.	Œ*XùâQÃõº¯ÿgà¹&Ñ’°ù­?çVÎK°$|dæ[¬4~x«Ïô7Åý´—ò/ÙisËB”_Þ_>$O‹xS}~Ù‰fœ¹	Œ*XùâQý7ÿf ÷£Vå×`-]ßæ‡›2môÖI\\Z©sb¶7G<ó`Œ*XOOË	î×ÌìkÁìX÷\\\\K½Ö4cz§aá\\"öÜ‹G,aö÷=¶ç›:¤ºšÙýSM5ûÖföÕé0ï=¯¹¡\\\\\\ZÆ©-Z¢íO~¨çgBU^JŸ–‹èwÿscë}UHgØ¢’šj‹ömY¦¬¥Ã—-Ûs„²S–2Áš\\rÞ‚uc”‘YÔèš~Áhép°F{(ã€F~Hó¥\\r--í±«yÁ\\Z¹_õh»nÚ<rÇÊ—6ŒÌ¢F‡M<^× I³F~Hó¥\\rÌø\\\\þø#{àx9Grž!0²`å› Ÿ¹Zœø\\n=f5´7S/£øÑUn­Åâ‚À&F,õ3…,\\\\ßÅ|ÜŠ¡àz~äXI`tÁ:µd%Æa“û8 “Ãvƒ¸]°|K{ÄáZFÀ³Ã;]ÆŒT…F¬<Ž…—°¬CyÏŠ]Ë˜‘ªÑ‹Ó1×w\\"/Vx¥ëù‘£€Àè‚%tþÔ)>7MR€õ°Y/9á°0¸±xÖõár­t±­d¾ú˜•fïcpü3;tÖµùßÍ^Ê@,ëîÇ‚aàÐ2ÑÎÍ#X×¶È½,’åiáAÜ=df­U;Ïî-A°nÌžoÕahhÆ²!e¡Ý›F°nl£C\\r}üáp#\\r«vŸÛa[†`Ýmz?¦OÞ6³‡ìZ®NådéÂ€ Õ[F°>j™\\\\´F\\Z\\ZÊ»”g•ÞpƒXµúäÚ.kÞðoLooÑ§£LáçbE€}PQhù¶¬yëä+àîi V-?¥´íCÖéÎ\\rz0]>Ùptqæñï˜\\0‚uÚx#xùú³Q†¿?²c7ÁºÝþù}$/±\\ZûÙïòî¬ófóÛRŽâ VçíNŠ	 Xçr´\\0|¾¢_1+ÀÇ6¤ó};@°– ÀÿÄÌ¾»,k3©ò˜œ\\ZF€½óÐ%¬%”®Óä§“öt,°†€wÜ‚PÝ\\\'….·=)!€`­3„ÿžrö°\\n^bõª™Ýçnµ\\\'±]g!Rš\\0‚µÞ¼=ê·õ3ûñªõF\\\'G¬Ëì¿æ¾ÅÀuÞÆ÷ÌìqÄê2ƒ“«\\rÖåvÈ½•¤¡–ÄkÏ·¹cr®_ngr6D\\0Á*3†fŸÍÎÐ’\\\'óË«b÷xe{>›©»cs™ÉÝ«Üòh4§YDI(^\\n.Õ­6øÃÕ<«rûRBC¬zÆÐlÜÍì‰á’p¼>y;ú¹Æ%qúž™}eF¨T>ËjP¦Œ¦ XõÍ1·@Ó×¢™:y_p¶4æ•<¨äQÍµ^‚¨åµ„±>!J„À…¬Á-È&Kñ­|¨8—U‚•¾ôùƒS\\"ÅÃ$Réë¶jªF!Iß¬íí\\\'±‘xéŒtýü3{ bµ\\Zj*ØŽGU*EµI\\0ÁÚÇ.^Ä–x`y+SLl™È}ˆQ+®bVÝ 	Xj<°÷\\\'¯ÉÏüùac-§$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@V lª‚\\0Ê XeüÈ\\r@°aS PF\\0Á*ãGn@ \\0‚›ª \\02V?rC\\0¬@ØT”@°Êø‘$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@V lª‚\\0Ê XeüÈ\\r@°aS PF\\0Á*ãGn@ \\0‚›ª \\02V?rC\\0¬@ØT”@°Êø‘$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@ÿ/¨è¦PÎ§\\n\\0\\0\\0\\0IEND®B`‚\', \'‰PNG\\r\\n\\Z\\n\\0\\0\\0\\rIHDR\\0\\0,\\0\\0\\0–\\0\\0\\0d[µÒ\\0\\0\\0sRGB\\0®Îé\\0\\0?IDATx^íOèÙÇŸ©!4…š\\"†R”Ä„²°3š™²SÄ+djH’4Š%²@,”…l…ˆ‘	åï÷Í}úžÏ™s?÷¹÷s?Ÿçsî}Ýúõùþ¾ŸsÏ}îë9÷ý=ç9Ï9÷ã€\\0 Ð	;:±3!\\0‚E#€\\0º!€`uã*…\\0,Ú\\0 Ð\\r«Wa( €`Ñ \\0n XÝ¸\\nC!\\0‹6\\0tC\\0ÁêÆU\\n X´@ V7®ÂP@\\0Á¢\\r@\\0Ý@°ºq†B\\0m\\0è†\\0‚Õ«0@°h€@7¬n\\\\…¡€\\0‚E€\\0º!€`uã*…\\0,Ú\\0 Ð\\r«Wa( €`Ñ \\0n XÝ¸\\nC!\\0‹6\\0tC\\0ÁêÆU\\n X´@ V7®ÂP@\\0Á¢\\r@\\0Ý@°n]õ3{Kå¹{Íì…fös3{ÍˆW¿7|§Ï²¬ê+_ÿyš™=afwš™Êè÷þïû7u©/ÛMCÂP\\\\‚\\0‚õ‘ú™=÷Àƒ×xüFü>of_,x\\ZÅ °m{¬Ï6zT×èí²÷õk4› p){,\\rí$VõMÌmfŸ)†d\\Zžõùú¿Ê—¿÷Ÿ}ˆ§ÿß=TøÒáÓËŒ\\r9ëa¥z^×¥ž®sUö&X\\Zþ}zˆ•Žøœ™}09v$áÒ¿ûÍì\\r#‚ê6KßšlïU5dŒÙ=	Vk¨ÿµWêj°7AýV_A~ì†À^ë»Y¾‡ÍìcyZÃÀ÷Wö~mè‘ut˜\\nåö X­]Ã)\\r{;ÔËúq“ý{ðao~ÂÞ3ØCcÿOÅNÃ¨žóœ4³ÇŠ{ÚƒÏÔü©¶7[oìê‘(éÓšÙ}½9©²·ì1Jx‰cuîPÌØº`)U@ñ+?4Ôpp£ÌŒWöú·.”äYÆã4³IŠÃ\\ZÞ¤Ž.l]°äõ°Ê6ª¿4ü›r’ŸçKvâGžKUžÿ[3ûÔ¤,ÍpË›º?¾‡@Wö XcížAîsqºkXë§ß·’K§¼f/®u­¿˜™lÔÑ{<nŠ%ßCà€ÀK¢£^ÉñYÚ\\\\Î)Zå$Âü·Ôœ·A{iðŠeifmégï½ÈÌî13\\rÿ\\Z†cÊåzg£mœk¸†`mðAä–bö\\"X>¼“¸hÙËØ!a’i›Ñu¸X›«g#ý¼µgðÊë0Ckã”Ú=	–»Í—¼èóÕ7³†¿¾Ð0n,?«žmlõž˜W¼¬<´P¹Þcë”æS^Á:…$çvI`‚5×Qï2³G‹“ÆÖJ\\0%Xå®ÿ4³·­˜U_\\nÖ5¯ƒœË˜ò@°Žcª{V*}lfnlh¨Ü¯5ÒÊa)9X¡&N¡-@°Ž{³µqŠÙ‡Íì½Uµk\\rßÈÁÚÒÓÇ½Ì&0õðÍ®pC\\\'œHo	Ý\\Z©e¾ÛPcãVbhôãœZ¢†µâYºÒÇÍL1±¥‡§4hgÔç/­„ó Ð+kÜsõ.s‡u­š®VæpÍi7e<m®-s®CY\\\\-«íšV°=Ú»*k<–e/Ñ™Œ/mZbËÕ6Bƒ@”\\0‚Õ&Õ\\Z.]·\\\'ÑÒ0°•\\r¯«K¸\\"/–`†0Úª)·YVÛµõ‚é5rž|;šz›c·@CÅoöÚM¢>Ê]\\\'ðÛfInì\\Z~›Îï«mˆ×\\\\øÆ›Ý Þmf/?â%œþtèyi9Ñ5/É)Wxqœ3ž\\\\<‰\\0‚õäFq®]J•¥®ÞÕÜ]#þmfÐç¦fÆ¯ÊýÁî=²ì(:Ìå‘„À,Ö“qÕ÷¥±+¯yÍímþef_ÞöSïç5ËñÂ>„=&LSÕüÁÌÞÜ,qª.¾‡\\0o\\\\i´5÷LŸ+_l­ »½\\rZ[à¼*Ð6]°¼7³†€MÅÙf5‹¬9¤^jçm€\\0=¬C\\\'ÖÃÁS‡_­÷!êŠ_1³÷L¼½G=½o˜ÙÓÿt“|úì‘vçâ§ø‘¶ÇÑgäí@.RÚ¹¢\\\\¸mÞ~=•WoLõµê9µ§\\Zµ‡r&€`:·Þ\\"æ”žAk»™¹ËsþffzÁ…²G\\"$QÐ¡ÇÄÁË«¬ŠÿìAr‰Šÿ¯¶oß+ìw7/oýÉPïXp]÷þ‰b+g]âTñšI±-@°½»ÖpP³€­\\ZÎÜ¶•¼Úz¬‹–zHS¦ÙÇ;ƒ\\rºj.yél-Øk¤†M§ØV	 X‡ž-‡pK0	†fëMûæö¬Æ–õh(ù¦#Ñ“T_<£ç¤êž03‰™†’ê=­ñê°–àÒÞ¶ª$º/\\ZÐ!èßû¾ÏY¨<&Tª]±ªGfø³^8ý3{Êp~k\\r¡Ç ÞÜ³þïÕ0³6­Ž…ùPrÆ-ü¯hKt‰cÍ¥HùÖaƒ(<G…¦Õ“P­zÐ=æmvµX©—§YÃ—4ë˜Húõõ©:´\\r´Ç›ôéùT²=2”ôzÔóÙÈHrh½€<S°4óª¤Ýg÷ïÃÞÈ½D}H¹3@°Æ+\\Zp×ÌÝ³Šj–&MJD¾cfz3ŽðÖ.\\r­t	¿®Î=¶?ý±æTf­»ùïZ=±R[iõKl³kl¶ÖïiÉðÿŒ%U@°N¬zØóø‘´ƒ)¡(ßXîwU_C½‰Iù°)kI`<úd”=2ý<–¾ Ô›óadý>ÈÖ¤AÔ†¥åê^ÞX=Ñ?PKíà¼ X·—d¸×b\\"¡¹/˜ÿäW®w†hmÎ7ÖC˜Ì_¡ÉTáB¦_j¢AB&ŽåïË~6$Ç®mÇX}-±ÒÅ\\\'Õ+.wÐÈêý]ŠÅ&®ƒ`V”M=ìñáÜ\\\'\\\'‚íz°5£X&Y{#Ï5ôVæ4z	˜îMùbåÑ\\nê¯‘¥_ÛÖùÝìˆñŠA\\\\ËW²Eã•sîŸ²g }(Ïpé««rIK7¡’\\\'qÖ7U.Ÿùó°/VX÷s¦â(žcµtÖ.xãSjÆÝlx2ÿôl}·{Ž¨µf(Õ«RïªôÕÜMeKÙƒÔ}Ì™ÎòÁf®‹`6$Ö5å;ÝÕø2#¶s©F\\\\ï-VÆŠ\\\\„Ë¸ØX¿.ïÅú¬¥ÿß‡¢êÝ•q¾¿šÙ3ªŽ$òzÊÈƒÈJ êCi\\"åò©KqÝåu¬[·×•çÆ4ô—÷ËÕ>ZSJ1(=8‘5Su]ë÷K—;¹øèóþ!Á{8ú‹“qø£™ý`ˆ]y\\ZCÉ]Â£C1Ä×\\rñ¸è[»çäì]«Ÿº°Á:tS¤+Xþù1Ò\\0²ƒæO-Sµ}Ë­‘ôž•X+Xú®%äeYå¨¹pÝ3dëkØ÷<3{ê©†Ï8Ë=äÎ_Á\\Z¬S¦¹õ}!¸MÌ)×9Yç\\n­‰‰ujÎ¯¥µú ßªZ€`:¶|°–\\nÉØÎ¢Ú³ýa3{¬jK{øë,×pL½ -K‚ö[ºÿ‹ß‚µž`µÒ¼örèWÎîé¯³ø<jf/+ÞTÎxÖ1©ÖÐ‡ˆ­²b]~¯\\0¹†Ÿºî+‡%N­	©µ•c¥â`úc³åøãÅiê‚Ö!¡_½€hë˜P©ö=ô ¦ÚYß×Ùüc\\Z*(ÿE3{_7µ5¬CjØâÛO	–\\Zø7‹…ÉuÛ`¸°§e,ø¿»ëì.¬C‡yvô±¡ÚTJ5Fr|:k*˜|Ö¡<­alß)%AÛ÷\\\\Bµt§„üÖ€¸rÖ­ƒÊ|!­9{høJ³~cKoTDAÛÜü°Æ.WÞ\\\\0¹¬[þõ®	SžYºïÕT½|Œ@°æ–„Ê‡~4,@à‚¬[ØÙéco•A¨.Ø0¹Z¬C*šÂÖU~øî™çÜÍ“–		 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	üÜXµP¬\\0\\0\\0\\0IEND®B`‚\', \'2024-09-01 20:29:51\')', 0)
- 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `generalconsents` (`pasien_id`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `alamat_lengkap`, `no_hp`, `status_hubungan_pasien`, `privasi_khusus`, `permintaan_privasi_khusus`, `akses_keluarga`, `cara_bayar`, `jenis_perawatan`, `signature_penanggung`, `signature_petugas`, `created_at`) VALUES (\'1\', \'Consequat Culpa ame\', \'Cupiditate quia eius\', \'2024-10-10\', \'asfafa\', \'089516325685\', \'ayah\', \'mengijinkan\', \'\', \'mengijinkan\', \'tunai\', \'rawat jalan\', \'‰PNG\\r\\n\\Z\\n\\0\\0\\0\\rIHDR\\0\\0,\\0\\0\\0–\\0\\0\\0d[µÒ\\0\\0\\0sRGB\\0®Îé\\0\\0\\raIDATx^í½«>GÇOÀ\\"E„)b-	X(X$QÑF,L!©ÿÓH,„Ÿ\\"‚\\"¢)­4U\\n\\niÒˆ¦³‹IPÁ\\"… ÷ËÝÉ=¿É>÷Ù}föìÌÎgár_žyÛÏ™ýÞ3g^öã‚\\0 Ð	{:i\\\'Í„\\0 `\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`µÛ>efÏ™ÙCf¦ŸuýÝÌ^wM~ÄÌ>˜Ò|iJ§4)Ý÷Û½=Zõ¬õÌ¶Ì!ú¢™=if÷W¨èE3{¾B9& Xû›!‰”¾×¾þcf¯](åA`/Ö^äÍ4„»c×ß·¼°ñ–t);”\\09÷‡•ýñ¡Rüé%3{ËÌÞ›r(†¥¡¢¾§x–¾+~õ¯)­b[ò¨~ênIù?¹Ï-R+ê@°ê3½­D\\rûäU%Ññi¿u%bšæ—´Jeþ-Ë¨2}Iaä@‹¬«HL~gfŸÍª“7õƒJ¢ò«iV1U!ñûrÌíQb XÛr–PÉ£š¨×ô~ž6³—³[Á¶ÛÚ–Òw @§ÞzZC%±ò—bL?»úCÍõQªK11?Ì”×V³Žm(Q*V@°V[\\\\B‘U\\n¤o!\\"y\\0_ÁúG´“$èŽ\\0‚UÏdsžŽJWÐ[D«öõÆL\\\\Lq+Å¯¸ p8V¹IO\\rÿ$\\ZŠSm!TªSAö|\\rWÍ¸X9J€@eVP	††dþ’@¥%\\ne¥Ïçž«3yrª—‡%€`]nÚ|Á–qªÔÊ¹µVúL‹G?qù­}@°ÖÛi.VµåðÏ·ðÔ\\nyâVëíHŽ	 XëŒöc3{ÁeÙzøç[wj(È†u6$uÇ¬eÆ›rGÅoÌì©¬¹š$nµÌ†¤:\\0ë¼óaØŸÍì™fÿnk†Ú\\0í/ìwÞ~¤8:üicÎyU{ÆŠr‹%z¹•e¬yNŠýÜ-ÊŒ\\nªßf5?+=]Ö›H	 Xœ{V:Sêñ†€yËü–¼«Šo“\\0‚u·]äYÉ“ñ‰?Ý€X©•V›Ï­\\n$€`ÝÀž[_ÕŠXå‚ÕR»»+UN\\0Áºéùlàžö¹~™<,­ý’`qA`8ÖµÉuÀž†‚éj5F¤!+\\\'1÷˜rÃ‰\\0‚u}âßÀÌÑÂ<h”Àè‚•‹o™i´£Ò,ˆÀÈ‚•Åc„`¶&¶8£‹\\\'\\n›U°æ6·d_cüü}…Ê«¿é>õê/}Ÿ{µ˜.ý¬þ^ö\\\'lúŒØÙ\\Z‹v£\\nÖ»fö #Ú“XI|ôõ¥M:GVh7	W³ôE/†xoÖ´Ž+?ïm3{¸!ûû‡?yFzŸá7.hãÍìcS¾$$~H8çu­­Æ×¡¼-lcZ{¤ï„Àˆ‚•¿ÕfÏ}yé<øô\\Zú4”[Ó}$DúÒ«êu¥ß“@óxæ2µ§DÐ^¼:	õù57BZœ#0¢`åGï±æêÔvNÙë3Óf¦$J[Ç•’`ÉÓ{v\\Z‚®±&1Î=c|^‘Àˆ‚•¯hßC°rÑÌ=#ÅˆÒð*‰SE³•üúþu3ûü$¤>ðŸ*ØÓ{-ºI2·I`DÁÊÅbS;5—<•÷Íì;SìçÜð­Í^tÓ*±”\\\'æ/¼¬Ö­ÖQûF¬_˜Ù·öØ›7·,5)\\ró’ ÝgfL‚–þ6\\\'lþo>žå½·ˆ®™Ç÷ð`#î“:v 0¢`å^À¯È:õòÕ­»€_Oõï«\\n?U¸4@¿¤}ù\\Z7†…K¨‘fkÎ»Ù‹ƒ„ëe3{l‘µbå‹DOÍ>žjM¾lÁŠ±Ûµìõ î	·Å-9iÎ¯HOÁö¿šÙ;f¦¡aº´h4]ù¢Íôû©-8úû½ÙÂÙ5ö¸m©ÊA°ÖÐ$í*#\\nÖÜ¶œ–Ã‘{ý¼¸¥Ÿý›yÒöž%Ê¯ÿÒ?…t±k	=Ò,\\"0¢`	Ìÿ2:=mÍYdØÊ‰üz,Dm© ù	4© ¡&{+êèÅ*X~YlÌLVyOOâõ¤ÛF¤¯z£¼ÚÛ.?ÌTº7Íì·S†¹-Eå­¥„.	Œ*XùâQÃõº¯ÿgà¹&Ñ’°ù­?çVÎK°$|dæ[¬4~x«Ïô7Åý´—ò/ÙisËB”_Þ_>$O‹xS}~Ù‰fœ¹	Œ*XùâQý7ÿf ÷£Vå×`-]ßæ‡›2môÖI\\Z©sb¶7G<ó`Œ*XOOË	î×ÌìkÁìX÷\\\\K½Ö4cz§aá\\"öÜ‹G,aö÷=¶ç›:¤ºšÙýSM5ûÖföÕé0ï=¯¹¡\\\\\\ZÆ©-Z¢íO~¨çgBU^JŸ–‹èwÿscë}UHgØ¢’šj‹ömY¦¬¥Ã—-Ûs„²S–2Áš\\rÞ‚uc”‘YÔèš~Áhép°F{(ã€F~Hó¥\\r--í±«yÁ\\Z¹_õh»nÚ<rÇÊ—6ŒÌ¢F‡M<^× I³F~Hó¥\\rÌø\\\\þø#{àx9Grž!0²`å› Ÿ¹Zœø\\n=f5´7S/£øÑUn­Åâ‚À&F,õ3…,\\\\ßÅ|ÜŠ¡àz~äXI`tÁ:µd%Æa“û8 “Ãvƒ¸]°|K{ÄáZFÀ³Ã;]ÆŒT…F¬<Ž…—°¬CyÏŠ]Ë˜‘ªÑ‹Ó1×w\\"/Vx¥ëù‘£€Àè‚%tþÔ)>7MR€õ°Y/9á°0¸±xÖõár­t±­d¾ú˜•fïcpü3;tÖµùßÍ^Ê@,ëîÇ‚aàÐ2ÑÎÍ#X×¶È½,’åiáAÜ=df­U;Ïî-A°nÌžoÕahhÆ²!e¡Ý›F°nl£C\\r}üáp#\\r«vŸÛa[†`Ýmz?¦OÞ6³‡ìZ®NådéÂ€ Õ[F°>j™\\\\´F\\Z\\ZÊ»”g•ÞpƒXµúäÚ.kÞðoLooÑ§£LáçbE€}PQhù¶¬yëä+àîi V-?¥´íCÖéÎ\\rz0]>Ùptqæñï˜\\0‚uÚx#xùú³Q†¿?²c7ÁºÝþù}$/±\\ZûÙïòî¬ófóÛRŽâ VçíNŠ	 Xçr´\\0|¾¢_1+ÀÇ6¤ó};@°– ÀÿÄÌ¾»,k3©ò˜œ\\ZF€½óÐ%¬%”®Óä§“öt,°†€wÜ‚PÝ\\\'….·=)!€`­3„ÿžrö°\\n^bõª™Ýçnµ\\\'±]g!Rš\\0‚µÞ¼=ê·õ3ûñªõF\\\'G¬Ëì¿æ¾ÅÀuÞÆ÷ÌìqÄê2ƒ“«\\rÖåvÈ½•¤¡–ÄkÏ·¹cr®_ngr6D\\0Á*3†fŸÍÎÐ’\\\'óË«b÷xe{>›©»cs™ÉÝ«Üòh4§YDI(^\\n.Õ­6øÃÕ<«rûRBC¬zÆÐlÜÍì‰á’p¼>y;ú¹Æ%qúž™}eF¨T>ËjP¦Œ¦ XõÍ1·@Ó×¢™:y_p¶4æ•<¨äQÍµ^‚¨åµ„±>!J„À…¬Á-È&Kñ­|¨8—U‚•¾ôùƒS\\"ÅÃ$Réë¶jªF!Iß¬íí\\\'±‘xéŒtýü3{ bµ\\Zj*ØŽGU*EµI\\0ÁÚÇ.^Ä–x`y+SLl™È}ˆQ+®bVÝ 	Xj<°÷\\\'¯ÉÏüùac-§$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@V lª‚\\0Ê XeüÈ\\r@°aS PF\\0Á*ãGn@ \\0‚›ª \\02V?rC\\0¬@ØT”@°Êø‘$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@V lª‚\\0Ê XeüÈ\\r@°aS PF\\0Á*ãGn@ \\0‚›ª \\02V?rC\\0¬@ØT”@°Êø‘$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@ÿ/¨è¦PÎ§\\n\\0\\0\\0\\0IEND®B`‚\', \'‰PNG\\r\\n\\Z\\n\\0\\0\\0\\rIHDR\\0\\0,\\0\\0\\0–\\0\\0\\0d[µÒ\\0\\0\\0sRGB\\0®Îé\\0\\0?IDATx^íOèÙÇŸ©!4…š\\"†R”Ä„²°3š™²SÄ+djH’4Š%²@,”…l…ˆ‘	åï÷Í}úžÏ™s?÷¹÷s?Ÿçsî}Ýúõùþ¾ŸsÏ}îë9÷ý=ç9Ï9÷ã€\\0 Ð	;:±3!\\0‚E#€\\0º!€`uã*…\\0,Ú\\0 Ð\\r«Wa( €`Ñ \\0n XÝ¸\\nC!\\0‹6\\0tC\\0ÁêÆU\\n X´@ V7®ÂP@\\0Á¢\\r@\\0Ý@°ºq†B\\0m\\0è†\\0‚Õ«0@°h€@7¬n\\\\…¡€\\0‚E€\\0º!€`uã*…\\0,Ú\\0 Ð\\r«Wa( €`Ñ \\0n XÝ¸\\nC!\\0‹6\\0tC\\0ÁêÆU\\n X´@ V7®ÂP@\\0Á¢\\r@\\0Ý@°n]õ3{Kå¹{Íì…fös3{ÍˆW¿7|§Ï²¬ê+_ÿyš™=afwš™Êè÷þïû7u©/ÛMCÂP\\\\‚\\0‚õ‘ú™=÷Àƒ×xüFü>of_,x\\ZÅ °m{¬Ï6zT×èí²÷õk4› p){,\\rí$VõMÌmfŸ)†d\\Zžõùú¿Ê—¿÷Ÿ}ˆ§ÿß=TøÒáÓËŒ\\r9ëa¥z^×¥ž®sUö&X\\Zþ}zˆ•Žøœ™}09v$áÒ¿ûÍì\\r#‚ê6KßšlïU5dŒÙ=	Vk¨ÿµWêj°7AýV_A~ì†À^ë»Y¾‡ÍìcyZÃÀ÷Wö~mè‘ut˜\\nåö X­]Ã)\\r{;ÔËúq“ý{ðao~ÂÞ3ØCcÿOÅNÃ¨žóœ4³ÇŠ{ÚƒÏÔü©¶7[oìê‘(éÓšÙ}½9©²·ì1Jx‰cuîPÌØº`)U@ñ+?4Ôpp£ÌŒWöú·.”äYÆã4³IŠÃ\\ZÞ¤Ž.l]°äõ°Ê6ª¿4ü›r’ŸçKvâGžKUžÿ[3ûÔ¤,ÍpË›º?¾‡@Wö XcížAîsqºkXë§ß·’K§¼f/®u­¿˜™lÔÑ{<nŠ%ßCà€ÀK¢£^ÉñYÚ\\\\Î)Zå$Âü·Ôœ·A{iðŠeifmégï½ÈÌî13\\rÿ\\Z†cÊåzg£mœk¸†`mðAä–bö\\"X>¼“¸hÙËØ!a’i›Ñu¸X›«g#ý¼µgðÊë0Ckã”Ú=	–»Í—¼èóÕ7³†¿¾Ð0n,?«žmlõž˜W¼¬<´P¹Þcë”æS^Á:…$çvI`‚5×Qï2³G‹“ÆÖJ\\0%Xå®ÿ4³·­˜U_\\nÖ5¯ƒœË˜ò@°Žcª{V*}lfnlh¨Ü¯5ÒÊa)9X¡&N¡-@°Ž{³µqŠÙ‡Íì½Uµk\\rßÈÁÚÒÓÇ½Ì&0õðÍ®pC\\\'œHo	Ý\\Z©e¾ÛPcãVbhôãœZ¢†µâYºÒÇÍL1±¥‡§4hgÔç/­„ó Ð+kÜsõ.s‡u­š®VæpÍi7e<m®-s®CY\\\\-«íšV°=Ú»*k<–e/Ñ™Œ/mZbËÕ6Bƒ@”\\0‚Õ&Õ\\Z.]·\\\'ÑÒ0°•\\r¯«K¸\\"/–`†0Úª)·YVÛµõ‚é5rž|;šz›c·@CÅoöÚM¢>Ê]\\\'ðÛfInì\\Z~›Îï«mˆ×\\\\øÆ›Ý Þmf/?â%œþtèyi9Ñ5/É)Wxqœ3ž\\\\<‰\\0‚õäFq®]J•¥®ÞÕÜ]#þmfÐç¦fÆ¯ÊýÁî=²ì(:Ìå‘„À,Ö“qÕ÷¥±+¯yÍímþef_ÞöSïç5ËñÂ>„=&LSÕüÁÌÞÜ,qª.¾‡\\0o\\\\i´5÷LŸ+_l­ »½\\rZ[à¼*Ð6]°¼7³†€MÅÙf5‹¬9¤^jçm€\\0=¬C\\\'ÖÃÁS‡_­÷!êŠ_1³÷L¼½G=½o˜ÙÓÿt“|úì‘vçâ§ø‘¶ÇÑgäí@.RÚ¹¢\\\\¸mÞ~=•WoLõµê9µ§\\Zµ‡r&€`:·Þ\\"æ”žAk»™¹ËsþffzÁ…²G\\"$QÐ¡ÇÄÁË«¬ŠÿìAr‰Šÿ¯¶oß+ìw7/oýÉPïXp]÷þ‰b+g]âTñšI±-@°½»ÖpP³€­\\ZÎÜ¶•¼Úz¬‹–zHS¦ÙÇ;ƒ\\rºj.yél-Øk¤†M§ØV	 X‡ž-‡pK0	†fëMûæö¬Æ–õh(ù¦#Ñ“T_<£ç¤êž03‰™†’ê=­ñê°–àÒÞ¶ª$º/\\ZÐ!èßû¾ÏY¨<&Tª]±ªGfø³^8ý3{Êp~k\\r¡Ç ÞÜ³þïÕ0³6­Ž…ùPrÆ-ü¯hKt‰cÍ¥HùÖaƒ(<G…¦Õ“P­zÐ=æmvµX©—§YÃ—4ë˜Húõõ©:´\\r´Ç›ôéùT²=2”ôzÔóÙÈHrh½€<S°4óª¤Ýg÷ïÃÞÈ½D}H¹3@°Æ+\\Zp×ÌÝ³Šj–&MJD¾cfz3ŽðÖ.\\r­t	¿®Î=¶?ý±æTf­»ùïZ=±R[iõKl³kl¶ÖïiÉðÿŒ%U@°N¬zØóø‘´ƒ)¡(ßXîwU_C½‰Iù°)kI`<úd”=2ý<–¾ Ô›óadý>ÈÖ¤AÔ†¥åê^ÞX=Ñ?PKíà¼ X·—d¸×b\\"¡¹/˜ÿäW®w†hmÎ7ÖC˜Ì_¡ÉTáB¦_j¢AB&ŽåïË~6$Ç®mÇX}-±ÒÅ\\\'Õ+.wÐÈêý]ŠÅ&®ƒ`V”M=ìñáÜ\\\'\\\'‚íz°5£X&Y{#Ï5ôVæ4z	˜îMùbåÑ\\nê¯‘¥_ÛÖùÝìˆñŠA\\\\ËW²Eã•sîŸ²g }(Ïpé««rIK7¡’\\\'qÖ7U.Ÿùó°/VX÷s¦â(žcµtÖ.xãSjÆÝlx2ÿôl}·{Ž¨µf(Õ«RïªôÕÜMeKÙƒÔ}Ì™ÎòÁf®‹`6$Ö5å;ÝÕø2#¶s©F\\\\ï-VÆŠ\\\\„Ë¸ØX¿.ïÅú¬¥ÿß‡¢êÝ•q¾¿šÙ3ªŽ$òzÊÈƒÈJ êCi\\"åò©KqÝåu¬[·×•çÆ4ô—÷ËÕ>ZSJ1(=8‘5Su]ë÷K—;¹øèóþ!Á{8ú‹“qø£™ý`ˆ]y\\ZCÉ]Â£C1Ä×\\rñ¸è[»çäì]«Ÿº°Á:tS¤+Xþù1Ò\\0²ƒæO-Sµ}Ë­‘ôž•X+Xú®%äeYå¨¹pÝ3dëkØ÷<3{ê©†Ï8Ë=äÎ_Á\\Z¬S¦¹õ}!¸MÌ)×9Yç\\n­‰‰ujÎ¯¥µú ßªZ€`:¶|°–\\nÉØÎ¢Ú³ýa3{¬jK{øë,×pL½ -K‚ö[ºÿ‹ß‚µž`µÒ¼örèWÎîé¯³ø<jf/+ÞTÎxÖ1©ÖÐ‡ˆ­²b]~¯\\0¹†Ÿºî+‡%N­	©µ•c¥â`úc³åøãÅiê‚Ö!¡_½€hë˜P©ö=ô ¦ÚYß×Ùüc\\Z*(ÿE3{_7µ5¬CjØâÛO	–\\Zø7‹…ÉuÛ`¸°§e,ø¿»ëì.¬C‡yvô±¡ÚTJ5Fr|:k*˜|Ö¡<­alß)%AÛ÷\\\\Bµt§„üÖ€¸rÖ­ƒÊ|!­9{høJ³~cKoTDAÛÜü°Æ.WÞ\\\\0¹¬[þõ®	SžYºïÕT½|Œ@°æ–„Ê‡~4,@à‚¬[ØÙéco•A¨.Ø0¹Z¬C*šÂÖU~øî™çÜÍ“–		 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	üÜXµP¬\\0\\0\\0\\0IEND®B`‚\', \'2024-09-01 20:29:51\')')
- 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `generalconsents` (`pasien_id`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `alamat_lengkap`, `no_hp`, `status_hubungan_pasien`, `privasi_khusus`, `permintaan_privasi_khusus`, `akses_keluarga`, `cara_bayar`, `jenis_perawatan`, `signature_penanggung`, `signature_petugas`, `created_at`) VALUES (\'1\', \'Consequat Culpa ame\', \'Cupiditate quia eius\', \'2024-10-10\', \'asfafa\', \'089516325685\', \'ayah\', \'mengijinkan\', \'\', \'mengijinkan\', \'tunai\', \'rawat jalan\', \'‰PNG\\r\\n\\Z\\n\\0\\0\\0\\rIHDR\\0\\0,\\0\\0\\0–\\0\\0\\0d[µÒ\\0\\0\\0sRGB\\0®Îé\\0\\0\\raIDATx^í½«>GÇOÀ\\"E„)b-	X(X$QÑF,L!©ÿÓH,„Ÿ\\"‚\\"¢)­4U\\n\\niÒˆ¦³‹IPÁ\\"… ÷ËÝÉ=¿É>÷Ù}föìÌÎgár_žyÛÏ™ýÞ3g^öã‚\\0 Ð	{:i\\\'Í„\\0 `\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`Ñ \\0n XÝ˜Š†B\\0}\\0è†\\0‚Õ©h( €`µÛ>efÏ™ÙCf¦ŸuýÝÌ^wM~ÄÌ>˜Ò|iJ§4)Ý÷Û½=Zõ¬õÌ¶Ì!ú¢™=if÷W¨èE3{¾B9& Xû›!‰”¾×¾þcf¯](åA`/Ö^äÍ4„»c×ß·¼°ñ–t);”\\09÷‡•ýñ¡Rüé%3{ËÌÞ›r(†¥¡¢¾§x–¾+~õ¯)­b[ò¨~ênIù?¹Ï-R+ê@°ê3½­D\\rûäU%Ññi¿u%bšæ—´Jeþ-Ë¨2}Iaä@‹¬«HL~gfŸÍª“7õƒJ¢ò«iV1U!ñûrÌíQb XÛr–PÉ£š¨×ô~ž6³—³[Á¶ÛÚ–Òw @§ÞzZC%±ò—bL?»úCÍõQªK11?Ì”×V³Žm(Q*V@°V[\\\\B‘U\\n¤o!\\"y\\0_ÁúG´“$èŽ\\0‚UÏdsžŽJWÐ[D«öõÆL\\\\Lq+Å¯¸ p8V¹IO\\rÿ$\\ZŠSm!TªSAö|\\rWÍ¸X9J€@eVP	††dþ’@¥%\\ne¥Ïçž«3yrª—‡%€`]nÚ|Á–qªÔÊ¹µVúL‹G?qù­}@°ÖÛi.VµåðÏ·ðÔ\\nyâVëíHŽ	 XëŒöc3{ÁeÙzøç[wj(È†u6$uÇ¬eÆ›rGÅoÌì©¬¹š$nµÌ†¤:\\0ë¼óaØŸÍì™fÿnk†Ú\\0í/ìwÞ~¤8:üicÎyU{ÆŠr‹%z¹•e¬yNŠýÜ-ÊŒ\\nªßf5?+=]Ö›H	 Xœ{V:Sêñ†€yËü–¼«Šo“\\0‚u·]äYÉ“ñ‰?Ý€X©•V›Ï­\\n$€`ÝÀž[_ÕŠXå‚ÕR»»+UN\\0Áºéùlàžö¹~™<,­ý’`qA`8ÖµÉuÀž†‚éj5F¤!+\\\'1÷˜rÃ‰\\0‚u}âßÀÌÑÂ<h”Àè‚•‹o™i´£Ò,ˆÀÈ‚•Åc„`¶&¶8£‹\\\'\\n›U°æ6·d_cüü}…Ê«¿é>õê/}Ÿ{µ˜.ý¬þ^ö\\\'lúŒØÙ\\Z‹v£\\nÖ»fö #Ú“XI|ôõ¥M:GVh7	W³ôE/†xoÖ´Ž+?ïm3{¸!ûû‡?yFzŸá7.hãÍìcS¾$$~H8çu­­Æ×¡¼-lcZ{¤ï„Àˆ‚•¿ÕfÏ}yé<øô\\Zú4”[Ó}$DúÒ«êu¥ß“@óxæ2µ§DÐ^¼:	õù57BZœ#0¢`åGï±æêÔvNÙë3Óf¦$J[Ç•’`ÉÓ{v\\Z‚®±&1Î=c|^‘Àˆ‚•¯hßC°rÑÌ=#ÅˆÒð*‰SE³•üúþu3ûü$¤>ðŸ*ØÓ{-ºI2·I`DÁÊÅbS;5—<•÷Íì;SìçÜð­Í^tÓ*±”\\\'æ/¼¬Ö­ÖQûF¬_˜Ù·öØ›7·,5)\\ró’ ÝgfL‚–þ6\\\'lþo>žå½·ˆ®™Ç÷ð`#î“:v 0¢`å^À¯È:õòÕ­»€_Oõï«\\n?U¸4@¿¤}ù\\Z7†…K¨‘fkÎ»Ù‹ƒ„ëe3{l‘µbå‹DOÍ>žjM¾lÁŠ±Ûµìõ î	·Å-9iÎ¯HOÁö¿šÙ;f¦¡aº´h4]ù¢Íôû©-8úû½ÙÂÙ5ö¸m©ÊA°ÖÐ$í*#\\nÖÜ¶œ–Ã‘{ý¼¸¥Ÿý›yÒöž%Ê¯ÿÒ?…t±k	=Ò,\\"0¢`	Ìÿ2:=mÍYdØÊ‰üz,Dm© ù	4© ¡&{+êèÅ*X~YlÌLVyOOâõ¤ÛF¤¯z£¼ÚÛ.?ÌTº7Íì·S†¹-Eå­¥„.	Œ*XùâQÃõº¯ÿgà¹&Ñ’°ù­?çVÎK°$|dæ[¬4~x«Ïô7Åý´—ò/ÙisËB”_Þ_>$O‹xS}~Ù‰fœ¹	Œ*XùâQý7ÿf ÷£Vå×`-]ßæ‡›2môÖI\\Z©sb¶7G<ó`Œ*XOOË	î×ÌìkÁìX÷\\\\K½Ö4cz§aá\\"öÜ‹G,aö÷=¶ç›:¤ºšÙýSM5ûÖföÕé0ï=¯¹¡\\\\\\ZÆ©-Z¢íO~¨çgBU^JŸ–‹èwÿscë}UHgØ¢’šj‹ömY¦¬¥Ã—-Ûs„²S–2Áš\\rÞ‚uc”‘YÔèš~Áhép°F{(ã€F~Hó¥\\r--í±«yÁ\\Z¹_õh»nÚ<rÇÊ—6ŒÌ¢F‡M<^× I³F~Hó¥\\rÌø\\\\þø#{àx9Grž!0²`å› Ÿ¹Zœø\\n=f5´7S/£øÑUn­Åâ‚À&F,õ3…,\\\\ßÅ|ÜŠ¡àz~äXI`tÁ:µd%Æa“û8 “Ãvƒ¸]°|K{ÄáZFÀ³Ã;]ÆŒT…F¬<Ž…—°¬CyÏŠ]Ë˜‘ªÑ‹Ó1×w\\"/Vx¥ëù‘£€Àè‚%tþÔ)>7MR€õ°Y/9á°0¸±xÖõár­t±­d¾ú˜•fïcpü3;tÖµùßÍ^Ê@,ëîÇ‚aàÐ2ÑÎÍ#X×¶È½,’åiáAÜ=df­U;Ïî-A°nÌžoÕahhÆ²!e¡Ý›F°nl£C\\r}üáp#\\r«vŸÛa[†`Ýmz?¦OÞ6³‡ìZ®NådéÂ€ Õ[F°>j™\\\\´F\\Z\\ZÊ»”g•ÞpƒXµúäÚ.kÞðoLooÑ§£LáçbE€}PQhù¶¬yëä+àîi V-?¥´íCÖéÎ\\rz0]>Ùptqæñï˜\\0‚uÚx#xùú³Q†¿?²c7ÁºÝþù}$/±\\ZûÙïòî¬ófóÛRŽâ VçíNŠ	 Xçr´\\0|¾¢_1+ÀÇ6¤ó};@°– ÀÿÄÌ¾»,k3©ò˜œ\\ZF€½óÐ%¬%”®Óä§“öt,°†€wÜ‚PÝ\\\'….·=)!€`­3„ÿžrö°\\n^bõª™Ýçnµ\\\'±]g!Rš\\0‚µÞ¼=ê·õ3ûñªõF\\\'G¬Ëì¿æ¾ÅÀuÞÆ÷ÌìqÄê2ƒ“«\\rÖåvÈ½•¤¡–ÄkÏ·¹cr®_ngr6D\\0Á*3†fŸÍÎÐ’\\\'óË«b÷xe{>›©»cs™ÉÝ«Üòh4§YDI(^\\n.Õ­6øÃÕ<«rûRBC¬zÆÐlÜÍì‰á’p¼>y;ú¹Æ%qúž™}eF¨T>ËjP¦Œ¦ XõÍ1·@Ó×¢™:y_p¶4æ•<¨äQÍµ^‚¨åµ„±>!J„À…¬Á-È&Kñ­|¨8—U‚•¾ôùƒS\\"ÅÃ$Réë¶jªF!Iß¬íí\\\'±‘xéŒtýü3{ bµ\\Zj*ØŽGU*EµI\\0ÁÚÇ.^Ä–x`y+SLl™È}ˆQ+®bVÝ 	Xj<°÷\\\'¯ÉÏüùac-§$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@V lª‚\\0Ê XeüÈ\\r@°aS PF\\0Á*ãGn@ \\0‚›ª \\02V?rC\\0¬@ØT”@°Êø‘$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@V lª‚\\0Ê XeüÈ\\r@°aS PF\\0Á*ãGn@ \\0‚›ª \\02V?rC\\0¬@ØT”@°Êø‘$€`Â¦*@ Œ\\0‚UÆÜ€@ +6UA\\0e¬2~ä†\\0	 X°©\\n(#€`•ñ#7 H\\0Á\\n„MU€@«Œ¹!\\0@ÿ/¨è¦PÎ§\\n\\0\\0\\0\\0IEND®B`‚\', \'‰PNG\\r\\n\\Z\\n\\0\\0\\0\\rIHDR\\0\\0,\\0\\0\\0–\\0\\0\\0d[µÒ\\0\\0\\0sRGB\\0®Îé\\0\\0?IDATx^íOèÙÇŸ©!4…š\\"†R”Ä„²°3š™²SÄ+djH’4Š%²@,”…l…ˆ‘	åï÷Í}úžÏ™s?÷¹÷s?Ÿçsî}Ýúõùþ¾ŸsÏ}îë9÷ý=ç9Ï9÷ã€\\0 Ð	;:±3!\\0‚E#€\\0º!€`uã*…\\0,Ú\\0 Ð\\r«Wa( €`Ñ \\0n XÝ¸\\nC!\\0‹6\\0tC\\0ÁêÆU\\n X´@ V7®ÂP@\\0Á¢\\r@\\0Ý@°ºq†B\\0m\\0è†\\0‚Õ«0@°h€@7¬n\\\\…¡€\\0‚E€\\0º!€`uã*…\\0,Ú\\0 Ð\\r«Wa( €`Ñ \\0n XÝ¸\\nC!\\0‹6\\0tC\\0ÁêÆU\\n X´@ V7®ÂP@\\0Á¢\\r@\\0Ý@°n]õ3{Kå¹{Íì…fös3{ÍˆW¿7|§Ï²¬ê+_ÿyš™=afwš™Êè÷þïû7u©/ÛMCÂP\\\\‚\\0‚õ‘ú™=÷Àƒ×xüFü>of_,x\\ZÅ °m{¬Ï6zT×èí²÷õk4› p){,\\rí$VõMÌmfŸ)†d\\Zžõùú¿Ê—¿÷Ÿ}ˆ§ÿß=TøÒáÓËŒ\\r9ëa¥z^×¥ž®sUö&X\\Zþ}zˆ•Žøœ™}09v$áÒ¿ûÍì\\r#‚ê6KßšlïU5dŒÙ=	Vk¨ÿµWêj°7AýV_A~ì†À^ë»Y¾‡ÍìcyZÃÀ÷Wö~mè‘ut˜\\nåö X­]Ã)\\r{;ÔËúq“ý{ðao~ÂÞ3ØCcÿOÅNÃ¨žóœ4³ÇŠ{ÚƒÏÔü©¶7[oìê‘(éÓšÙ}½9©²·ì1Jx‰cuîPÌØº`)U@ñ+?4Ôpp£ÌŒWöú·.”äYÆã4³IŠÃ\\ZÞ¤Ž.l]°äõ°Ê6ª¿4ü›r’ŸçKvâGžKUžÿ[3ûÔ¤,ÍpË›º?¾‡@Wö XcížAîsqºkXë§ß·’K§¼f/®u­¿˜™lÔÑ{<nŠ%ßCà€ÀK¢£^ÉñYÚ\\\\Î)Zå$Âü·Ôœ·A{iðŠeifmégï½ÈÌî13\\rÿ\\Z†cÊåzg£mœk¸†`mðAä–bö\\"X>¼“¸hÙËØ!a’i›Ñu¸X›«g#ý¼µgðÊë0Ckã”Ú=	–»Í—¼èóÕ7³†¿¾Ð0n,?«žmlõž˜W¼¬<´P¹Þcë”æS^Á:…$çvI`‚5×Qï2³G‹“ÆÖJ\\0%Xå®ÿ4³·­˜U_\\nÖ5¯ƒœË˜ò@°Žcª{V*}lfnlh¨Ü¯5ÒÊa)9X¡&N¡-@°Ž{³µqŠÙ‡Íì½Uµk\\rßÈÁÚÒÓÇ½Ì&0õðÍ®pC\\\'œHo	Ý\\Z©e¾ÛPcãVbhôãœZ¢†µâYºÒÇÍL1±¥‡§4hgÔç/­„ó Ð+kÜsõ.s‡u­š®VæpÍi7e<m®-s®CY\\\\-«íšV°=Ú»*k<–e/Ñ™Œ/mZbËÕ6Bƒ@”\\0‚Õ&Õ\\Z.]·\\\'ÑÒ0°•\\r¯«K¸\\"/–`†0Úª)·YVÛµõ‚é5rž|;šz›c·@CÅoöÚM¢>Ê]\\\'ðÛfInì\\Z~›Îï«mˆ×\\\\øÆ›Ý Þmf/?â%œþtèyi9Ñ5/É)Wxqœ3ž\\\\<‰\\0‚õäFq®]J•¥®ÞÕÜ]#þmfÐç¦fÆ¯ÊýÁî=²ì(:Ìå‘„À,Ö“qÕ÷¥±+¯yÍímþef_ÞöSïç5ËñÂ>„=&LSÕüÁÌÞÜ,qª.¾‡\\0o\\\\i´5÷LŸ+_l­ »½\\rZ[à¼*Ð6]°¼7³†€MÅÙf5‹¬9¤^jçm€\\0=¬C\\\'ÖÃÁS‡_­÷!êŠ_1³÷L¼½G=½o˜ÙÓÿt“|úì‘vçâ§ø‘¶ÇÑgäí@.RÚ¹¢\\\\¸mÞ~=•WoLõµê9µ§\\Zµ‡r&€`:·Þ\\"æ”žAk»™¹ËsþffzÁ…²G\\"$QÐ¡ÇÄÁË«¬ŠÿìAr‰Šÿ¯¶oß+ìw7/oýÉPïXp]÷þ‰b+g]âTñšI±-@°½»ÖpP³€­\\ZÎÜ¶•¼Úz¬‹–zHS¦ÙÇ;ƒ\\rºj.yél-Øk¤†M§ØV	 X‡ž-‡pK0	†fëMûæö¬Æ–õh(ù¦#Ñ“T_<£ç¤êž03‰™†’ê=­ñê°–àÒÞ¶ª$º/\\ZÐ!èßû¾ÏY¨<&Tª]±ªGfø³^8ý3{Êp~k\\r¡Ç ÞÜ³þïÕ0³6­Ž…ùPrÆ-ü¯hKt‰cÍ¥HùÖaƒ(<G…¦Õ“P­zÐ=æmvµX©—§YÃ—4ë˜Húõõ©:´\\r´Ç›ôéùT²=2”ôzÔóÙÈHrh½€<S°4óª¤Ýg÷ïÃÞÈ½D}H¹3@°Æ+\\Zp×ÌÝ³Šj–&MJD¾cfz3ŽðÖ.\\r­t	¿®Î=¶?ý±æTf­»ùïZ=±R[iõKl³kl¶ÖïiÉðÿŒ%U@°N¬zØóø‘´ƒ)¡(ßXîwU_C½‰Iù°)kI`<úd”=2ý<–¾ Ô›óadý>ÈÖ¤AÔ†¥åê^ÞX=Ñ?PKíà¼ X·—d¸×b\\"¡¹/˜ÿäW®w†hmÎ7ÖC˜Ì_¡ÉTáB¦_j¢AB&ŽåïË~6$Ç®mÇX}-±ÒÅ\\\'Õ+.wÐÈêý]ŠÅ&®ƒ`V”M=ìñáÜ\\\'\\\'‚íz°5£X&Y{#Ï5ôVæ4z	˜îMùbåÑ\\nê¯‘¥_ÛÖùÝìˆñŠA\\\\ËW²Eã•sîŸ²g }(Ïpé««rIK7¡’\\\'qÖ7U.Ÿùó°/VX÷s¦â(žcµtÖ.xãSjÆÝlx2ÿôl}·{Ž¨µf(Õ«RïªôÕÜMeKÙƒÔ}Ì™ÎòÁf®‹`6$Ö5å;ÝÕø2#¶s©F\\\\ï-VÆŠ\\\\„Ë¸ØX¿.ïÅú¬¥ÿß‡¢êÝ•q¾¿šÙ3ªŽ$òzÊÈƒÈJ êCi\\"åò©KqÝåu¬[·×•çÆ4ô—÷ËÕ>ZSJ1(=8‘5Su]ë÷K—;¹øèóþ!Á{8ú‹“qø£™ý`ˆ]y\\ZCÉ]Â£C1Ä×\\rñ¸è[»çäì]«Ÿº°Á:tS¤+Xþù1Ò\\0²ƒæO-Sµ}Ë­‘ôž•X+Xú®%äeYå¨¹pÝ3dëkØ÷<3{ê©†Ï8Ë=äÎ_Á\\Z¬S¦¹õ}!¸MÌ)×9Yç\\n­‰‰ujÎ¯¥µú ßªZ€`:¶|°–\\nÉØÎ¢Ú³ýa3{¬jK{øë,×pL½ -K‚ö[ºÿ‹ß‚µž`µÒ¼örèWÎîé¯³ø<jf/+ÞTÎxÖ1©ÖÐ‡ˆ­²b]~¯\\0¹†Ÿºî+‡%N­	©µ•c¥â`úc³åøãÅiê‚Ö!¡_½€hë˜P©ö=ô ¦ÚYß×Ùüc\\Z*(ÿE3{_7µ5¬CjØâÛO	–\\Zø7‹…ÉuÛ`¸°§e,ø¿»ëì.¬C‡yvô±¡ÚTJ5Fr|:k*˜|Ö¡<­alß)%AÛ÷\\\\Bµt§„üÖ€¸rÖ­ƒÊ|!­9{høJ³~cKoTDAÛÜü°Æ.WÞ\\\\0¹¬[þõ®	SžYºïÕT½|Œ@°æ–„Ê‡~4,@à‚¬[ØÙéco•A¨.Ø0¹Z¬C*šÂÖU~øî™çÜÍ“–		 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	 Xù>À@ H\\0Á\\n‚¢ O\\0ÁÊ÷@\\0AVÅ \\0|V¾°\\0@°‚ (ä@°ò}€€@\\0‚E1@ Ÿ\\0‚•ï,€\\0‚¬ (ŠA\\0ù¬|` $€`AQÈ\\\'€`åû\\0 \\0 +Šb€@>+ßX\\0	 XAPƒ\\0ò	üÜXµP¬\\0\\0\\0\\0IEND®B`‚\', \'2024-09-01 20:29:51\')')
- 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `generalconsents` (`pasien_id`, `nama_lengkap`, `tempat_lahir`, `tanggal_lahir`, `alamat_lengkap`, `no_hp`, `status_hubungan_pasien`, `privasi_khusus`, `permintaan_privasi_khusus`, `akses_keluarga`, `cara_bayar`, `jenis_perawatan`, `signature_penanggung`, `signature_petugas`, `created_at`) VALUES (:pasien_id:, :nama_lengkap:, :tempat_lahir:, :tanggal_lahir:, :alamat_lengkap:, :no_hp:, :status_hubungan_pasien:, :privasi_khusus:, :permintaan_privasi_khusus:, :akses_keluarga:, :cara_bayar:, :jenis_perawatan:, :signature_penanggung:, :signature_petugas:, :created_at:)', [...], false)
- 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
- 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
- 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
- 8 APPPATH\Controllers\GeneralConsentController.php(104): CodeIgniter\Model->insert([...])
- 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\GeneralConsentController->store('1')
-10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\GeneralConsentController))
-11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
-12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 20:30:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 20:30:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 20:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 20:38:35 --> Error: Call to undefined function App\Controllers\getNewQueueNumber()
-[Method: GET, Route: kunjungan/create/1]
-in APPPATH\Controllers\KunjunganController.php on line 33.
- 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KunjunganController->create('1')
- 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KunjunganController))
- 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
- 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
- 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 20:39:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 20:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 20:40:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 21:16:08 --> ErrorException: Undefined variable $no_rm
-[Method: GET, Route: kunjungan/create/1]
-in APPPATH\Views\kunjungan\create.php on line 57.
- 1 APPPATH\Views\kunjungan\create.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $no_rm', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\kunjungan\\create.php', 57)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\kunjungan\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('kunjungan/create', [], true)
- 5 APPPATH\Controllers\KunjunganController.php(36): view('kunjungan/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KunjunganController->create('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KunjunganController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 21:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:17:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 21:19:26 --> ErrorException: Undefined array key "no_nik"
-[Method: GET, Route: kunjungan/create/1]
-in APPPATH\Views\kunjungan\create.php on line 62.
- 1 APPPATH\Views\kunjungan\create.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "no_nik"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\kunjungan\\create.php', 62)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\kunjungan\\create.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('kunjungan/create', [], true)
- 5 APPPATH\Controllers\KunjunganController.php(36): view('kunjungan/create', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KunjunganController->create('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KunjunganController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 21:20:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:22:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:22:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:23:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:28:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:35:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:35:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:36:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-ERROR - 2024-09-01 21:48:38 --> mysqli_sql_exception: Unknown column 'cara_bayar' in 'field list' in D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
-Stack trace:
-#0 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `ku...', 0)
-#1 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ku...')
-#2 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ku...')
-#3 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ku...', Array, false)
-#4 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
-#5 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
-#6 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
-#7 D:\Dev\Projects\sistem_rme_pendaftaran\app\Controllers\KunjunganController.php(72): CodeIgniter\Model->insert(Array)
-#8 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\KunjunganController->store('1')
-#9 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KunjunganController))
-#10 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
-#11 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
-#12 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-#13 D:\Dev\Projects\sistem_rme_pendaftaran\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-#14 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\rewrite.php(44): require_once('D:\\Dev\\Projects...')
-#15 {main}
-CRITICAL - 2024-09-01 21:48:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cara_bayar' in 'field list'
-[Method: POST, Route: kunjungan/create/store/1]
-in SYSTEMPATH\Database\BaseConnection.php on line 688.
- 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `kunjungan` (`id_pasien`, `id_general_consent`, `no_antrian`, `poli`, `status_kunjungan`, `status_pemeriksaan`, `tanggal_kunjungan`, `cara_bayar`, `created_at`) VALUES (:id_pasien:, :id_general_consent:, :no_antrian:, :poli:, :status_kunjungan:, :status_pemeriksaan:, :tanggal_kunjungan:, :cara_bayar:, :created_at:)', [...], false)
- 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
- 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
- 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
- 5 APPPATH\Controllers\KunjunganController.php(72): CodeIgniter\Model->insert([...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KunjunganController->store('1')
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KunjunganController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-CRITICAL - 2024-09-01 21:48:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cara_bayar' in 'field list'
-in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
- 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `kunjungan` (`id_pasien`, `id_general_consent`, `no_antrian`, `poli`, `status_kunjungan`, `status_pemeriksaan`, `tanggal_kunjungan`, `cara_bayar`, `created_at`) VALUES (\'1\', \'1\', \'1\', \'POLI UMUM\', \'LAMA\', \'PENDING\', \'2024-09-01\', \'BPJS\', \'2024-09-01 21:48:38\')')
- 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `kunjungan` (`id_pasien`, `id_general_consent`, `no_antrian`, `poli`, `status_kunjungan`, `status_pemeriksaan`, `tanggal_kunjungan`, `cara_bayar`, `created_at`) VALUES (\'1\', \'1\', \'1\', \'POLI UMUM\', \'LAMA\', \'PENDING\', \'2024-09-01\', \'BPJS\', \'2024-09-01 21:48:38\')')
- 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `kunjungan` (`id_pasien`, `id_general_consent`, `no_antrian`, `poli`, `status_kunjungan`, `status_pemeriksaan`, `tanggal_kunjungan`, `cara_bayar`, `created_at`) VALUES (:id_pasien:, :id_general_consent:, :no_antrian:, :poli:, :status_kunjungan:, :status_pemeriksaan:, :tanggal_kunjungan:, :cara_bayar:, :created_at:)', [...], false)
- 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
- 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
- 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
- 7 APPPATH\Controllers\KunjunganController.php(72): CodeIgniter\Model->insert([...])
- 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KunjunganController->store('1')
- 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KunjunganController))
-10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
-11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-14 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-CRITICAL - 2024-09-01 21:48:38 --> [Caused by] mysqli_sql_exception: Unknown column 'cara_bayar' in 'field list'
-in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
- 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `kunjungan` (`id_pasien`, `id_general_consent`, `no_antrian`, `poli`, `status_kunjungan`, `status_pemeriksaan`, `tanggal_kunjungan`, `cara_bayar`, `created_at`) VALUES (\'1\', \'1\', \'1\', \'POLI UMUM\', \'LAMA\', \'PENDING\', \'2024-09-01\', \'BPJS\', \'2024-09-01 21:48:38\')', 0)
- 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `kunjungan` (`id_pasien`, `id_general_consent`, `no_antrian`, `poli`, `status_kunjungan`, `status_pemeriksaan`, `tanggal_kunjungan`, `cara_bayar`, `created_at`) VALUES (\'1\', \'1\', \'1\', \'POLI UMUM\', \'LAMA\', \'PENDING\', \'2024-09-01\', \'BPJS\', \'2024-09-01 21:48:38\')')
- 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `kunjungan` (`id_pasien`, `id_general_consent`, `no_antrian`, `poli`, `status_kunjungan`, `status_pemeriksaan`, `tanggal_kunjungan`, `cara_bayar`, `created_at`) VALUES (\'1\', \'1\', \'1\', \'POLI UMUM\', \'LAMA\', \'PENDING\', \'2024-09-01\', \'BPJS\', \'2024-09-01 21:48:38\')')
- 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `kunjungan` (`id_pasien`, `id_general_consent`, `no_antrian`, `poli`, `status_kunjungan`, `status_pemeriksaan`, `tanggal_kunjungan`, `cara_bayar`, `created_at`) VALUES (:id_pasien:, :id_general_consent:, :no_antrian:, :poli:, :status_kunjungan:, :status_pemeriksaan:, :tanggal_kunjungan:, :cara_bayar:, :created_at:)', [...], false)
- 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
- 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
- 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
- 8 APPPATH\Controllers\KunjunganController.php(72): CodeIgniter\Model->insert([...])
- 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\KunjunganController->store('1')
-10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\KunjunganController))
-11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
-12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-15 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-ERROR - 2024-09-01 21:48:49 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NULL AFTER `id_pasien`' at line 2 in D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:312
-Stack trace:
-#0 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(312): mysqli->query('ALTER TABLE `ku...', 0)
-#1 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `ku...')
-#2 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `ku...')
-#3 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\Forge.php(772): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `ku...')
-#4 D:\Dev\Projects\sistem_rme_pendaftaran\app\Database\Migrations\2024-09-01-144341_AddCaraBayarToKunjunganTable.php(13): CodeIgniter\Database\Forge->addColumn('kunjungan', Array)
-#5 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(867): App\Database\Migrations\AddCaraBayarToKunjunganTable->up()
-#6 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
-#7 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
-#8 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
-#9 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
-#10 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Boot.php(351): CodeIgniter\CLI\Console->run()
-#11 D:\Dev\Projects\sistem_rme_pendaftaran\vendor\codeigniter4\framework\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
-#12 D:\Dev\Projects\sistem_rme_pendaftaran\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
-#13 {main}
-INFO - 2024-09-01 21:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:49:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 21:50:25 --> Error: Call to undefined method CodeIgniter\View\View::hitungUmur()
-[Method: GET, Route: pendaftaran]
-in APPPATH\Views\pendaftaran\index.php on line 52.
- 1 SYSTEMPATH\View\View.php(234): include()
- 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 3 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('pendaftaran/index', [], true)
- 4 APPPATH\Controllers\PendaftaranController.php(28): view('pendaftaran/index', [...])
- 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PendaftaranController->index()
- 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PendaftaranController))
- 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 21:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 21:51:04 --> Error: Call to undefined function hitungUmur()
-[Method: GET, Route: pendaftaran]
-in APPPATH\Views\pendaftaran\index.php on line 52.
- 1 SYSTEMPATH\View\View.php(234): include()
- 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 3 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('pendaftaran/index', [], true)
- 4 APPPATH\Controllers\PendaftaranController.php(28): view('pendaftaran/index', [...])
- 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PendaftaranController->index()
- 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PendaftaranController))
- 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
- 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-11 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 21:51:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-CRITICAL - 2024-09-01 21:51:20 --> ErrorException: Undefined array key "tgl_lahir"
-[Method: GET, Route: pendaftaran]
-in APPPATH\Views\pendaftaran\index.php on line 55.
- 1 APPPATH\Views\pendaftaran\index.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tgl_lahir"', 'D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\pendaftaran\\index.php', 55)
- 2 SYSTEMPATH\View\View.php(234): include('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\app\\Views\\pendaftaran\\index.php')
- 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
- 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('pendaftaran/index', [], true)
- 5 APPPATH\Controllers\PendaftaranController.php(28): view('pendaftaran/index', [...])
- 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PendaftaranController->index()
- 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PendaftaranController))
- 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
- 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
-10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
-11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
-12 SYSTEMPATH\rewrite.php(44): require_once('D:\\Dev\\Projects\\sistem_rme_pendaftaran\\public\\index.php')
-INFO - 2024-09-01 21:51:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:52:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:53:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:53:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 21:53:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 22:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
-INFO - 2024-09-01 22:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

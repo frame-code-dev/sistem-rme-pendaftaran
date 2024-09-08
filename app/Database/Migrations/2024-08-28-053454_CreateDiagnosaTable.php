@@ -17,7 +17,7 @@ class CreateDiagnosaTable extends Migration
             ],
             'diagnosa_kode' => [
                 'type'       => 'VARCHAR',
-                'constraint' => '10',
+                'constraint' => '250',
                 'null'       => true,
             ],
             'diagnosa_nama' => [

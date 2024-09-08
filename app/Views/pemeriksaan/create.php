@@ -3,23 +3,15 @@
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
     <script>
         $(document).ready(function() {
-            if ($('input[name="skala_nyeri"]:checked').val() == 'anak') {
+            let umur = parseInt($('#umur').val());
+            if (umur >= 18) {
                 $('.tingkat_nyeri_anak-show').removeClass('hidden')
                 $('.tingkat_nyeri_dewasa-show').addClass('hidden')
             }else{
-                $('.tingkat_nyeri_dewasa-show').removeClass('hidden')
                 $('.tingkat_nyeri_anak-show').addClass('hidden')
+                $('.tingkat_nyeri_dewasa-show').removeClass('hidden')
             }
-
-            $('input[name="skala_nyeri"]').on('change', function() {
-                if ($('input[name="skala_nyeri"]:checked').val() == 'anak') {
-                    $('.tingkat_nyeri_anak-show').removeClass('hidden')
-                    $('.tingkat_nyeri_dewasa-show').addClass('hidden')
-                }else{
-                    $('.tingkat_nyeri_dewasa-show').removeClass('hidden')
-                    $('.tingkat_nyeri_anak-show').addClass('hidden')
-                }
-            })
+            
         })
 
         $('#tingkat_nyeri_anak').on('keyup', function() {
@@ -84,7 +76,6 @@
             // Get selected radio buttons
             const bbRadio = document.querySelector('input[name="bb"]:checked');
             const appetiteRadio = document.querySelector('input[name="appetite"]:checked');
-            const conditionRadio = document.querySelector('input[name="condition"]:checked');
 
             // Add scores from the first question (weight loss)
             if (bbRadio) {
@@ -101,10 +92,6 @@
                 totalScore += parseInt(appetiteRadio.value);
             }
 
-            // Add scores from the third question (underlying condition)
-            if (conditionRadio) {
-                totalScore += parseInt(conditionRadio.value);
-            }
 
             // Update total score display
             document.getElementById('total-score').textContent = totalScore;
@@ -115,7 +102,6 @@
             // Get selected radio buttons
             const bbRadio = document.querySelector('input[name="bb_anak"]:checked');
             const appetiteRadio = document.querySelector('input[name="bb_penurunan_anak"]:checked');
-            const conditionRadio = document.querySelector('input[name="condition_anak"]:checked');
 
             // Add scores from the first question (weight loss)
             // if (bbRadio) {
@@ -134,10 +120,7 @@
                 totalScore += parseInt(appetiteRadio.value);
             }
 
-            // Add scores from the third question (underlying condition)
-            if (conditionRadio) {
-                totalScore += parseInt(conditionRadio.value);
-            }
+           
 
             // Update total score display
             document.getElementById('total-score-anak').textContent = totalScore;
@@ -214,6 +197,18 @@
         });
 
     </script>
+    <!-- Script to toggle input fields for 'Lainnya' option -->
+    <script>
+        document.getElementById('assesmentLainnya').addEventListener('change', function () {
+            var input = document.getElementById('assesmentLainnyaInput');
+            input.classList.toggle('hidden', !this.checked);
+        });
+
+        document.getElementById('intervensiLainnya').addEventListener('change', function () {
+            var input = document.getElementById('intervensiLainnyaInput');
+            input.classList.toggle('hidden', !this.checked);
+        });
+    </script>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 <div class="p-4 sm:ml-64 h-screen">
@@ -272,6 +267,11 @@
                             <option <?= 'L' == set_value("jenis_kelamin",$pasien['jenis_kelamin']) ? "selected" : "" ?> value="L">Laki-Laki</option>
                             <option <?= 'P' == set_value("jenis_kelamin",$pasien['jenis_kelamin']) ? "selected" : "" ?> value="P">Perempuan</option>
                         </select>
+                    </div>
+                    <div class="">
+                        <label for="" class="block mb-2 text-sm font-semibold text-gray-900">Umur<span class="me-2 text-red-500">*</span></label>
+                        <input type="text" placeholder="Masukkan Umur" name="umur" id="umur" readonly class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                            value="<?= set_value("umur",hitungUmur($pasien['tanggal_lahir'])) ?>">
                     </div>
                 </div>
             </div>
@@ -679,11 +679,11 @@
                                                 <div class="space-y-2">
                                                     <label class="flex items-center">
                                                     <input type="radio" name="condition_anak" value="0" class="mr-2" onclick="calculateScoreAnak()"> 
-                                                    Ya (Skor 0)
+                                                    Ya
                                                     </label>
                                                     <label class="flex items-center">
                                                     <input type="radio" name="condition_anak" value="1" class="mr-2" onclick="calculateScoreAnak()"> 
-                                                    Tidak (Skor 1)
+                                                    Tidak
                                                     </label>
                                                 </div>
                                             </div>
@@ -745,11 +745,11 @@
                                                 <div class="space-y-2">
                                                     <label class="flex items-center">
                                                     <input type="radio" name="condition" value="2" class="mr-2"> 
-                                                    Ya (Skor 2)
+                                                    Ya
                                                     </label>
                                                     <label class="flex items-center">
                                                     <input type="radio" name="condition" value="0" class="mr-2"> 
-                                                    Tidak (Skor 0)
+                                                    Tidak
                                                     </label>
                                                 </div>
                                             </div>
@@ -889,10 +889,241 @@
                         </div>
                     </div>
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
+                        <div class="grid grid-cols-3 gap-4">
+                            <!-- Assessment Keperawatan -->
+                            <div>
+                                <h2 class="font-bold text-lg mb-2">Assesment Keperawatan</h2>
+                                <hr>
+                                <div class="space-y-2">
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Bersihan Jalan Nafas Tidak Efektif" class="mr-2">Bersihan Jalan Nafas Tidak Efektif</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Perubahan Nutrisi Kurang dari Kebutuhan" class="mr-2">Perubahan Nutrisi Kurang dari Kebutuhan</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Keseimbangan Cairan dan Elektrolit" class="mr-2">Keseimbangan Cairan dan Elektrolit</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Gangguan Komunikasi Verbal" class="mr-2">Gangguan Komunikasi Verbal</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Pola Nafas Tidak Efektif" class="mr-2">Pola Nafas Tidak Efektif</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Resiko Infeksi atau Sepsis" class="mr-2">Resiko Infeksi atau Sepsis</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Gangguan Integritas Kulit dan Jaringan" class="mr-2">Gangguan Integritas Kulit dan Jaringan</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Gangguan Pola Tidur" class="mr-2">Gangguan Pola Tidur</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Nyeri Akut" class="mr-2">Nyeri Akut</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Intoleransi Aktivitas" class="mr-2">Intoleransi Aktivitas</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Gangguan Mobilitas" class="mr-2">Gangguan Mobilitas</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Cemas" class="mr-2">Cemas</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Hipotermi atau Hipertermi" class="mr-2">Hipotermi atau Hipertermi</label><br>
+                                    <label><input type="checkbox" name="assesment_keperawatan[]" value="Lainnya" id="assesmentLainnya" class="mr-2">Lainnya</label>
+                                    <input type="text" name="assesment_keperawatan_lainnya" id="assesmentLainnyaInput" class="hidden border border-gray-300 rounded p-2 w-full mt-2" placeholder="Masukkan Assesment Lainnya">
+                                </div>
+                            </div>
+                            <!-- Intervensi Keperawatan -->
+                            <div>
+                                <h2 class="font-bold text-lg mb-2">Intervensi Keperawatan</h2>
+                                <hr>
+                                <div class="space-y-2">
+                                    <label><input type="checkbox" name="intervensi_keperawatan[]" value="Menganjurkan pasien untuk menjaga pola makan sedikit tapi sering" class="mr-2">Menganjurkan pasien untuk menjaga pola makan sedikit tapi sering</label><br>
+                                    <label><input type="checkbox" name="intervensi_keperawatan[]" value="Menganjurkan pasien untuk minum" class="mr-2">Menganjurkan pasien untuk minum</label><br>
+                                    <label><input type="checkbox" name="intervensi_keperawatan[]" value="Menganjurkan pasien untuk minum air hangat" class="mr-2">Menganjurkan pasien untuk minum air hangat</label><br>
+                                    <label><input type="checkbox" name="intervensi_keperawatan[]" value="Menganjurkan pasien untuk membatasi aktivitas" class="mr-2">Menganjurkan pasien untuk membatasi aktivitas</label><br>
+                                    <label><input type="checkbox" name="intervensi_keperawatan[]" value="Menganjurkan pasien untuk relaksasi" class="mr-2">Menganjurkan pasien untuk relaksasi</label><br>
+                                    <label><input type="checkbox" name="intervensi_keperawatan[]" value="Menganjurkan pasien untuk teknik distraksi relaksasi" class="mr-2">Menganjurkan pasien untuk teknik distraksi relaksasi</label><br>
+                                    <label><input type="checkbox" name="intervensi_keperawatan[]" value="Menganjurkan pasien untuk batuk efektif" class="mr-2">Menganjurkan pasien untuk batuk efektif</label><br>
+                                    <label><input type="checkbox" name="intervensi_keperawatan[]" value="Menganjurkan pasien untuk kompres air hangat" class="mr-2">Menganjurkan pasien untuk kompres air hangat</label><br>
+                                    <label><input type="checkbox" name="intervensi_keperawatan[]" value="Menganjurkan pasien untuk istirahat cukup" class="mr-2">Menganjurkan pasien untuk istirahat cukup</label><br>
+                                    <label><input type="checkbox" name="intervensi_keperawatan[]" value="Menganjurkan pasien untuk rawat luka teraktur" class="mr-2">Menganjurkan pasien untuk rawat luka teraktur</label><br>
+                                    <label><input type="checkbox" name="intervensi_keperawatan[]" value="Lainnya" id="intervensiLainnya" class="mr-2">Lainnya</label>
+                                    <input type="text" name="intervensi_keperawatan_lainnya" id="intervensiLainnyaInput" class="hidden border border-gray-300 rounded p-2 w-full mt-2" placeholder="Masukkan Intervensi Lainnya">
+                                </div>
+                            </div>
+                            <!-- Diagnosa & Tindakan -->
+                            <div>
+                                <!-- Diagnosa -->
+                                <h2 class="font-bold text-lg mb-2">DIAGNOSA</h2>
+                                <hr>
+                                <div class="mb-4">
+                                    <label class="block mb-2">Jenis Diagnosa</label>
+                                    <select name="diagnosa" class="w-full border border-gray-300 rounded p-2">
+                                        <option>Pilih</option>
+                                        <option>Diagnosa 1</option>
+                                        <option>Diagnosa 2</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block mb-2">Kode ICD 10</label>
+                                    <input type="text" name="diagnosa_icd" class="w-full border border-gray-300 rounded p-2">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block mb-2">Jenis Kasus</label>
+                                    <select name="diagnosa_kasus" class="w-full border border-gray-300 rounded p-2">
+                                        <option> -- Pilih -- </option>
+                                        <option value="kasus baru">Kasus Baru</option>
+                                        <option value="kasus lama">Kasus Lama</option>
+                                    </select>
+                                </div>
 
+                                <!-- Tindakan -->
+                                <h2 class="font-bold text-lg mb-2">TINDAKAN</h2>
+                                <div class="mb-4">
+                                    <label class="block mb-2">Jenis Tindakan</label>
+                                    <select name="tindakan" class="w-full border border-gray-300 rounded p-2">
+                                        <option>Pilih</option>
+                                        <option>Tindakan 1</option>
+                                        <option>Tindakan 2</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block mb-2">Kode ICD 9 CM</label>
+                                    <input type="text" class="w-full border border-gray-300 rounded p-2">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block mb-2">Jenis Kasus</label>
+                                    <select class="w-full border border-gray-300 rounded p-2">
+                                        <option>Pilih</option>
+                                        <option>Kasus 1</option>
+                                        <option>Kasus 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-contacts" role="tabpanel" aria-labelledby="contacts-tab">
-                        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                        <div class="grid grid-cols-3 gap-10">
+                            <!-- Rencana Pemulangan -->
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h2 class="text-lg font-bold mb-4">Rencana Pemulangan</h2>
+
+                                <div class="mb-4">
+                                    <label class="block mb-2">Status Pasien Keluar</label>
+                                    <select name="status_pasien_keluar" class="w-full border border-gray-300 rounded p-2">
+                                        <option value="">Pilih</option>
+                                        <option value="Sembuh">Sembuh</option>
+                                        <option value="Meninggal">Meninggal</option>
+                                        <option value="Pindah RS">Pindah RS</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="block mb-2">Kesadaran</label>
+                                    <select name="kesadaran" class="w-full border border-gray-300 rounded p-2">
+                                        <option value="">Pilih</option>
+                                        <option value="Sadar">Sadar</option>
+                                        <option value="Tidak Sadar">Tidak Sadar</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="block mb-2">Rujukan Internal</label>
+                                    <div>
+                                        <label class="inline-flex items-center">
+                                            <input type="radio" name="rujukan_internal" value="Poli" class="mr-2"> Poli
+                                        </label>
+                                        <label class="inline-flex items-center ml-4">
+                                            <input type="radio" name="rujukan_internal" value="UGD" class="mr-2"> UGD
+                                        </label>
+                                    </div>
+                                    <div class="mt-2">
+                                        <select name="rujukan_internal_poli" class="w-full border border-gray-300 rounded p-2">
+                                            <option value="">Pilih</option>
+                                            <option value="Poli Anak">Poli Anak</option>
+                                            <option value="Poli Gigi">Poli Gigi</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="inline-flex items-center">
+                                        <input type="checkbox" name="rujukan_eksternal" value="Ya" class="mr-2"> Rujukan Eksternal
+                                    </label>
+                                    <select name="rujukan_eksternal_detail" class="w-full border border-gray-300 rounded p-2 mt-2">
+                                        <option value="">Pilih</option>
+                                        <option value="RS A">RS A</option>
+                                        <option value="RS B">RS B</option>
+                                    </select>
+                                    <input type="text" name="alasan_rujukan" placeholder="Alasan Rujukan" class="w-full border border-gray-300 rounded p-2 mt-2">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="block mb-2">Keterangan</label>
+                                    <p class="text-sm text-gray-700">Kode 0: Diagnosa diluar kompetensi</p>
+                                    <p class="text-sm text-gray-700">Kode 1: Diagnosa ada dalam kompetensi, ada keterbatasan kemampuan/kapasitas</p>
+                                </div>
+
+                                <button class="bg-blue-500 text-white rounded p-2 flex items-center">
+                                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 10l-6 6m0 0l-6-6m6 6V3" />
+                                    </svg>
+                                    CETAK
+                                </button>
+                            </div>
+
+                            <!-- Surat Keterangan Sehat -->
+                            <div class="bg-white p-6 rounded-lg shadow-md col-span-2">
+                                <h2 class="text-lg font-bold mb-4">Surat Keterangan Sehat</h2>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="mb-4">
+                                        <label class="block mb-2">Nama</label>
+                                        <input type="text" name="nama" class="w-full border border-gray-300 rounded p-2">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block mb-2">Tempat Lahir</label>
+                                        <input type="text" name="tempat_lahir" class="w-full border border-gray-300 rounded p-2">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block mb-2">Tanggal Lahir</label>
+                                        <input type="date" name="tanggal_lahir" class="w-full border border-gray-300 rounded p-2">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block mb-2">Jenis Kelamin</label>
+                                        <select name="jenis_kelamin" class="w-full border border-gray-300 rounded p-2">
+                                            <option value="">Pilih</option>
+                                            <option value="Laki-Laki">Laki-Laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block mb-2">Pekerjaan</label>
+                                        <input type="text" name="pekerjaan" class="w-full border border-gray-300 rounded p-2">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block mb-2">Alamat</label>
+                                        <input type="text" name="alamat" class="w-full border border-gray-300 rounded p-2">
+                                    </div>
+                                    <div class="mb-4">
+                                        <button class="bg-purple-500 text-white rounded p-2 w-full">Ambil Data</button>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="mb-4">
+                                        <label class="block mb-2">Jenis Keperluan</label>
+                                        <select name="jenis_keperluan" class="w-full border border-gray-300 rounded p-2">
+                                            <option value="">Pilih</option>
+                                            <option value="Keterangan Sehat">Keterangan Sehat</option>
+                                            <option value="Lainnya">Lainnya</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block mb-2">Dokter Pemeriksa</label>
+                                        <select name="dokter_pemeriksa" class="w-full border border-gray-300 rounded p-2">
+                                            <option value="">Pilih</option>
+                                            <option value="Dr. A">Dr. A</option>
+                                            <option value="Dr. B">Dr. B</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button class="bg-blue-500 text-white rounded p-2 flex items-center">
+                                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 10l-6 6m0 0l-6-6m6 6V3" />
+                                    </svg>
+                                    CETAK
+                                </button>
+                            </div>
+
+                            <!-- Tanda Tangan Dokter -->
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h2 class="text-lg font-bold mb-4">Tanda Tangan Dokter</h2>
+                                <input type="file" name="tanda_tangan_dokter" class="w-full border border-gray-300 rounded p-2">
+                                <button class="bg-orange-500 text-white rounded p-2 mt-4 w-full">Upload</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

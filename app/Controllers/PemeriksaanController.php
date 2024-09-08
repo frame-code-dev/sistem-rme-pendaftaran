@@ -18,6 +18,7 @@ class PemeriksaanController extends BaseController
     public $param;
     
     public function __construct() {
+        helper(['my_helper']);
         $this->validation = \Config\Services::validation();
         $this->userModel = new UserModel();
         $this->kunjunganModel = new Kunjungan();

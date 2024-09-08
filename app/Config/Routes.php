@@ -3,6 +3,7 @@
 use App\Controllers\DashboardController;
 use App\Controllers\DiagnosaController;
 use App\Controllers\GeneralConsentController;
+use App\Controllers\ImportController;
 use App\Controllers\KunjunganController;
 use App\Controllers\ObatController;
 use App\Controllers\PemeriksaanController;
@@ -66,3 +67,7 @@ $routes->post('kunjungan/create/store/(:any)', [KunjunganController::class,'stor
 // Pemeriksaaan 
 $routes->get('pemeriksaan',[PemeriksaanController::class,'index'],['filter' => 'login']);
 $routes->get('pemeriksaan/create/(:any)',[PemeriksaanController::class,'create'],['filter' => 'login']);
+
+// import Excel 
+$routes->get('import-excel', [ImportController::class,'importExcel'],['filter' => 'login']);
+$routes->post('import-excel/store', [ImportController::class,'importExcelStore'],['filter' => 'login']);

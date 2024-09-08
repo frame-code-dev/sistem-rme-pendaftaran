@@ -6,9 +6,9 @@ export default defineConfig(() => {
 	const env = loadEnv(null, process.cwd());
 
 	return {
-		plugins: [
-			FullReload(['app/Views/**/*.php', 'app/Controllers/**/*.php']), // Memantau perubahan pada file PHP
-		],
+		// plugins: [
+		// 	FullReload(['app/Views/**/*.php', 'app/Controllers/**/*.php']), // Memantau perubahan pada file PHP
+		// ],
 
 		build: {
 			emptyOutDir: false,
