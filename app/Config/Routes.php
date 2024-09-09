@@ -8,6 +8,7 @@ use App\Controllers\ImportController;
 use App\Controllers\KunjunganController;
 use App\Controllers\ObatController;
 use App\Controllers\PemeriksaanController;
+use App\Controllers\PemeriksaanLabController;
 use App\Controllers\PendaftaranController;
 use App\Controllers\PetugasController;
 use CodeIgniter\Router\RouteCollection;
@@ -68,6 +69,11 @@ $routes->post('kunjungan/create/store/(:any)', [KunjunganController::class,'stor
 // Pemeriksaaan 
 $routes->get('pemeriksaan',[PemeriksaanController::class,'index'],['filter' => 'login']);
 $routes->get('pemeriksaan/create/(:any)',[PemeriksaanController::class,'create'],['filter' => 'login']);
+$routes->post('pemeriksaan/store', [PemeriksaanController::class,'store'],['filter' => 'login']);
+$routes->post('pemeriksaan/store-dokter', [PemeriksaanController::class,'store-dokter'],['filter' => 'login']);
+
+// Pemeriksaan Dokter 
+$routes->get('pemeriksaan-lab',[PemeriksaanLabController::class,'index'],['filter' => 'login']);
 
 // import Excel 
 $routes->get('import-excel', [ImportController::class,'importExcel'],['filter' => 'login']);

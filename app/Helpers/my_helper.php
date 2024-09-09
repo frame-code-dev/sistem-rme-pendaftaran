@@ -2,6 +2,7 @@
 
 use App\Models\Kunjungan;
 use App\Models\Pasien;
+use App\Models\PemeriksaanLab;
 use CodeIgniter\I18n\Time;
 
     function hitungUmur($tanggalLahir)
@@ -57,5 +58,43 @@ use CodeIgniter\I18n\Time;
         
         $query = $kunjunganModel->get();
         return $query->getRow()->new_no_antrian;
+    }
+
+    function checkPemeriksaanSubject($id){
+        $current_kunjungan = new Kunjungan();
+        $data = $current_kunjungan->join('pemeriksaan_subjective','pemeriksaan_subjective.id_kunjungan=kunjungan.id')
+        ->join('pasien','pasien.id=kunjungan.id_pasien')
+        ->select('kunjungan.*,pasien.id as pasien_id, pasien.no_rm, pasien.nik, pasien.nama_lengkap, 
+            pasien.tempat_lahir,  pasien.pekerjaan, pasien.alamat_lengkap, pasien.tanggal_lahir,
+            pasien.jenis_kelamin, pasien.jenis_pasien, pasien.no_bpjs, 
+            pemeriksaan_subjective.id_kunjungan, pemeriksaan_subjective.id_user')
+        ->where('kunjungan.status_pemeriksaan','PENDING')
+        ->where('kunjungan.id',$id)
+        ->where('pemeriksaan_subjective.id_user',user()->id)
+        ->countAllResults();
+        return $data;
+    }
+
+    function checkPemeriksaanLab($id){
+        $current_kunjungan = new Kunjungan();
+        $data = $current_kunjungan
+        ->join('pemeriksaan_objective','pemeriksaan_objective.kunjungan_id=kunjungan.id')
+        ->join('pemeriksaan_subjective','pemeriksaan_subjective.id_kunjungan=kunjungan.id')
+        ->join('pasien','pasien.id=kunjungan.id_pasien')
+        ->select('kunjungan.*,pasien.id as pasien_id, pasien.no_rm, pasien.nik, pasien.nama_lengkap, 
+            pasien.tempat_lahir,  pasien.pekerjaan, pasien.alamat_lengkap, pasien.tanggal_lahir,
+            pasien.jenis_kelamin, pasien.jenis_pasien, pasien.no_bpjs, 
+            pemeriksaan_subjective.id_kunjungan, pemeriksaan_subjective.id_user,
+            pemeriksaan_objective.tindak_lanjut')
+        ->where('kunjungan.id',$id)
+        ->where('kunjungan.status_pemeriksaan','PENDING')
+        ->where('pemeriksaan_objective.tindak_lanjut','ya')
+        ->first()['tindak_lanjut'];
+        return $data;
+    }
+    function checkPemeriksaanLabData($id){
+        $current_kunjungan_lab = new PemeriksaanLab();
+        $data = $current_kunjungan_lab->where('id_kunjungan',$id)->countAllResults();
+        return $data;
     }
 ?>
