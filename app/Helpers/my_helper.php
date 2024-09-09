@@ -70,7 +70,7 @@ use CodeIgniter\I18n\Time;
             pemeriksaan_subjective.id_kunjungan, pemeriksaan_subjective.id_user')
         ->where('kunjungan.status_pemeriksaan','PENDING')
         ->where('kunjungan.id',$id)
-        ->where('pemeriksaan_subjective.id_user',user()->id)
+        // ->where('pemeriksaan_subjective.id_user',user()->id)
         ->countAllResults();
         return $data;
     }
@@ -88,7 +88,6 @@ use CodeIgniter\I18n\Time;
             pemeriksaan_objective.tindak_lanjut')
         ->where('kunjungan.id',$id)
         ->where('kunjungan.status_pemeriksaan','PENDING')
-        ->where('pemeriksaan_objective.tindak_lanjut','ya')
         ->first()['tindak_lanjut'];
         return $data;
     }

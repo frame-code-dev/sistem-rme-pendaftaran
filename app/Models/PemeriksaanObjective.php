@@ -53,6 +53,7 @@ class PemeriksaanObjective extends Model
         'kepala',
         'condition',
         'appetite',
+        'bb_penurunan_anak',
         'bb',
         'created_at',
         'updated_at'

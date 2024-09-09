@@ -70,6 +70,7 @@ $routes->post('kunjungan/create/store/(:any)', [KunjunganController::class,'stor
 $routes->get('pemeriksaan',[PemeriksaanController::class,'index'],['filter' => 'login']);
 $routes->get('pemeriksaan/create/(:any)',[PemeriksaanController::class,'create'],['filter' => 'login']);
 $routes->post('pemeriksaan/store', [PemeriksaanController::class,'store'],['filter' => 'login']);
+$routes->get('pemeriksaan/create-dokter/(:any)',[PemeriksaanController::class,'createDokter'],['filter' => 'login']);
 $routes->post('pemeriksaan/store-dokter', [PemeriksaanController::class,'store-dokter'],['filter' => 'login']);
 
 // Pemeriksaan Dokter 

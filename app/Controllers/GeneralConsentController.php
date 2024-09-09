@@ -70,7 +70,8 @@ class GeneralConsentController extends BaseController
             $signature_penanggung = str_replace(' ', '+', $signature_penanggung);
             $signature_penanggungData = base64_decode($signature_penanggung);
             // Menyimpan gambar penanggung
-            $filePathPenanggung = FCPATH  . 'signature/'.uniqid().'.png'; // Ganti 'uploads' dengan folder yang diinginkan
+            $filename_penaggungData = uniqid() . '.png';
+            $filePathPenanggung = FCPATH  . 'signature/'.$filename_penaggungData; // Ganti 'uploads' dengan folder yang diinginkan
             if (file_put_contents($filePathPenanggung, $signature_penanggungData) === false) {
                 throw new \RuntimeException('Gagal menyimpan gambar penanggung.');
             }
@@ -79,7 +80,8 @@ class GeneralConsentController extends BaseController
             $signature_petugas = str_replace('data:image/png;base64,', '', $signature_petugas);
             $signature_petugas = str_replace(' ', '+', $signature_petugas);
             $signature_petugasData = base64_decode($signature_petugas);
-            $filePathPetugas = FCPATH  . 'signature/'.uniqid().'.png'; // Ganti 'uploads' dengan folder yang diinginkan
+            $filename_petugasData = uniqid() . '.png';
+            $filePathPetugas =  FCPATH . 'signature/'.$filename_petugasData; // Ganti 'uploads' dengan folder yang diinginkan
             if (file_put_contents($filePathPetugas, $signature_petugasData) === false) {
                 throw new \RuntimeException('Gagal menyimpan gambar penanggung.');
             }

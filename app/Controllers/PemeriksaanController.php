@@ -114,8 +114,9 @@ class PemeriksaanController extends BaseController
             $signature_penanggung = str_replace(' ', '+', $signature_penanggung);
             $signature_penanggungData = base64_decode($signature_penanggung);
             // Menyimpan gambar penanggung
-            $filePathPenanggung = 'signature/'.uniqid().'.png'; // Ganti 'uploads' dengan folder yang diinginkan
-            if (file_put_contents($filePathPenanggung, FCPATH.$signature_penanggungData) === false) {
+            $filename = uniqid().'.png';
+            $filePathPenanggung = FCPATH . 'signature/'.$filename; // Ganti 'uploads' dengan folder yang diinginkan
+            if (file_put_contents($filePathPenanggung, $signature_penanggungData) === false) {
                 throw new \RuntimeException('Gagal menyimpan gambar penanggung.');
             }
             $simpanObjective = new PemeriksaanObjective();
@@ -123,7 +124,7 @@ class PemeriksaanController extends BaseController
             $dataObjective = [
                 'kunjungan_id' => $data['id_kunjungan'],
                 'user_id' => user()->id,
-                'ttd_name' => $filePathPenanggung,
+                'ttd_name' => $filename,
                 'kondisi_umum' => $data['kondisi_umum'],
                 'kesadaran_e' => $data['tipe_kesadaran'],
                 'tingkat_kesadaran' => $data['tingkat_kesadaran'],
@@ -136,7 +137,7 @@ class PemeriksaanController extends BaseController
                 'tinggi_badan' => $data['tinggi_badan'],
                 'imt' => $data['hasil_bt'],
                 'lingkar_perut' => $data['lingkar_perut'],
-                'skala_nyeri' => $data['skala_nyeri'],
+                'skala_nyeri' => $data['skala_nyeri'] == 'Anak' ? 'Anak Usia > 3 Tahun' : 'Dewasa',
                 'lokasi_nyeri' => $data['lokasi_nyeri'],
                 'rasa_nyeri' => $data['rasa_nyeri'],
                 'bb' => $data['bb'],
@@ -161,6 +162,8 @@ class PemeriksaanController extends BaseController
             if ($data['skala_nyeri'] == 'Anak' ) {
                 $dataObjective['tingkat_nyeri_anak'] = $data['tingkat_nyeri_anak'];
                 $dataObjective['jenis_nyeri_anak'] = $data['jenis_nyeri_anak'];
+                $dataObjective['bb'] = $data['bb_anak'];
+                $dataObjective['bb_penurunan_anak'] = $data['bb_penurunan_anak'];
             } else {
                 $dataObjective['tingkat_nyeri_dewasa'] = $data['tingkat_nyeri_dewasa'];
                 $dataObjective['jenis_nyeri_dewasa'] = $data['jenis_nyeri_dewasa'];
@@ -179,5 +182,19 @@ class PemeriksaanController extends BaseController
         } catch (\Exception $e) {
             dd($e);
         }
+    }
+
+    public function createDokter($id){
+        $param['title'] = 'Tambah Data Pemeriksaan';
+        $param['pasien']  = $this->kunjunganModel
+                            ->join('pasien','pasien.id=kunjungan.id_pasien')
+                            ->select('kunjungan.*,pasien.id as pasien_id, pasien.no_rm, pasien.nik, pasien.nama_lengkap, pasien.tempat_lahir,  pasien.pekerjaan, pasien.alamat_lengkap, pasien.tanggal_lahir,
+                                pasien.jenis_kelamin, pasien.jenis_pasien, pasien.no_bpjs')
+                            ->find($id);
+        $current_pemeriksaan_subject = new PemeriksaanSubjective();
+        $current_pemeriksaan_object = new PemeriksaanObjective();
+        $param['current_pemeriksaan_subject'] = $current_pemeriksaan_subject->where('id_kunjungan', $id)->first();  
+        $param['current_pemeriksaan_object'] = $current_pemeriksaan_object->where('kunjungan_id', $id)->first(); 
+        return view('pemeriksaan/dokter/create',$param);
     }
 }

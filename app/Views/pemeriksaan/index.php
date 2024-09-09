@@ -56,23 +56,31 @@
                                         <td class="px-4 py-3"><?= $row['jenis_pasien'] ?></td>
                                         <td class="px-4 py-3"><?= $row['no_bpjs'] ?? '-' ?></td>
                                         <td class="px-4 py-3">
-                                            <?php if(in_groups('perawat')) :?>
+                                            
                                                 <?php if(checkPemeriksaanSubject($row['id']) == 0) : ?>
-                                                    <a href="<?=base_url('pemeriksaan/create/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                                        Tambahkan Pemeriksaaan Perawat
-                                                    </a>
+                                                    <?php if(in_groups('perawat')) :?>
+                                                        <a href="<?=base_url('pemeriksaan/create/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                                            Tambahkan Pemeriksaaan Perawat
+                                                        </a>
+                                                    <?php endif; ?>
                                                 <?php else : ?>
                                                     <?php if(checkPemeriksaanLab($row['id']) == 'ya') : ?>
                                                         <?php if(checkPemeriksaanLabData($row['id']) == 0) : ?>
-                                                            <span class="text-xs p-2 bg-gray-500 text-white">Pemeriksaan LAB</span>
+                                                            <span class="text-xs p-1 rounded-md bg-gray-500 text-white">Pemeriksaan LAB</span>
                                                         <?php else : ?>
-                                                            <span class="text-xs p-2 bg-gray-500 text-white">Pemeriksaan DOKTER</span>
+                                                            <span class="text-xs p-1 rounded-md bg-gray-500 text-white">Pemeriksaan DOKTER</span>
                                                         <?php endif; ?>
                                                     <?php else : ?>
-                                                        <span class="text-xs p-2 bg-orange-500 text-white">Pemeriksaan Dokter</span>
+                                                        <?php if(in_groups('perawat')) :?>
+                                                            <span class="text-xs p-1 rounded-md bg-orange-500 text-white">Pemeriksaan Dokter</span>
+                                                        <?php else : ?>
+                                                            <a href="<?=base_url('pemeriksaan/create-dokter/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                                                Tambahkan Pemeriksaaan Dokter
+                                                            </a>
+                                                        <?php endif; ?>
                                                     <?php endif; ?>
                                                 <?php endif; ?>
-                                            <?php endif; ?>
+                                            
                                         </td>
                                     </tr>
                                 <?php endif; ?>
