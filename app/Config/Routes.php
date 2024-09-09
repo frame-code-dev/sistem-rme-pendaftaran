@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\ApiController;
 use App\Controllers\DashboardController;
 use App\Controllers\DiagnosaController;
 use App\Controllers\GeneralConsentController;
@@ -71,3 +72,6 @@ $routes->get('pemeriksaan/create/(:any)',[PemeriksaanController::class,'create']
 // import Excel 
 $routes->get('import-excel', [ImportController::class,'importExcel'],['filter' => 'login']);
 $routes->post('import-excel/store', [ImportController::class,'importExcelStore'],['filter' => 'login']);
+
+$routes->get('diagnosa/sepuluh',[ApiController::class,'sepuluh']);
+$routes->get('diagnosa/sembilan',[ApiController::class,'sembilanData']);
