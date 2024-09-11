@@ -299,24 +299,14 @@ class PemeriksaanController extends BaseController
                     'required' => 'Diagnosa harap diisi.'
                 ]
             ],
-            'intervensi_keperawatan_lainnya' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Intervensi keperawatan lainnya harap diisi.'
-                ]
-            ],
+           
             'intervensi_keperawatan' => [
                 'rules' => 'required',
                 'errors' => [
                     'required' => 'Intervensi keperawatan harap diisi.'
                 ]
             ],
-            'assesment_keperawatan_lainnya' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Assessment keperawatan lainnya harap diisi.'
-                ]
-            ],
+          
             'assesment_keperawatan' => [
                 'rules' => 'required',
                 'errors' => [
@@ -340,8 +330,9 @@ class PemeriksaanController extends BaseController
             if (file_put_contents($filePathdokter, $signature_dokterData) === false) {
                 throw new \RuntimeException('Gagal menyimpan gambar penanggung.');
             }
-            $result_assesment_keperawatan = $this->request->getPost('assesment_keperawatan');
-            $result_intervensi_keperawatan = $this->request->getPost('intervensi_keperawatan');
+            $result_assesment_keperawatan = implode(',', $this->request->getPost('assesment_keperawatan'));
+            $result_intervensi_keperawatan = implode(',', $this->request->getPost('intervensi_keperawatan'));
+
             $data = [
                 'kunjungan_id' => $this->request->getPost('id_kunjungan'),  
                 'user_id' => user()->id,   
@@ -364,14 +355,14 @@ class PemeriksaanController extends BaseController
                 'intervensi_keperawatan_lainnya' => $this->request->getPost('intervensi_keperawatan_lainnya') ?? null,    
                 'intervensi_keperawatan' => $result_intervensi_keperawatan,    
                 'assesment_keperawatan_lainnya' => $this->request->getPost('assesment_keperawatan_lainnya') ?? null, 
-                'assesment_keperawatan' => $result_assesment_keperawatan, 
+                'assesment_keperawatan' => $result_assesment_keperawatan,
             ];
-            $insert = new PemeriksaanDokter();
-            $insert->insert($data);
+            $insert_pemeriksaan = new PemeriksaanDokter();
+            $insert_pemeriksaan->insert($data);
 
             $update_pemeriksaan = new Kunjungan();
             $update_pemeriksaan->update($this->request->getPost('id_kunjungan'), [
-                'status_pemeriksaan'  => 'SELESAI'
+                'status_pemeriksaan'  => 'SELESAI',
             ]);
             session()->setFlashdata("status_success", true);
             session()->setFlashdata('message', 'Pemeriksaan berhasil ditambahkan.');

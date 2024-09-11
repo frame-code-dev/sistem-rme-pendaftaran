@@ -134,8 +134,8 @@
                 <span class=""><b>Tinggi Badan </b> : <?=$pemeriksaan_objective['tinggi_badan']?></span><br>
                 <span class=""><b>Berat Badan</b> : <?=$pemeriksaan_objective['berat_badan']?></span><br>
                 <span class=""><b>Golongan Darah </b> : <?=$pasien['gol_darah']?></span><br>
-                <span class=""><b>Penglihatan </b> : <?=$pemeriksaan_objective['respiratory_rate']?></span><br>
-                <span class=""><b>Pendengaran </b> : <?=$pemeriksaan_objective['respiratory_rate']?></span><br>
+                <span class=""><b>Penglihatan </b> : <?=$request['jenis_penglihatan']?></span><br>
+                <span class=""><b>Pendengaran </b> : <?=$request['jenis_pendengaran']?></span><br>
             </div>  
         </div>
     </div>

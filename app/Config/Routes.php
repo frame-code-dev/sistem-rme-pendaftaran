@@ -6,11 +6,13 @@ use App\Controllers\DiagnosaController;
 use App\Controllers\GeneralConsentController;
 use App\Controllers\ImportController;
 use App\Controllers\KunjunganController;
+use App\Controllers\KunjunganLaporanController;
 use App\Controllers\ObatController;
 use App\Controllers\PemeriksaanController;
 use App\Controllers\PemeriksaanLabController;
 use App\Controllers\PendaftaranController;
 use App\Controllers\PetugasController;
+use App\Controllers\RiwayatPelayananController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -58,7 +60,6 @@ $routes->get('pendaftaran/show/(:any)', [PendaftaranController::class,'show'],['
 $routes->get('pendaftaran/edit/(:any)', [PendaftaranController::class,'edit'],['filter' => 'login']); 
 $routes->post('pendaftaran/edit/update/(:any)', [PendaftaranController::class,'update'],['filter' => 'login']); 
 $routes->get('pendaftaran/delete/(:any)', [PendaftaranController::class,'destroy'],['filter' => 'login']);    
-
 // General Consent 
 $routes->get('consent/create/(:any)', [GeneralConsentController::class,'index'],['filter' => 'login']);   
 $routes->get('consent/pdf', [GeneralConsentController::class,'pdf'],['filter' => 'login']);   
@@ -75,13 +76,20 @@ $routes->post('pemeriksaan/store-dokter', [PemeriksaanController::class,'storeDd
 $routes->get('pemeriksaan/cetak-bpjs',[PemeriksaanController::class,'cetakBPJS'],['filter' => 'login']);
 $routes->get('pemeriksaan/cetak-kuliah',[PemeriksaanController::class,'cetakKuliah'],['filter' => 'login']);
 $routes->get('pemeriksaan/cetak-kerja',[PemeriksaanController::class,'cetakKerja'],['filter' => 'login']);
-
 // Pemeriksaan Dokter 
 $routes->get('pemeriksaan-lab',[PemeriksaanLabController::class,'index'],['filter' => 'login']);
-
 // import Excel 
 $routes->get('import-excel', [ImportController::class,'importExcel'],['filter' => 'login']);
 $routes->post('import-excel/store', [ImportController::class,'importExcelStore'],['filter' => 'login']);
 
+// API 
 $routes->get('diagnosa/sepuluh',[ApiController::class,'sepuluh']);
 $routes->get('diagnosa/sembilan',[ApiController::class,'sembilanData']);
+// Riwayat Pelayanan 
+$routes->group('rekam-medis',['filter' => 'login'], static function($routes) {
+    // Riwayat Pelayanan
+    $routes->get('riwayat-pelayanan',[RiwayatPelayananController::class,'index'],['filter' => 'login']);
+    // kunjungan laporan 
+    $routes->get('kunjungan-laporan',[KunjunganLaporanController::class,'index'],['filter' => 'login']);
+    
+});
