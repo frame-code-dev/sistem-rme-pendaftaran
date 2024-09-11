@@ -205,22 +205,12 @@
         }
     </script>
     <script>
-        var canvasPerawat = document.getElementById('signature-pad-perawat');
         var canvasDokter = document.getElementById('signature-pad-dokter');
-
-        var signaturePadPerawat = new SignaturePad(canvasPerawat);
-        document.getElementById('clear-perawat').addEventListener('click', function () {
-            signaturePadPerawat.clear();
-        });
 
         var signaturePadDokter = new SignaturePad(canvasDokter);
         document.getElementById('clear-dokter').addEventListener('click', function () {
             signaturePadDokter.clear();
         });
-
-
-        var PerawatDataUrl = signaturePadPerawat.toDataURL();
-        $('#signature_perawat').val(PerawatDataUrl);
 
         var DokterDataUrl = signaturePadDokter.toDataURL();
         $('#signature_dokter').val(DokterDataUrl);
@@ -265,6 +255,31 @@
 
             // Initialize the first step
             showStep(currentStep);
+        });
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#cetak-bpjs').on('click', function() {
+                let data = $('#form').serialize();
+
+                $('#cetak-bpjs').attr('href', '<?= base_url('pemeriksaan/cetak-bpjs') ?>?' + data);
+
+            })
+            $('#cetak-rujukan').on('click',function(){
+                let data = $('#form').serialize();
+                let value = $('#jenis_keperluan option:selected').val();
+                console.log(value);
+                let url = '';
+                if (value == 'Daftar kuliah') {
+                    url = '<?= base_url('pemeriksaan/cetak-kuliah') ?>?' + data;
+                }else if(value == 'Melamar Pekerjaan'){
+                    url = '<?= base_url('pemeriksaan/cetak-kerja') ?>?' + data;
+                }
+
+                $('#cetak-rujukan').attr('href', url);
+            })
+           
         });
 
     </script>
@@ -409,7 +424,22 @@
                 <div class="bg-blue-800 p-3 mb-4 border rounded-md">
                     <span class="font-semibold text-white uppercase">Form Pemeriksaaan Pasien</span>
                 </div>
-                
+                <?php if (session("errors")) : ?>
+                    <div class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                        <svg class="flex-shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                        </svg>
+                        <span class="sr-only">Danger</span>
+                        <div>
+                            <span class="font-medium">Terjadi Kesalahan:</span>
+                            <ul class="mt-1.5 list-disc list-inside">
+                                <?php foreach (session("errors") as $error) : ?>
+                                    <li><?= esc($error) ?></li>
+                                <?php endforeach ?>
+                            </ul>
+                        </div>
+                    </div>
+                <?php endif ?>
                 <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
                     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content" data-tabs-active-classes="text-purple-600 hover:text-purple-600 dark:text-purple-500 dark:hover:text-purple-500 border-purple-600 dark:border-purple-500" data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300" role="tablist">
                         <li class="me-2" role="presentation">
@@ -427,8 +457,7 @@
                     </ul>
                 </div>
                 <div id="default-styled-tab-content">
-                        <input type="hidden" value="<?= $pasien['pasien_id'] ?>" name="id_pasien" >
-                        <input type="hidden" value="<?= $pasien['id'] ?>" name="id_kunjungan" >
+                      
                         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="grid grid-cols-2 gap-4 mb-4">
                                 <!-- Jenis Keluhan Section -->
@@ -894,7 +923,9 @@
                                 <button type="button" id="nextBtn" class="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Next</button>
                             </div>
                         </div>
-                    <form action="<?=base_url('pemeriksaan/store')?>" method="POST" enctype="multipart/form-data">
+                    <form action="<?=base_url('pemeriksaan/store-dokter')?>" id="form" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" value="<?= $pasien['pasien_id'] ?>" name="id_pasien" >
+                        <input type="hidden" value="<?= $pasien['id'] ?>" name="id_kunjungan" >
                         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
                             <div class="grid grid-cols-3 gap-4">
                                 <!-- Assessment Keperawatan -->
@@ -1029,15 +1060,15 @@
                                             <input type="text" name="pekerjaan" class="w-full border border-gray-300 rounded p-2" value="<?= set_value("pekerjaan",$pasien['pekerjaan']) ?>">
                                         </div>
                                         <div class="block mb-2 text-sm font-semibold text-gray-900">
-                                            <label class="block mb-2">Alamat</label
+                                            <label class="block mb-2">Alamat</label>
                                             <input type="text" name="alamat" class="w-full border border-gray-300 rounded p-2" value="<?= set_value("alamat",$pasien['alamat_lengkap']) ?>">
                                         </div>
                                     </div>
     
                                     <div class="grid grid-cols-2 gap-4">
                                         <div class="mb-4">
-                                            <label class="block mb-2">Jenis Keperluan</label>
-                                            <select name="jenis_keperluan" class="w-full border border-gray-300 rounded p-2">
+                                            <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Keperluan</label>
+                                            <select name="jenis_keperluan" id="jenis_keperluan" class="w-full border border-gray-300 rounded p-2">
                                                 <option value=""> -- Pilih -- </option>
                                                 <option value="Daftar kuliah">Daftar kuliah</option>
                                                 <option value="Melamar Pekerjaan">Melamar Pekerjaan</option>
@@ -1053,13 +1084,19 @@
                                             </select>
                                         </div>
                                     </div>
-    
-                                    <button class="bg-red-500 text-white rounded p-2 flex items-center">
-                                        <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 10l-6 6m0 0l-6-6m6 6V3" />
-                                        </svg>
-                                        CETAK
-                                    </button>
+                                    <div class="flex justify-end">
+                                        <div>
+
+                                            <a href="#" id="cetak-rujukan" target="_blank" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                
+                                                <svg class="w-3.5 h-3.5 me-2 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 17v-5h1.5a1.5 1.5 0 1 1 0 3H5m12 2v-5h2m-2 3h2M5 10V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1v6M5 19v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1M10 3v4a1 1 0 0 1-1 1H5m6 4v5h1.375A1.627 1.627 0 0 0 14 15.375v-1.75A1.627 1.627 0 0 0 12.375 12H11Z"/>
+                                                </svg>
+
+                                                CETAK
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- Rencana Pemulangan -->
                                 <div class="">
@@ -1122,12 +1159,14 @@
                                             <p class="text-sm text-gray-700">Kode 1: Diagnosa ada dalam kompetensi, ada keterbatasan kemampuan/kapasitas</p>
                                         </div>
         
-                                        <button class="bg-blue-500 text-white rounded p-2 flex items-center">
-                                            <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 10l-6 6m0 0l-6-6m6 6V3" />
+                                        <a href="#" id="cetak-bpjs" target="_blank" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                
+                                            <svg class="w-3.5 h-3.5 me-2 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 17v-5h1.5a1.5 1.5 0 1 1 0 3H5m12 2v-5h2m-2 3h2M5 10V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1v6M5 19v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1M10 3v4a1 1 0 0 1-1 1H5m6 4v5h1.375A1.627 1.627 0 0 0 14 15.375v-1.75A1.627 1.627 0 0 0 12.375 12H11Z"/>
                                             </svg>
+
                                             CETAK
-                                        </button>
+                                        </a>
                                     </div>
                                     <!-- Tanda Tangan Dokter -->
                                     <div class="border p-3 rounded-md shadow-md mt-3">
@@ -1139,7 +1178,6 @@
                                         </div>
                                         <div class="border mt-3">
                                             <input type="file" name="tanda_tangan_dokter" class="w-full border border-gray-300 rounded p-2 mt-2">
-                                            <button class="bg-orange-500 text-white rounded p-2 mt-4 w-full">Upload</button>
                                         </div>
                                     </div>
                                 </div>

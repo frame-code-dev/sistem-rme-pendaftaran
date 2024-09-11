@@ -5,9 +5,14 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\GeneralConsent;
 use App\Models\Kunjungan;
+use App\Models\Pasien;
+use App\Models\PemeriksaanDokter;
 use App\Models\PemeriksaanObjective;
 use App\Models\PemeriksaanSubjective;
 use CodeIgniter\HTTP\ResponseInterface;
+use Dompdf\Dompdf;
+use Dompdf\Options;
+use Exception;
 use Myth\Auth\Config\Auth;
 use Myth\Auth\Models\UserModel;
 
@@ -85,8 +90,6 @@ class PemeriksaanController extends BaseController
         ];
         if (!$this->validate($rules))
         {
-            dd($this->validator->getErrors());
-            return '';
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
         try {
@@ -196,5 +199,212 @@ class PemeriksaanController extends BaseController
         $param['current_pemeriksaan_subject'] = $current_pemeriksaan_subject->where('id_kunjungan', $id)->first();  
         $param['current_pemeriksaan_object'] = $current_pemeriksaan_object->where('kunjungan_id', $id)->first(); 
         return view('pemeriksaan/dokter/create',$param);
+    }
+
+    public function storeDdokter() {
+        $rules = [
+            'signature_dokter' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Signature dokter harap diisi.'
+                ]
+            ],
+            'alasan_rujukan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Alasan rujukan harap diisi.'
+                ]
+            ],
+            'rujukan_eksternal_detail' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Detail rujukan eksternal harap diisi.'
+                ]
+            ],
+            'rujukan_eksternal' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Rujukan eksternal harap diisi.'
+                ]
+            ],
+            'rujukan_internal_poli' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Rujukan internal poli harap diisi.'
+                ]
+            ],
+            'rujukan_internal' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Rujukan internal harap diisi.'
+                ]
+            ],
+            'kesadaran' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Kesadaran harap diisi.'
+                ]
+            ],
+            'status_pasien_keluar' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Status pasien keluar harap diisi.'
+                ]
+            ],
+            'dokter_pemeriksa' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Dokter pemeriksa harap diisi.'
+                ]
+            ],
+            'jenis_keperluan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Jenis keperluan harap diisi.'
+                ]
+            ],
+            'tindakan_kasus' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Tindakan kasus harap diisi.'
+                ]
+            ],
+            'tindakan_kode' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Kode tindakan harap diisi.'
+                ]
+            ],
+            'tindakan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Tindakan harap diisi.'
+                ]
+            ],
+            'diagnosa_kasus' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Diagnosa kasus harap diisi.'
+                ]
+            ],
+            'diagnosa_sepluh_kode' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Kode diagnosa harap diisi.'
+                ]
+            ],
+            'diagnosa_sepluh' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Diagnosa harap diisi.'
+                ]
+            ],
+            'intervensi_keperawatan_lainnya' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Intervensi keperawatan lainnya harap diisi.'
+                ]
+            ],
+            'intervensi_keperawatan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Intervensi keperawatan harap diisi.'
+                ]
+            ],
+            'assesment_keperawatan_lainnya' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Assessment keperawatan lainnya harap diisi.'
+                ]
+            ],
+            'assesment_keperawatan' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Assessment keperawatan harap diisi.'
+                ]
+            ],
+        ];
+        
+        if (!$this->validate($rules))
+        {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+        try {
+            $signature_dokter = $this->request->getPost('signature_dokter');
+            $signature_dokter = str_replace('data:image/png;base64,', '', $signature_dokter);
+            $signature_dokter = str_replace(' ', '+', $signature_dokter);
+            $signature_dokterData = base64_decode($signature_dokter);
+            // Menyimpan gambar dokter
+            $filename = uniqid().'.png';
+            $filePathdokter = FCPATH . 'signature/'.$filename; // Ganti 'uploads' dengan folder yang diinginkan
+            if (file_put_contents($filePathdokter, $signature_dokterData) === false) {
+                throw new \RuntimeException('Gagal menyimpan gambar penanggung.');
+            }
+            $result_assesment_keperawatan = $this->request->getPost('assesment_keperawatan');
+            $result_intervensi_keperawatan = $this->request->getPost('intervensi_keperawatan');
+            $data = [
+                'kunjungan_id' => $this->request->getPost('id_kunjungan'),  
+                'user_id' => user()->id,   
+                'signature_dokter' => $filename,  
+                'alasan_rujukan' => $this->request->getPost('alasan_rujukan'),    
+                'rujukan_eksternal_detail' => $this->request->getPost('rujukan_eksternal_detail'),  
+                'rujukan_eksternal' => $this->request->getPost('rujukan_eksternal'), 
+                'rujukan_internal_poli' => $this->request->getPost('rujukan_internal_poli'), 
+                'rujukan_internal' => $this->request->getPost('rujukan_internal'),  
+                'kesadaran' => $this->request->getPost('kesadaran'), 
+                'status_pasien_keluar' => $this->request->getPost('status_pasien_keluar'),  
+                'dokter_pemeriksa' => $this->request->getPost('dokter_pemeriksa'),  
+                'jenis_keperluan' => $this->request->getPost('jenis_keperluan'),   
+                'tindakan_kasus' => $this->request->getPost('tindakan_kasus'),    
+                'tindakan_kode' => $this->request->getPost('tindakan_kode'), 
+                'tindakan' => $this->request->getPost('tindakan'),  
+                'diagnosa_kasus' => $this->request->getPost('diagnosa_kasus'),    
+                'diagnosa_sepluh_kode' => $this->request->getPost('diagnosa_sepluh_kode'),  
+                'diagnosa_sepluh' => $this->request->getPost('diagnosa_sepluh'),   
+                'intervensi_keperawatan_lainnya' => $this->request->getPost('intervensi_keperawatan_lainnya') ?? null,    
+                'intervensi_keperawatan' => $result_intervensi_keperawatan,    
+                'assesment_keperawatan_lainnya' => $this->request->getPost('assesment_keperawatan_lainnya') ?? null, 
+                'assesment_keperawatan' => $result_assesment_keperawatan, 
+            ];
+            $insert = new PemeriksaanDokter();
+            $insert->insert($data);
+
+            $update_pemeriksaan = new Kunjungan();
+            $update_pemeriksaan->update($this->request->getPost('id_kunjungan'), [
+                'status_pemeriksaan'  => 'SELESAI'
+            ]);
+            session()->setFlashdata("status_success", true);
+            session()->setFlashdata('message', 'Pemeriksaan berhasil ditambahkan.');
+            return redirect()->to('pemeriksaan');
+        } catch (Exception $th) {
+            dd($th);
+            return 'a';
+        }
+    }
+
+    public function cetakBPJS(){
+        $param['request'] = $this->request->getGet();
+        $result = new Pasien();
+        $param['pasien'] = $result->find($param['request']['id_pasien']);
+        return view('pemeriksaan/pdf/cetak-rujukan',$param);
+    }
+    public function cetakKuliah() {
+        $param['request'] = $this->request->getGet();
+        $result = new Pasien();
+        $param['pasien'] = $result->find($param['request']['id_pasien']);
+        $pemeriksaan_objective = new PemeriksaanObjective;
+        $result_pemeriksaan_objective = $pemeriksaan_objective->where('kunjungan_id', $param['request']['id_kunjungan'])->first();
+        $param['pemeriksaan_objective'] = $result_pemeriksaan_objective;
+        return view('pemeriksaan/pdf/cetak-daftar-kuliah',$param);
+    }
+
+    public function cetakKerja() {
+        $param['request'] = $this->request->getGet();
+        $result = new Pasien();
+        $pemeriksaan_objective = new PemeriksaanObjective;
+        $result_pemeriksaan_objective = $pemeriksaan_objective->where('kunjungan_id', $param['request']['id_kunjungan'])->first();
+        $param['pemeriksaan_objective'] = $result_pemeriksaan_objective;
+        $param['pasien'] = $result->find($param['request']['id_pasien']);
+        return view('pemeriksaan/pdf/cetak-lamar-kerja',$param);
     }
 }
