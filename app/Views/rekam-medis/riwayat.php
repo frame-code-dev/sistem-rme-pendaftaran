@@ -43,6 +43,9 @@
                         <th scope="col" class="px-4 py-3">Jenis Kelamin</th>
                         <th scope="col" class="px-4 py-3">Jenis Pasien</th>
                         <th scope="col" class="px-4 py-3">NO. BPJS</th>
+                        <th>
+
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,6 +61,14 @@
                                 <td class="px-4 py-3"><?= $row['jenis_kelamin'] == 'L' ? 'Laki-laki' : 'Perempuan' ?></td>
                                 <td class="px-4 py-3"><?= $row['jenis_pasien'] ?></td>
                                 <td class="px-4 py-3"><?= $row['no_bpjs'] ?? '-' ?></td>
+                                <td>
+                                    <a href="<?= base_url('rekam-medis/riwayat-pelayanan/detail/'.$row['id']) ?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                    <svg class="w-3.5 h-3.5 me-2 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H8m12 0-4 4m4-4-4-4M9 4H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2"/>
+                                    </svg>
+                                        Detail Pemeriksaan
+                                    </a>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
 

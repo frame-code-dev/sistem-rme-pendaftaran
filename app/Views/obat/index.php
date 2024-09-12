@@ -33,7 +33,8 @@
                                 <span class="sr-only">Actions</span>
                             </th>
                         </tr>
-                        <tbody>
+                    </thead>
+                    <tbody>
                         <?php $no = 1;
                         foreach ($data as $row) : ?>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -55,7 +56,8 @@
                             </td>
                             </tr>
                         <?php endforeach; ?>
-                    </thead>
+                    </tbody>
+                  
                 </table>
             </div>
     </div>

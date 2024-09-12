@@ -180,6 +180,67 @@
             }
         });
     </script>
+    <script>
+        // NIK
+        $('#no_nik').on('keyup', function() {
+            var noRmValue = $('#no_nik').val();
+            var errorNoRm = $('#error_nik');
+
+            // Reset error message
+            errorNoRm.text('');
+
+            // Check if the value is numeric
+            if (!/^\d+$/.test(noRmValue)) {
+                // Display error message
+                errorNoRm.text('NIK hanya boleh mengandung angka.');
+                $('#no_nik').val('');
+            }
+        });
+        // NIK
+        $('#no_bpjs').on('keyup', function() {
+            var noRmValue = $('#no_bpjs').val();
+            var errorNoRm = $('#error_bpjs');
+
+            // Reset error message
+            errorNoRm.text('');
+
+            // Check if the value is numeric
+            if (!/^\d+$/.test(noRmValue)) {
+                // Display error message
+                errorNoRm.text('NO BPJS hanya boleh mengandung angka.');
+                $('#no_bpjs').val('');
+            }
+        });
+        // NIK
+        $('#no_kk').on('keyup', function() {
+            var noRmValue = $('#no_kk').val();
+            var errorNoRm = $('#error_kk');
+
+            // Reset error message
+            errorNoRm.text('');
+
+            // Check if the value is numeric
+            if (!/^\d+$/.test(noRmValue)) {
+                // Display error message
+                errorNoRm.text('NO KK hanya boleh mengandung angka.');
+                $('#no_kk').val('');
+            }
+        });
+        $('#kode_pos').on('keyup', function() {
+            var noRmValue = $('#kode_pos').val();
+            var errorNoRm = $('#error_kode_pos');
+
+            // Reset error message
+            errorNoRm.text('');
+
+            // Check if the value is numeric
+            if (!/^\d+$/.test(noRmValue)) {
+                // Display error message
+                errorNoRm.text('Kode POS hanya boleh mengandung angka.');
+                $('#kode_pos').val('');
+            }
+        });
+    </script>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
     <div class="p-4 sm:ml-64 h-screen">
@@ -246,7 +307,7 @@
                                 </div>
                                 <div class="col-span-2">
                                     <label for="" class="block mb-2 text-sm font-semibold text-gray-900">No. NIK<span class="me-2 text-red-500">*</span></label>
-                                    <input type="text" placeholder="Masukkan NO. NIK" name="no_nik" id="no_nik" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                    <input type="text" maxlength="16" placeholder="Masukkan NO. NIK" name="no_nik" id="no_nik" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
                                         value="<?= set_value("no_nik") ?>">
                                     <div class="text-red-500 text-xs italic font-semibold">
                                         <?php if (session("errors.no_nik")) : ?>
@@ -255,6 +316,8 @@
                                             </div>
                                         <?php endif ?>
                                     </div>
+                                    <div id="error_nik" class="text-red-500 mt-2 text-xs"></div>
+
                                 </div>
                                 <div class="col-span-2">
                                     <label for="" class="block mb-2 text-sm font-semibold text-gray-900">Jenis Pasien<span class="me-2 text-red-500">*</span></label>
@@ -273,7 +336,7 @@
                                 </div>
                                 <div class="col-span-2">
                                     <label for="" class="block mb-2 text-sm font-semibold text-gray-900">NO. BPJS<span class="me-2 text-red-500">*</span></label>
-                                    <input type="text" placeholder="Masukkan No BPJS" name="no_bpjs" id="no_bpjs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="<?= set_value("no_bpjs") ?>">
+                                    <input type="text" maxlength="11" placeholder="Masukkan No BPJS" name="no_bpjs" id="no_bpjs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="<?= set_value("no_bpjs") ?>">
                                     <div class="text-red-500 text-xs italic font-semibold">
                                         <?php if (session("errors.no_bpjs")) : ?>
                                             <div class="text-red-500 text-sm">
@@ -281,6 +344,7 @@
                                             </div>
                                         <?php endif ?>
                                     </div>
+                                    <div id="error_bpjs" class="text-red-500 mt-2 text-xs"></div>
                                 </div>
                                 <div class="col-span-2">
                                     <label for="" class="block mb-2 text-sm font-semibold text-gray-900">Nama Lengkap<span class="me-2 text-red-500">*</span></label>
@@ -343,7 +407,7 @@
                                 </div>
                                 <div class="col-span-2">
                                     <label for="" class="block mb-2 text-sm font-semibold text-gray-900">NO. KK<span class="me-2 text-red-500">*</span></label>
-                                    <input type="text" placeholder="Masukkan NO. KK" name="no_kk" id="no_kk" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="<?= set_value("no_kk") ?>">
+                                    <input type="text" placeholder="Masukkan NO. KK" maxlength="16" name="no_kk" id="no_kk" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="<?= set_value("no_kk") ?>">
                                     <div class="text-red-500 text-xs italic font-semibold">
                                         <?php if (session("errors.no_kk")) : ?>
                                             <div class="text-red-500 text-sm">
@@ -351,6 +415,7 @@
                                             </div>
                                         <?php endif ?>
                                     </div>
+                                    <div id="error_kk" class="text-red-500 mt-2 text-xs"></div>
                                 </div>
 
                             </div>
@@ -555,6 +620,7 @@
                                             </div>
                                         <?php endif ?>
                                     </div>
+                                    <div id="error_kode_pos" class="text-red-500 mt-2 text-xs"></div>
                                 </div>
                                 <div class="col-span-2">
                                     <label for="" class="block mb-2 text-sm font-semibold text-gray-900">Keterangan Wilayah<span class="me-2 text-red-500">*</span></label>

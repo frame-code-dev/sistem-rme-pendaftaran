@@ -35,6 +35,8 @@ class PemeriksaanDokter extends Model
         'intervensi_keperawatan',	
         'assesment_keperawatan_lainnya',	
         'assesment_keperawatan',
+        'jenis_penglihatan',
+        'jenis_pendengaran',
     ];
 
     protected bool $allowEmptyInserts = false;

@@ -321,6 +321,7 @@
             }).on('select2:select',function(e){
                 let selected = e.params.data;
                 $('#diagnosa_sepluh_kode').val(selected.id);
+                $('#diagnosa_sepluh_nama').val(selected.text);
                 
             });
         });
@@ -349,6 +350,7 @@
             }).on('select2:select',function(e){
                 let selected = e.params.data;
                 $('#tindakan_kode').val(selected.id);
+                $('#tindakan_nama').val(selected.text);
                 
             });
         });
@@ -988,6 +990,7 @@
                                     <div class="mb-4">
                                         <label class="block mb-2 text-sm font-semibold text-gray-900">Kode ICD 10</label>
                                         <input type="text" name="diagnosa_sepluh_kode" id="diagnosa_sepluh_kode" class="w-full border border-gray-300 rounded p-2" readonly>
+                                        <input type="hidden" name="diagnosa_sepluh_nama" id="diagnosa_sepluh_nama" class="w-full border border-gray-300 rounded p-2" readonly>
                                     </div>
                                     <div class="mb-4">
                                         <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Kasus</label>
@@ -1012,6 +1015,7 @@
                                         <div class="mb-4">
                                             <label class="block mb-2 text-sm font-semibold text-gray-900">Kode ICD 9 CM</label>
                                             <input type="text" name="tindakan_kode" id="tindakan_kode" class="w-full border border-gray-300 rounded p-2">
+                                            <input type="hidden" name="tindakan_nama" id="tindakan_nama" class="w-full border border-gray-300 rounded p-2">
                                         </div>
                                         <div class="mb-4">
                                             <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Kasus</label>

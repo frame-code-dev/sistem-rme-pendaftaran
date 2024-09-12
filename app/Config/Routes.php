@@ -7,6 +7,7 @@ use App\Controllers\GeneralConsentController;
 use App\Controllers\ImportController;
 use App\Controllers\KunjunganController;
 use App\Controllers\KunjunganLaporanController;
+use App\Controllers\LaporanPenyakitController;
 use App\Controllers\ObatController;
 use App\Controllers\PemeriksaanController;
 use App\Controllers\PemeriksaanLabController;
@@ -89,7 +90,11 @@ $routes->get('diagnosa/sembilan',[ApiController::class,'sembilanData']);
 $routes->group('rekam-medis',['filter' => 'login'], static function($routes) {
     // Riwayat Pelayanan
     $routes->get('riwayat-pelayanan',[RiwayatPelayananController::class,'index'],['filter' => 'login']);
+    $routes->get('riwayat-pelayanan/detail/(:any)',[RiwayatPelayananController::class,'detail'],['filter' => 'login']);
     // kunjungan laporan 
     $routes->get('kunjungan-laporan',[KunjunganLaporanController::class,'index'],['filter' => 'login']);
+    $routes->get('kunjungan-laporan/pdf',[KunjunganLaporanController::class,'pdf'],['filter' => 'login']);
+    // Laporan Penyakit 
+    $routes->get('laporan-penyakit',[LaporanPenyakitController::class,'index'],['filter' => 'login']);
     
 });

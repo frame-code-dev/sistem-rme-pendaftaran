@@ -6,7 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\Kunjungan;
 use CodeIgniter\HTTP\ResponseInterface;
 
-class DashboardController extends BaseController
+class LaporanPenyakitController extends BaseController
 {
     public function index()
     {
@@ -19,6 +19,7 @@ class DashboardController extends BaseController
                 ->orderBy('jumlah', 'DESC') // Optional: Order by the count
                 ->findAll();
         $param['data'] = $query;
-        return view('dashboard',$param);
+        $param['title'] = 'Tabel 10 Besar Penyakit';
+        return view('rekam-medis/penyakit', $param);
     }
 }
