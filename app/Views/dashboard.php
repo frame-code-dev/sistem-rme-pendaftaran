@@ -80,7 +80,7 @@
                             20
                         </h2>
                         <p class="text-gray-500 text-sm tracking-tighter">
-                            TOTAL PASIEN
+                            TOTAL PASIEN LAMA
                         </p>
                 </div>
                 </div>
@@ -100,7 +100,7 @@
                             20
                         </h2>
                         <p class="text-gray-500 text-sm tracking-tighter">
-                            TOTAL KUNJUNGAN UMUM
+                            TOTAL PASIEN BARU
                         </p>
                 </div>
                 </div>
@@ -120,7 +120,7 @@
                             20
                         </h2>
                         <p class="text-gray-500 text-sm tracking-tighter">
-                            TOTAL KUNJUNGAN BPJS
+                            TOTAL PASIEN
                         </p>
                 </div>
                 </div>

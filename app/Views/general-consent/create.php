@@ -369,25 +369,25 @@
 <?=$this->section('js')?>
 <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
 <script>
+    var canvasPenanggung = document.getElementById('signature-pad-penanggung');
+    var signaturePadPenanggung = new SignaturePad(canvasPenanggung);
+
+    var canvasPetugas = document.getElementById('signature-pad-petugas');
+    var signaturePadPetugas = new SignaturePad(canvasPetugas);
+    // Clear Button for Penanggung Jawab
+    document.getElementById('clear-penanggung').addEventListener('click', function () {
+        signaturePadPenanggung.clear();
+    });
+
+    // Clear Button for Petugas
+    document.getElementById('clear-petugas').addEventListener('click', function () {
+        signaturePadPetugas.clear();
+    });
+    var penanggungDataUrl = signaturePadPenanggung.toDataURL();
+    var petugasDataUrl = signaturePadPetugas.toDataURL();
+    $('#signature_petugas').val(petugasDataUrl);
+    $('#signature_penanggung').val(penanggungDataUrl);
     $('#cetak-pdf',).on('click', function () {
-        var canvasPenanggung = document.getElementById('signature-pad-penanggung');
-        var signaturePadPenanggung = new SignaturePad(canvasPenanggung);
-
-        var canvasPetugas = document.getElementById('signature-pad-petugas');
-        var signaturePadPetugas = new SignaturePad(canvasPetugas);
-        // Clear Button for Penanggung Jawab
-        document.getElementById('clear-penanggung').addEventListener('click', function () {
-            signaturePadPenanggung.clear();
-        });
-
-        // Clear Button for Petugas
-        document.getElementById('clear-petugas').addEventListener('click', function () {
-            signaturePadPetugas.clear();
-        });
-        var penanggungDataUrl = signaturePadPenanggung.toDataURL();
-        var petugasDataUrl = signaturePadPetugas.toDataURL();
-        $('#signature_petugas').val(petugasDataUrl);
-        $('#signature_penanggung').val(penanggungDataUrl);
         // Get form data
         var formData = $('#form').serialize();
 

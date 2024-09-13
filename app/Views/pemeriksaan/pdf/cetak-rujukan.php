@@ -113,27 +113,27 @@
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Nama</td>
                     <td width="1%">:</td>
-                    <td class="font-bold"><?=ucwords($pasien['no_rm'] ?? '-')?></td>
+                    <td class="font-bold"><?=ucwords($pasien['nama_lengkap'] ?? '-')?></td>
                 </tr>
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Jenis Kelamin</td>
                     <td width="1%">:</td>
-                    <td class="font-bold"><?=ucwords($pasien['no_rm'] ?? '-')?></td>
+                    <td class="font-bold"><?=ucwords($pasien['jenis_kelamin'] ?? '-')?></td>
                 </tr>
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Umur</td>
                     <td width="1%">:</td>
-                    <td class="font-bold"><?=ucwords($pasien['no_rm'] ?? '-')?></td>
+                    <td class="font-bold"><?=hitungUmur($pasien['tanggal_lahir'])?></td>
                 </tr>
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Alamat</td>
                     <td width="1%">:</td>
-                    <td class="font-bold"><?=ucwords($pasien['no_rm'] ?? '-')?></td>
+                    <td class="font-bold"><?=ucwords($pasien['alamat_lengkap'] ?? '-')?></td>
                 </tr>
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Anamnesa</td>
                     <td width="1%">:</td>
-                    <td class="font-bold"><?=ucwords($pasien['no_rm'] ?? '-')?></td>
+                    <td class="font-bold"><?=ucwords($pemeriksaan_subject['jenis_keluhan'] ?? '-')?> - <?=ucwords($pemeriksaan_subject['riwayat_text'] ?? '-')?></td>
                 </tr>
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Pemeriksaan Fisik</td>
@@ -143,12 +143,12 @@
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Pemeriksaan Penunjang</td>
                     <td width="1%">:</td>
-                    <td class="font-bold"><?=ucwords($pasien['no_rm'] ?? '-')?></td>
+                    <td class="font-bold"><?=isset($pemeriksaan_penunjang) ? $pemeriksaan_penunjang['detail'] : '-'?></td>
                 </tr>
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Diagnosa (ICD 10)</td>
                     <td width="1%">:</td>
-                    <td class="font-bold"><?=ucwords($pasien['no_rm'] ?? '-')?></td>
+                    <td class="font-bold"><?=ucwords($request['diagnosa_sepluh_nama'] ?? '-')?></td>
                 </tr>
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Pengobatan yang dilakukan atau diberikan</td>
@@ -158,7 +158,7 @@
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Alasan dirujuk </td>
                     <td width="1%">:</td>
-                    <td class="font-bold"><?=ucwords($pasien['no_rm'] ?? '-')?></td>
+                    <td class="font-bold"><?=ucwords($request['alasan_rujukan'] ?? '-')?></td>
                 </tr>
             </tbody>
         </table>

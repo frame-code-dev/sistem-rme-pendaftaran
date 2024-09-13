@@ -90,7 +90,7 @@
                             <td class="px-4 py-3 border"><?= $row['jenis_pasien'] ?></td>
                             <td class="px-4 py-3 border"><?= hitungUmur($row['tanggal_lahir']) ?></td>
                             <td class="px-4 py-3 border"><?= $row['status_kunjungan'] ?></td>
-                            <td class="px-4 py-3 border"><?= $row['jenis_perawatan'] ?></td>
+                            <td class="px-4 py-3 border"><?= $row['poli'] ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

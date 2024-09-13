@@ -83,15 +83,15 @@
             if (isNaN(value)) {
                 value = 0;
             }else{
-                if (value > 0 && value < 2) {
+                if (value > 0 && value <= 2) {
                     hasil_text = 'Tidak Nyeri';
-                }else if(value >= 2 && value < 4) {
+                }else if(value >= 2 && value <= 4) {
                     hasil_text = 'Sedikit Nyeri';
-                }else if(value >= 4 && value < 6) {
+                }else if(value >= 4 && value <= 6) {
                     hasil_text = 'Cukup Nyeri';
-                }else if(value >= 6 && value < 8) {
+                }else if(value >= 6 && value <= 8) {
                     hasil_text = 'Lumayan Nyeri';
-                }else if(value >= 8 && value < 10) {
+                }else if(value >= 8 && value <= 10) {
                     hasil_text = 'Sangat Nyeri';
                 }else if(value >= 10) {
                     hasil_text = 'Sangat Amat Nyeri';
@@ -110,11 +110,11 @@
             }else{
                 if (value > 0 && value < 1) {
                     hasil_text = 'Tidak Nyeri';
-                }else if(value >= 1 && value < 3) {
+                }else if(value >= 1 && value <= 3) {
                     hasil_text = 'Nyeri Ringan';
-                }else if(value >= 4 && value < 7) {
+                }else if(value >= 4 && value <= 7) {
                     hasil_text = 'Nyeri Sedang';
-                }else if(value >= 8 && value < 10) {
+                }else if(value >= 8 && value <= 10) {
                     hasil_text = 'Nyeri Berat';
                 }else{
                     hasil_text = 'Tidak Ditemukan';
@@ -814,11 +814,11 @@
                                                     <span class="mb-2">Asupan makanan berkurang 1 minggu terakhir </span>
                                                     <div class="space-y-2">
                                                         <label class="flex items-center">
-                                                        <input type="radio" name="condition_anak" value="0" class="mr-2" onclick="calculateScoreAnak()"> 
+                                                        <input type="radio" name="condition_anak" value="Ya" class="mr-2" > 
                                                         Ya
                                                         </label>
                                                         <label class="flex items-center">
-                                                        <input type="radio" name="condition_anak" value="1" class="mr-2" onclick="calculateScoreAnak()"> 
+                                                        <input type="radio" name="condition_anak" value="Tidak" class="mr-2" > 
                                                         Tidak
                                                         </label>
                                                     </div>
@@ -841,8 +841,8 @@
                                                             Tidak ada penurunan BB (Skor 0)
                                                             </label>
                                                             <label class="flex items-center">
-                                                            <input type="radio" name="bb" value="0" class="mr-2" onclick="calculateScore()"> 
-                                                            Tidak Yakin/Tidak Tahu/Baju Terasa Longgar (Skor 0)
+                                                            <input type="radio" name="bb" value="2" class="mr-2" onclick="calculateScore()"> 
+                                                            Tidak Yakin/Tidak Tahu/Baju Terasa Longgar (Skor 2)
                                                             </label>
                                                             <label class="flex items-center">
                                                             <input type="radio" name="bb" value="1" class="mr-2" onclick="toggleSelect(this, 'bb-options'); calculateScore()"> 
@@ -880,11 +880,11 @@
                                                     <p class="text-sm">(DM/CKD/Infeksi Kronis/Gangguan Fungsi Tiroid/Kanker/Lainnya)</p>
                                                     <div class="space-y-2">
                                                         <label class="flex items-center">
-                                                        <input type="radio" name="condition" value="2" class="mr-2"> 
+                                                        <input type="radio" name="condition" value="Ya" class="mr-2"> 
                                                         Ya
                                                         </label>
                                                         <label class="flex items-center">
-                                                        <input type="radio" name="condition" value="0" class="mr-2"> 
+                                                        <input type="radio" name="condition" value="Tidak" class="mr-2"> 
                                                         Tidak
                                                         </label>
                                                     </div>

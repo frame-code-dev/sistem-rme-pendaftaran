@@ -21,7 +21,9 @@ class RiwayatPelayananController extends BaseController
     {
         $result_data = new Kunjungan();
         $param['title'] = 'Riwayat Pelayanan';
-        $param['data'] = $result_data
+        $param['start'] = isset($_GET['start']) && $_GET['start'] != '' ? $_GET['start'] : '';
+        $param['end'] = isset($_GET['end']) && $_GET['end'] != '' ? $_GET['end'] : '';
+        $query = $result_data
                     ->select('kunjungan.*,pasien.id as pasien_id, pasien.no_rm, pasien.nik, pasien.nama_lengkap, 
                     pasien.tempat_lahir,  pasien.pekerjaan, pasien.alamat_lengkap, pasien.tanggal_lahir,
                     pasien.jenis_kelamin, pasien.jenis_pasien, pasien.no_bpjs, 
@@ -30,9 +32,17 @@ class RiwayatPelayananController extends BaseController
                     ->join('pasien', 'kunjungan.id_pasien = pasien.id')
                     ->join('pemeriksaan_assesment', 'kunjungan.id = pemeriksaan_assesment.kunjungan_id')
                     ->join('pemeriksaan_objective', 'kunjungan.id = pemeriksaan_objective.kunjungan_id')
+                    
                     ->join('pemeriksaan_subjective', 'kunjungan.id = pemeriksaan_subjective.id_kunjungan')
-                    ->where('kunjungan.status_pemeriksaan','SELESAI')
-                    ->findAll();
+                    ->where('kunjungan.status_pemeriksaan','SELESAI');
+                    if ($param['start'] != '') {
+                        $query->where('kunjungan.tanggal_kunjungan >=', date('Y-m-d', strtotime($param['start'])));
+                    }
+
+                    if ($param['end'] != '') {
+                        $query->where('kunjungan.tanggal_kunjungan <=',  date('Y-m-d', strtotime($param['end'])));
+                    }
+        $param['data'] = $query->findAll();
         return view('rekam-medis/riwayat',$param);
     }
 

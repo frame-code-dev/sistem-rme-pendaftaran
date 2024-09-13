@@ -7,6 +7,7 @@ use App\Models\GeneralConsent;
 use App\Models\Kunjungan;
 use App\Models\Pasien;
 use App\Models\PemeriksaanDokter;
+use App\Models\PemeriksaanLab;
 use App\Models\PemeriksaanObjective;
 use App\Models\PemeriksaanSubjective;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -251,18 +252,8 @@ class PemeriksaanController extends BaseController
                     'required' => 'Status pasien keluar harap diisi.'
                 ]
             ],
-            'dokter_pemeriksa' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Dokter pemeriksa harap diisi.'
-                ]
-            ],
-            'jenis_keperluan' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Jenis keperluan harap diisi.'
-                ]
-            ],
+           
+           
             'tindakan_kasus' => [
                 'rules' => 'required',
                 'errors' => [
@@ -348,8 +339,8 @@ class PemeriksaanController extends BaseController
                 'jenis_keperluan' => $this->request->getPost('jenis_keperluan'),   
                 'tindakan_kasus' => $this->request->getPost('tindakan_kasus'),    
                 'tindakan_kode' => $this->request->getPost('tindakan_kode'), 
-                'tindakan' => $this->request->getPost('tindakan'),  
-                'diagnosa_kasus' => $this->request->getPost('diagnosa_kasus'),    
+                'tindakan' => $this->request->getPost('tindakan_nama'),  
+                'diagnosa_kasus' => $this->request->getPost('diagnosa_sepluh_nama'),    
                 'diagnosa_sepluh_kode' => $this->request->getPost('diagnosa_sepluh_kode'),  
                 'diagnosa_sepluh' => $this->request->getPost('diagnosa_sepluh'),   
                 'intervensi_keperawatan_lainnya' => $this->request->getPost('intervensi_keperawatan_lainnya') ?? null,    
@@ -377,6 +368,12 @@ class PemeriksaanController extends BaseController
         $param['request'] = $this->request->getGet();
         $result = new Pasien();
         $param['pasien'] = $result->find($param['request']['id_pasien']);
+        $current_pemeriksaan_object = new PemeriksaanObjective();
+        $current_pemeriksaan_subject = new PemeriksaanSubjective();
+        $current_pemeriksaan_penunjang = new PemeriksaanLab();
+        $param['pemeriksaan_penunjang'] = $current_pemeriksaan_penunjang->where('id_kunjungan', $param['request']['id_kunjungan'])->first();
+        $param['pemeriksaan_objective'] = $current_pemeriksaan_object->where('kunjungan_id', $param['request']['id_kunjungan'])->first();
+        $param['pemeriksaan_subject'] = $current_pemeriksaan_subject->where('id_kunjungan', $param['request']['id_kunjungan'])->first();
         return view('pemeriksaan/pdf/cetak-rujukan',$param);
     }
     public function cetakKuliah() {

@@ -40,10 +40,10 @@
         }
     </style>
     <script>
-        print();
-        window.onafterprint = function() {
-            window.location.href = "<?= base_url('consent/create/'.$pasien['id']) ?>";
-        };
+        // print();
+        // window.onafterprint = function() {
+        //     window.location.href = "<?= base_url('consent/create/'.$pasien['id']) ?>";
+        // };
     </script>
 </head>
 
@@ -166,8 +166,8 @@
 
             <div class="space-y-2">
                 <h2 class="font-bold">VI. KEWAJIBAN PEMBAYARAN</h2>
-                <p>Saya menyatakan setuju/tidak setuju sebagai wali atau sebagai pasien, bahwa sesuai pertimbangan pelayanan yang diberikan kepada pasien, maka saya wajib untuk membayar total biaya pelayanan dengan cara bayar <?=$request['cara_bayar']?>.</p>
-                <p class="ml-4">[ ] Setuju &nbsp;&nbsp;&nbsp;&nbsp; [ ] Tidak Setuju</p>
+                <p>Saya menyatakan setuju/tidak setuju sebagai wali atau sebagai pasien, bahwa sesuai pertimbangan pelayanan yang diberikan kepada pasien, maka saya wajib untuk membayar total biaya pelayanan dengan cara bayar <b><?=$request['cara_bayar']?></b>.</p>
+                <p class="ml-1 font-bold"><?=$request['cara_bayar']?></p>
             </div>
             <p class="mt-12 text-end">Besuki, <?=date('Y-m-d')?></p>
             <div class="flex justify-between py-5 my-5">
