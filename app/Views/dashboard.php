@@ -3,54 +3,51 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
     <script>
-       var options = {
+        var options = {
           series: [{
-          name: 'Net Profit',
-          data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
-        }, {
-          name: 'Revenue',
-          data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
-        }, {
-          name: 'Free Cash Flow',
-          data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
-        }],
+            name: 'Pasien Baru',
+            data: <?= json_encode($data_baru) ?>
+          }, {
+            name: 'Pasien Lama',
+            data: <?= json_encode($data_lama) ?>
+          }],
           chart: {
-          type: 'bar',
-          height: 350
-        },
-        plotOptions: {
-          bar: {
-            horizontal: false,
-            columnWidth: '55%',
-            endingShape: 'rounded'
+            type: 'bar',
+            height: 350
           },
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          show: true,
-          width: 2,
-          colors: ['transparent']
-        },
-        xaxis: {
-          categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-        },
-        yaxis: {
-          title: {
-            text: '$ (thousands)'
-          }
-        },
-        fill: {
-          opacity: 1
-        },
-        tooltip: {
-          y: {
-            formatter: function (val) {
-              return "$ " + val + " thousands"
+          plotOptions: {
+            bar: {
+              horizontal: false,
+              columnWidth: '55%',
+              endingShape: 'rounded'
+            },
+          },
+          dataLabels: {
+            enabled: false
+          },
+          stroke: {
+            show: true,
+            width: 2,
+            colors: ['transparent']
+          },
+          xaxis: {
+            categories: <?= json_encode($categories) ?>,
+          },
+          yaxis: {
+            title: {
+              text: 'Jumlah Pasien'
+            }
+          },
+          fill: {
+            opacity: 1
+          },
+          tooltip: {
+            y: {
+              formatter: function (val) {
+                return val + " pasien";
+              }
             }
           }
-        }
         };
 
         var chart = new ApexCharts(document.querySelector("#kunjungan"), options);
@@ -77,7 +74,7 @@
                 </div>
                 <div class="mt-3">
                         <h2 class="text-theme-text text-3xl font-bold tracking-tighter">
-                            20
+                            <?=$pasien_lama?>
                         </h2>
                         <p class="text-gray-500 text-sm tracking-tighter">
                             TOTAL PASIEN LAMA
@@ -97,7 +94,7 @@
                 </div>
                 <div class="mt-3">
                         <h2 class="text-theme-text text-3xl font-bold tracking-tighter">
-                            20
+                        <?=$pasien_baru?>
                         </h2>
                         <p class="text-gray-500 text-sm tracking-tighter">
                             TOTAL PASIEN BARU
@@ -117,7 +114,7 @@
                 </div>
                 <div class="mt-3">
                         <h2 class="text-theme-text text-3xl font-bold tracking-tighter">
-                            20
+                        <?=$pasien_semua?>
                         </h2>
                         <p class="text-gray-500 text-sm tracking-tighter">
                             TOTAL PASIEN
@@ -150,7 +147,7 @@
                 </div>
                 <hr>
                 <div class="my-4">
-                    <table class="w-full border text-sm text-left text-gray-500 dark:text-gray-400 mt-4" id="datatable">
+                    <table class="w-full border text-sm text-left text-gray-500 dark:text-gray-400 mt-4 datatable" id="datatable">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th class="px-4 py-3 border">No</th>

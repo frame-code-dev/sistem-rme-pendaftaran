@@ -4,24 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PemeriksaanLab extends Model
+class PemeriksaanDetailObat extends Model
 {
-    protected $table            = 'pemeriksaan_lab';
+    protected $table            = 'pemeriksaan_detail_obat';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [
-        'id_kunjungan',	
-        'jenis_pemeriksaan',	
-        'status',	
-        'ttd_pemeriksa',	
-        'created_at',	
-        'updated_at',	
-        'kunjungan_id',	
-
-    ];
+    protected $allowedFields    = ['id','id_kunjungan','dosis_obat','aturan_obat'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

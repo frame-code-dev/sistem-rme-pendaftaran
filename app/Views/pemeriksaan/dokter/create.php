@@ -283,6 +283,65 @@
         });
 
     </script>
+    <script>
+        $(document).ready(function() {
+            $('#addBtn').click(function() {
+            var formRow = `
+                        <div class="row form-row my-3 grid grid-cols-4 content-center gap-3">
+                            <div class="form-group col-md-4">
+                                <label for="" class="block mb-2 text-sm font-semibold text-gray-900">Nama Obat<span class="me-2 text-red-500">*</span></label>
+                                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 obat-select" name="obat[]" required>
+                                    <option value="">Pilih Obat</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="" class="block mb-2 text-sm font-semibold text-gray-900">Dosis Obat<span class="me-2 text-red-500">*</span></label>
+                                <input type="text" placeholder="Masukkan Data" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" name="dosis_obat[]">
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="" class="block mb-2 text-sm font-semibold text-gray-900">Aturan Minuman Obat<span class="me-2 text-red-500">*</span></label>
+                                <select name="aturan_obat[]" class="w-full border border-gray-300 rounded p-2">
+                                    <option value=""> -- Pilih -- </option>
+                                    <option value="1 Kali"> 1 Kali</option>
+                                    <option value="2 Kali">2 Kali</option>
+                                    <option value="3 Kali">3 Kali</option>
+                                    <option value="4 Kali">4 Kali</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-2 flex align-bottom content-end items-end">
+                                <button type="button" class="bg-white text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 remove-btn">Hapus</button>
+                            </div>
+                        </div>
+            `;
+
+            $('#formContainer').append(formRow);
+
+            // Mendapatkan data obat dan mengisi dropdown di form baru
+            let url = `<?=base_url('rekam-medis/data-obat')?>`
+            console.log('qwqg');
+            
+            $.ajax({
+                url: url,
+                dataType: 'json',
+                success: function(response) {
+                    console.log(response);
+                    var obatSelect = $('.obat-select:last');
+                    obatSelect.empty();
+                    obatSelect.append('<option value="">Pilih Obat</option>');
+
+                    $.each(response, function(key, value) {
+                        obatSelect.append('<option value="' + value.id + '">' + value.nama + '</option>');
+                    });
+                }
+            });
+        });
+
+        // Menghapus form ketika tombol "Remove" ditekan
+        $(document).on('click', '.remove-btn', function() {
+            $(this).closest('.form-row').remove();
+        });
+        })
+    </script>
     <!-- Script to toggle input fields for 'Lainnya' option -->
     <script>
         document.getElementById('assesmentLainnya').addEventListener('change', function () {
@@ -929,7 +988,7 @@
                         <input type="hidden" value="<?= $pasien['pasien_id'] ?>" name="id_pasien" >
                         <input type="hidden" value="<?= $pasien['id'] ?>" name="id_kunjungan" >
                         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
-                            <div class="grid grid-cols-3 gap-4">
+                            <div class="grid grid-cols-2 gap-4 mb-3">
                                 <!-- Assessment Keperawatan -->
                                 <div class="border p-2">
                                     <div class="mb-2">
@@ -975,57 +1034,107 @@
                                         <input type="text" name="intervensi_keperawatan_lainnya" id="intervensiLainnyaInput" class="hidden border border-gray-300 rounded p-2 w-full mt-2" placeholder="Masukkan Intervensi Lainnya">
                                     </div>
                                 </div>
-                                <!-- Diagnosa & Tindakan -->
-                                <div>
-                                    <!-- Diagnosa -->
-                                    <div class="border p-2">
-                                        <div class="mb-2">
-                                            <h2 class="font-bold text-lg mb-2">DIAGNOSA</h2>
-                                            <hr>
-                                        </div>
-                                    <div class="mb-4">
-                                        <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Diagnosa</label>
-                                        <select id="diagnosaSelect10" name="diagnosa_sepluh" class="diagnosaSelect10 w-full border border-gray-300 rounded p-2" style="width: 100%;"></select>
+                            </div>
+                            <!-- Diagnosa & Tindakan -->
+                            <div>
+                                <!-- Diagnosa -->
+                                <div class="border p-2">
+                                    <div class="mb-2">
+                                        <h2 class="font-bold text-lg mb-2">DIAGNOSA</h2>
+                                        <hr>
+                                    </div>
+                                <div class="mb-4">
+                                    <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Diagnosa</label>
+                                    <select id="diagnosaSelect10" name="diagnosa_sepluh" class="diagnosaSelect10 w-full border border-gray-300 rounded p-2" style="width: 100%;"></select>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block mb-2 text-sm font-semibold text-gray-900">Kode ICD 10</label>
+                                    <input type="text" name="diagnosa_sepluh_kode" id="diagnosa_sepluh_kode" class="w-full border border-gray-300 rounded p-2" readonly>
+                                    <input type="hidden" name="diagnosa_sepluh_nama" id="diagnosa_sepluh_nama" class="w-full border border-gray-300 rounded p-2" readonly>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Kasus</label>
+                                    <select name="diagnosa_kasus" class="w-full border border-gray-300 rounded p-2">
+                                        <option> -- Pilih -- </option>
+                                        <option value="kasus baru">Kasus Baru</option>
+                                        <option value="kasus lama">Kasus Lama</option>
+                                    </select>
+                                </div>
+                                </div>
+
+                                <!-- PENGOBATAN/TERAPI -->
+                                <div class="border p-2 mt-2">
+                                    <div class="mb-2">
+                                        <h2 class="font-bold text-lg mb-2">TINDAKAN</h2>
+                                        <hr>
                                     </div>
                                     <div class="mb-4">
-                                        <label class="block mb-2 text-sm font-semibold text-gray-900">Kode ICD 10</label>
-                                        <input type="text" name="diagnosa_sepluh_kode" id="diagnosa_sepluh_kode" class="w-full border border-gray-300 rounded p-2" readonly>
-                                        <input type="hidden" name="diagnosa_sepluh_nama" id="diagnosa_sepluh_nama" class="w-full border border-gray-300 rounded p-2" readonly>
+                                        <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Tindakan</label>
+                                        <select name="tindakan" class="tindakan w-full border border-gray-300 rounded p-2" style="width: 100%;"></select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block mb-2 text-sm font-semibold text-gray-900">Kode ICD 9 CM</label>
+                                        <input type="text" name="tindakan_kode" id="tindakan_kode" class="w-full border border-gray-300 rounded p-2">
+                                        <input type="hidden" name="tindakan_nama" id="tindakan_nama" class="w-full border border-gray-300 rounded p-2">
                                     </div>
                                     <div class="mb-4">
                                         <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Kasus</label>
-                                        <select name="diagnosa_kasus" class="w-full border border-gray-300 rounded p-2">
+                                        <select id="tindakan_kasus" name="tindakan_kasus" class="w-full border border-gray-300 rounded p-2">
                                             <option> -- Pilih -- </option>
                                             <option value="kasus baru">Kasus Baru</option>
                                             <option value="kasus lama">Kasus Lama</option>
                                         </select>
                                     </div>
+                                </div>
+                                <div class="border p-2 mt-2">
+                                    <div class="mb-2 flex justify-between">
+                                        <h2 class="font-bold text-lg mb-2">PENGOBATAN/TERAPI</h2>
+                                        <div>
+											<button type="button" 
+													class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" 
+													id="addBtn">
+												<svg class="w-3.5 h-3.5 me-2 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+													<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
+												</svg>
+												Tambah
+											
+											</button>
+										</div>
                                     </div>
-    
-                                    <!-- Tindakan -->
-                                    <div class="border p-2 mt-2">
-                                        <div class="mb-2">
-                                            <h2 class="font-bold text-lg mb-2">TINDAKAN</h2>
-                                            <hr>
-                                        </div>
-                                        <div class="mb-4">
-                                            <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Tindakan</label>
-                                            <select name="tindakan" class="tindakan w-full border border-gray-300 rounded p-2" style="width: 100%;"></select>
-                                        </div>
-                                        <div class="mb-4">
-                                            <label class="block mb-2 text-sm font-semibold text-gray-900">Kode ICD 9 CM</label>
-                                            <input type="text" name="tindakan_kode" id="tindakan_kode" class="w-full border border-gray-300 rounded p-2">
-                                            <input type="hidden" name="tindakan_nama" id="tindakan_nama" class="w-full border border-gray-300 rounded p-2">
-                                        </div>
-                                        <div class="mb-4">
-                                            <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Kasus</label>
-                                            <select id="tindakan_kasus" name="tindakan_kasus" class="w-full border border-gray-300 rounded p-2">
-                                                <option> -- Pilih -- </option>
-                                                <option value="kasus baru">Kasus Baru</option>
-                                                <option value="kasus lama">Kasus Lama</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                    <hr>
+                                    <div id="formContainer">
+										<div class="row form-row my-3 grid grid-cols-4 content-center gap-3">
+											<div class="form-group col-md-4">
+												<label for="" class="block mb-2 text-sm font-semibold text-gray-900">Nama Obat<span class="me-2 text-red-500">*</span></label>
+												<select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 obat-select" name="obat[]" required>
+													<option value="">Pilih Obat</option>
+													<?php foreach ($obat as $item): ?>
+														<option value="<?= $item['id'] ?>"><?= $item['nama'] ?></option>
+													<?php endforeach; ?>
+												
+												</select>
+											</div>
+											<div class="form-group col-md-3">
+												<label for="" class="block mb-2 text-sm font-semibold text-gray-900">Dosis Obat<span class="me-2 text-red-500">*</span></label>
+												<input type="text" placeholder="Masukkan Data" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" name="dosis_obat[]">
+											</div>
+											<div class="form-group col-md-3">
+												<label for="" class="block mb-2 text-sm font-semibold text-gray-900">Aturan Minuman Obat<span class="me-2 text-red-500">*</span></label>
+                                                <select name="aturan_obat[]" class="w-full border border-gray-300 rounded p-2">
+                                                    <option value=""> -- Pilih -- </option>
+                                                    <option value="1 Kali"> 1 Kali</option>
+                                                    <option value="2 Kali">2 Kali</option>
+                                                    <option value="3 Kali">3 Kali</option>
+                                                    <option value="4 Kali">4 Kali</option>
+                                                </select>
+                                            </div>
+											
+											<div class="form-group col-md-2 flex align-bottom content-end items-end">
+												<button type="button" class="bg-white text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900 remove-btn">Hapus</button>
+											</div>
+										</div>
+									</div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -1082,8 +1191,9 @@
                                             <label class="block mb-2 text-sm font-semibold text-gray-900">Dokter Pemeriksa</label>
                                             <select name="dokter_pemeriksa" id="dokter_pemeriksa" class="w-full border border-gray-300 rounded p-2">
                                                 <option value=""> -- Pilih -- </option>
-                                                <option value="Dokter A">Dokter A</option>
-                                                <option value="Dokter A">Dokter B</option>
+                                                <?php foreach ($dokter as $item): ?>
+                                                    <option value="<?= $item->id ?>"><?= $item->name ?></option>
+                                                <?php endforeach; ?>
                                             </select>
                                         </div>
                                         <div class="mb-2">
@@ -1165,8 +1275,13 @@
                                             </label>
                                             <select name="rujukan_eksternal_detail" class="w-full border border-gray-300 rounded p-2 mt-2">
                                                 <option value=""> -- Pilih -- </option>
-                                                <option value="RS A">RS A</option>
-                                                <option value="RS B">RS B</option>
+                                                <option value="RS Besuki">RS Besuki</option>
+                                                <option value="RSUD Abd Rahem">RSUD Abd</option> 
+                                                <option value="RS Elizabet">RS Elizabet</option>
+                                                <option value="RS Waluyojati">RS Waluyojati</option>
+                                                <option value="RS Rizani">RS Rizani</option>
+                                                <option value="RS Bayangkara bws">RS Bayangkara bws</option>
+                                                <option value="RS Mata">RS Mata</option>
                                             </select>
                                             <input type="text" name="alasan_rujukan" placeholder="Alasan Rujukan" class="w-full border border-gray-300 rounded p-2 mt-2">
                                         </div>

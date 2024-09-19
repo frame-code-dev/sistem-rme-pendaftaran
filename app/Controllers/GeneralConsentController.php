@@ -17,6 +17,7 @@ class GeneralConsentController extends BaseController
     protected $pasienModel;
     protected $generalModel;
     public $param;
+    
 
     public function __construct() {
         $this->validation = \Config\Services::validation();
@@ -48,8 +49,9 @@ class GeneralConsentController extends BaseController
             'signature_penanggung' => 'required',
             'signature_petugas' => 'required',
         ];
-        if (! $this->validate($rules))
+        if (!$this->validate($rules))
         {
+            dd($this->validator->getErrors());
             return redirect()->to('consent/create/'.$id)->withInput()->with('errors', $this->validator->getErrors());
         }
         try {
@@ -70,20 +72,35 @@ class GeneralConsentController extends BaseController
             $signature_penanggung = str_replace(' ', '+', $signature_penanggung);
             $signature_penanggungData = base64_decode($signature_penanggung);
             // Menyimpan gambar penanggung
-            $filename_penaggungData = uniqid() . '.png';
+            $filename_penaggungData = uniqid().'.png';
             $filePathPenanggung = FCPATH  . 'signature/'.$filename_penaggungData; // Ganti 'uploads' dengan folder yang diinginkan
             if (file_put_contents($filePathPenanggung, $signature_penanggungData) === false) {
                 throw new \RuntimeException('Gagal menyimpan gambar penanggung.');
             }
             // ttd petugas 
+            $filename_petugasData = '';
             $signature_petugas = $this->request->getPost('signature_petugas');
-            $signature_petugas = str_replace('data:image/png;base64,', '', $signature_petugas);
-            $signature_petugas = str_replace(' ', '+', $signature_petugas);
-            $signature_petugasData = base64_decode($signature_petugas);
-            $filename_petugasData = uniqid() . '.png';
-            $filePathPetugas =  FCPATH . 'signature/'.$filename_petugasData; // Ganti 'uploads' dengan folder yang diinginkan
-            if (file_put_contents($filePathPetugas, $signature_petugasData) === false) {
-                throw new \RuntimeException('Gagal menyimpan gambar penanggung.');
+            if (isset($signature_petugas)) {
+             
+                $signature_petugas = str_replace('data:image/png;base64,', '', $signature_petugas);
+                $signature_petugas = str_replace(' ', '+', $signature_petugas);
+                $signature_petugasData = base64_decode($signature_petugas);
+                $filename_petugasData = uniqid().'.png';
+                $filePathPetugas =  FCPATH . 'signature/'.$filename_petugasData; // Ganti 'uploads' dengan folder yang diinginkan
+                if (file_put_contents($filePathPetugas, $signature_petugasData) === false) {
+                    throw new \RuntimeException('Gagal menyimpan gambar penanggung.');
+                }
+            }
+            $files = $this->request->getFiles();
+            $newName = '';
+            if (count($files) > 0) {
+                $uploadPath = FCPATH . 'signature/';
+                foreach ($files as $key => $value) {
+                    if ($value->isValid() && !$value->hasMoved()) {
+                        $newName = $value->getRandomName();
+                        $value->move($uploadPath, $newName);
+                    }
+                }
             }
             $tanggal_lahir = date('Y-m-d', strtotime($tgl_lahir));
             $data = [
@@ -99,8 +116,8 @@ class GeneralConsentController extends BaseController
                 'akses_keluarga' => $akses_keluarga,	
                 'cara_bayar' => $cara_bayar,	
                 'jenis_perawatan' => $jenis_perawatan,
-                'signature_penanggung' => $filePathPenanggung,	
-                'signature_petugas' => $filePathPetugas,	
+                'signature_penanggung' => $filename_penaggungData,	
+                'signature_petugas' => count($files) > 0 ? $newName : $filename_petugasData,	
                 'created_at' =>  date("Y-m-d H:i:s"),	
             ];
             $id_general = $this->generalModel->insert($data);

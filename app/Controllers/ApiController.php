@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\Diagnosa;
 use App\Models\DiagnosaSembilan;
+use App\Models\Obat;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class ApiController extends BaseController
@@ -51,5 +52,11 @@ class ApiController extends BaseController
 
             return $this->response->setJSON($data);
 
+    }
+
+    public function obat() {
+        $query_obat = new Obat();
+        $obat = $query_obat->findAll();
+		echo json_encode($obat);
     }
 }

@@ -4,60 +4,20 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PemeriksaanObjective extends Model
+class PemeriksaanLabDetail extends Model
 {
-    protected $table            = 'pemeriksaan_objective';
+    protected $table            = 'pemeriksaan_lab_detail';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'kunjungan_id',
-        'user_id',
-        'ttd_name',
-        'kondisi_umum',
-        'kesadaran_e',
-        'kesadaran_v',
-        'kesadaran_m',
-        'tingkat_kesadaran',
-        'tekanan_darah',
-        'respiratory_rate',
-        'nadi',
-        'spo2',
-        'suhu',
-        'berat_badan',
-        'tinggi_badan',
-        'imt',
-        'lingkar_perut',
-        'skala_nyeri',
-        'tingkat_nyeri_anak',
-        'jenis_nyeri_anak',
-        'keterangan_nyeri_anak',
-        'tingkat_nyeri_dewasa',
-        'jenis_nyeri_dewasa',
-        'keterangan_nyeri_dewasa',
-        'lokasi_nyeri',
-        'durasi',
-        'rasa_nyeri',
-        'hubungan_dengan_keluarga',
-        'tindak_lanjut',
-        'kebutuhan_spiritual',
-        'bahasa',
-        'respon_emosi',
-        'status_mental',
-        'lainnya',
-        'ekstremitas',
-        'abdomen',
-        'thorax',
-        'kepala',
-        'condition',
-        'appetite',
-        'bb_penurunan_anak',
-        'jenis_pemeriksaaan',
-        'bb',
-        'created_at',
-        'updated_at'
+        'id',	
+        'kunjungan_id',	
+        'nama',	
+        'nilai_normal',	
+        'hasil',	
     ];
 
     protected bool $allowEmptyInserts = false;

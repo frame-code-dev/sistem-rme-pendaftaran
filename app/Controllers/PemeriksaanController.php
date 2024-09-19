@@ -5,9 +5,12 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\GeneralConsent;
 use App\Models\Kunjungan;
+use App\Models\Obat;
 use App\Models\Pasien;
+use App\Models\PemeriksaanDetailObat;
 use App\Models\PemeriksaanDokter;
 use App\Models\PemeriksaanLab;
+use App\Models\PemeriksaanLabForm;
 use App\Models\PemeriksaanObjective;
 use App\Models\PemeriksaanSubjective;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -57,6 +60,7 @@ class PemeriksaanController extends BaseController
     }
 
     public function store(){
+      
         $rules = [
             'jenis_keluhan' => 'required',
             'jenis_riwayat' => 'required',
@@ -112,23 +116,37 @@ class PemeriksaanController extends BaseController
             ]; 
             $subject = new PemeriksaanSubjective;
             $subject->insert($data_subjektif);
-
+            
             $signature_penanggung = $this->request->getPost('signature_perawat');
-            $signature_penanggung = str_replace('data:image/png;base64,', '', $signature_penanggung);
-            $signature_penanggung = str_replace(' ', '+', $signature_penanggung);
-            $signature_penanggungData = base64_decode($signature_penanggung);
-            // Menyimpan gambar penanggung
-            $filename = uniqid().'.png';
-            $filePathPenanggung = FCPATH . 'signature/'.$filename; // Ganti 'uploads' dengan folder yang diinginkan
-            if (file_put_contents($filePathPenanggung, $signature_penanggungData) === false) {
-                throw new \RuntimeException('Gagal menyimpan gambar penanggung.');
+            if (!empty($signature_penanggung)) {
+                $signature_penanggung = str_replace('data:image/png;base64,', '', $signature_penanggung);
+                $signature_penanggung = str_replace(' ', '+', $signature_penanggung);
+                $signature_penanggungData = base64_decode($signature_penanggung);
+                // Menyimpan gambar penanggung
+                $filename = uniqid().'.png';
+                $filePathPenanggung = FCPATH . 'signature/'.$filename; // Ganti 'uploads' dengan folder yang diinginkan
+                if (file_put_contents($filePathPenanggung, $signature_penanggungData) === false) {
+                    throw new \RuntimeException('Gagal menyimpan gambar penanggung.');
+                }
+            }
+
+            $files = $this->request->getFiles();
+            $newName = '';
+            if (count($files) > 0) {
+                $uploadPath = FCPATH . 'signature/';
+                foreach ($files as $key => $value) {
+                    if ($value->isValid() && !$value->hasMoved()) {
+                        $newName = $value->getRandomName();
+                        $value->move($uploadPath, $newName);
+                    }
+                }
             }
             $simpanObjective = new PemeriksaanObjective();
 
             $dataObjective = [
                 'kunjungan_id' => $data['id_kunjungan'],
                 'user_id' => user()->id,
-                'ttd_name' => $filename,
+                'ttd_name' => count($files) > 0 ? $newName : $filename,
                 'kondisi_umum' => $data['kondisi_umum'],
                 'kesadaran_e' => $data['tipe_kesadaran'],
                 'tingkat_kesadaran' => $data['tingkat_kesadaran'],
@@ -158,10 +176,10 @@ class PemeriksaanController extends BaseController
                 'kebutuhan_spiritual' => $data['kebutuhan_spiritual'],
                 'hubungan_dengan_keluarga' => $data['hubungan_dengan_keluarga'],
                 'tindak_lanjut' => $data['tindak_lanjut'],
+                'jenis_pemeriksaaan' => isset($data['jenis_pemeriksaan']) ? $this->request->getPost('jenis_pemeriksaan') : null,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ];
-
             // Handling skala_nyeri conditionally
             if ($data['skala_nyeri'] == 'Anak' ) {
                 $dataObjective['tingkat_nyeri_anak'] = $data['tingkat_nyeri_anak'];
@@ -175,8 +193,20 @@ class PemeriksaanController extends BaseController
 
             $simpanObjective->insert($dataObjective);
             if ($data['tindak_lanjut'] == 'ya') {
+                $data_form = $this->request->getPost('form_isian');
+                foreach ($data_form as $key => $value) {
+                    $explode = explode('-', $value);
+                    $name = $explode[0];
+                    $value = $explode[1];
+                    $pemeriksaanLabForm = new PemeriksaanLabForm();
+                    $pemeriksaanLabForm->insert([
+                        'id_kunjungan' => $data['id_kunjungan'],
+                        'nama' => $name,
+                        'value' => $value,
+                    ]);
+                }
                 session()->setFlashdata("status_success", true);
-                session()->setFlashdata('message', 'Data Pemeriksaan berhasil ditambahkan.');
+                session()->setFlashdata('message', 'Data Pemeriksaan berhasil ditambahkan, silahkan melakukan pemeriksaan lab.');
                 return redirect()->to('pemeriksaan-lab');
             }else{
                 session()->setFlashdata("status_success", true);
@@ -198,11 +228,21 @@ class PemeriksaanController extends BaseController
         $current_pemeriksaan_subject = new PemeriksaanSubjective();
         $current_pemeriksaan_object = new PemeriksaanObjective();
         $param['current_pemeriksaan_subject'] = $current_pemeriksaan_subject->where('id_kunjungan', $id)->first();  
-        $param['current_pemeriksaan_object'] = $current_pemeriksaan_object->where('kunjungan_id', $id)->first(); 
+        $param['current_pemeriksaan_object'] = $current_pemeriksaan_object->where('kunjungan_id', $id)->first();
+        $query_obat = new Obat();
+        $query_user = new UserModel();
+        $param['dokter'] = $query_user
+                        ->select('users.*, auth_groups.name')
+                        ->join('auth_groups_users', 'auth_groups_users.user_id = users.id')
+                        ->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id')
+                        ->where('auth_groups.name', 'dokter')->findAll();
+    
+        $param['obat'] = $query_obat->findAll(); 
         return view('pemeriksaan/dokter/create',$param);
     }
 
     public function storeDdokter() {
+
         $rules = [
             'signature_dokter' => [
                 'rules' => 'required',
@@ -351,6 +391,17 @@ class PemeriksaanController extends BaseController
             $insert_pemeriksaan = new PemeriksaanDokter();
             $insert_pemeriksaan->insert($data);
 
+            if (count($this->request->getPost('obat'))) {
+                foreach ($this->request->getPost('obat') as $key => $value) {
+                    $pemeriksaan_obat = new PemeriksaanDetailObat();
+                    $pemeriksaan_obat->insert([
+                        'id_kunjungan' => $this->request->getPost('id_kunjungan'),
+                        'dosis_obat' => $this->request->getPost('dosis_obat')[$key],
+                        'aturan_obat' => $this->request->getPost('aturan_obat')[$key],
+                        'id_obat' => $value,
+                    ]);
+                }
+            }
             $update_pemeriksaan = new Kunjungan();
             $update_pemeriksaan->update($this->request->getPost('id_kunjungan'), [
                 'status_pemeriksaan'  => 'SELESAI',

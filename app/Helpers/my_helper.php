@@ -96,4 +96,8 @@ use CodeIgniter\I18n\Time;
         $data = $current_kunjungan_lab->where('id_kunjungan',$id)->countAllResults();
         return $data;
     }
+
+    function checkInsertPemeriksaanLab() {
+        
+    }
 ?>

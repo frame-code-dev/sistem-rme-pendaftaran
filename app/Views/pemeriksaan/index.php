@@ -26,7 +26,7 @@
             </div>
             <div id="default-styled-tab-content">
                 <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <table class="w-full border text-sm text-left text-gray-500 dark:text-gray-400" id="datatable">
+                    <table class="w-full border text-sm text-left text-gray-500 dark:text-gray-400 datatable" id="datatable">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th class="px-4 py-3">No</th>
@@ -68,7 +68,9 @@
                                                         <?php if(checkPemeriksaanLabData($row['id']) == 0) : ?>
                                                             <span class="text-xs p-1 rounded-md bg-gray-500 text-white">Pemeriksaan LAB</span>
                                                         <?php else : ?>
-                                                            <span class="text-xs p-1 rounded-md bg-gray-500 text-white">Pemeriksaan DOKTER</span>
+                                                            <a href="<?=base_url('pemeriksaan/create-dokter/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                                                Tambahkan Pemeriksaaan Dokter
+                                                            </a>
                                                         <?php endif; ?>
                                                     <?php else : ?>
                                                         <?php if(in_groups('perawat')) :?>
@@ -89,7 +91,7 @@
                     </table>
                 </div>
                 <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                    <table class="w-full border text-sm text-left text-gray-500 dark:text-gray-400" id="datatable">
+                    <table class="w-full border text-sm text-left text-gray-500 dark:text-gray-400 datatable" id="datatable">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th class="px-4 py-3">No</th>
@@ -100,6 +102,7 @@
                                 <th scope="col" class="px-4 py-3">Jenis Kelamin</th>
                                 <th scope="col" class="px-4 py-3">Jenis Pasien</th>
                                 <th scope="col" class="px-4 py-3">NO. BPJS</th>
+                                <th scope="col" class="px-4 py-3">Status</th>
                                 <th scope="col" class="px-4 py-3">
                                     <span class="sr-only">Actions</span>
                                 </th>

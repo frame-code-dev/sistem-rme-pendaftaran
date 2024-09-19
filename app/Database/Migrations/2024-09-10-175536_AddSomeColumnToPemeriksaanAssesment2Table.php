@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddSomeColumnToPemeriksaanAssesmentTable extends Migration
+class AddSomeColumnToPemeriksaanAssesment2Table extends Migration
 {
     public function up()
     {

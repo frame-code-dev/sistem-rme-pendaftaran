@@ -73,7 +73,19 @@
                 $('.tingkat_nyeri_anak_mst-show').removeClass('hidden')
                 $('.tingkat_nyeri_dewasa_mst-show').addClass('hidden')
             }
-            
+            $('input[name="tindak_lanjut"]').on('change',function(){
+                if ($(this).val() == 'ya') {
+                    $('#jenis_pemeriksaan_show').removeClass('hidden')
+                }else{
+                    $('#form_isian_show_klinik').addClass('hidden');
+                    $('#form_isian_show_imonologi').addClass('hidden');
+                    $('#form_isian_show_faces').addClass('hidden');
+                    $('#form_isian_show_urine').addClass('hidden');
+                    $('#form_isian_show_microbiologi').addClass('hidden');
+                    $('#jenis_pemeriksaan_show').addClass('hidden')
+
+                }
+            })
         })
 
         $('#tingkat_nyeri_anak').on('keyup', function() {
@@ -339,8 +351,94 @@
                 $('#tindakan_kode').val(selected.id);
                 
             });
+            $('.js-example-basic-multiple').select2({
+                placeholder:'-- Pilih --',
+                width: 'resolve',
+            });
         });
-        
+    </script>
+    <script>
+        $(document).ready(function() {
+            let value = $('#jenis_pemeriksaan').val();
+            if (value == '' || value == null) {
+                $('#form_isian_show_klinik').addClass('hidden');
+                $('#form_isian_show_hematologi').addClass('hidden');
+                $('#form_isian_show_imonologi').addClass('hidden');
+                $('#form_isian_show_faces').addClass('hidden');
+                $('#form_isian_show_urine').addClass('hidden');
+                $('#form_isian_show_microbiologi').addClass('hidden');
+            }
+            $('#jenis_pemeriksaan').on('change',function(){
+                let value = $(this).val();
+                switch (value) {
+                    case 'Klinik Kimia':
+                        $('#form_isian_show_klinik').removeClass('hidden');
+                        $('#form_isian_show_hematologi').addClass('hidden');
+                        $('#form_isian_show_imonologi').addClass('hidden');
+                        $('#form_isian_show_faces').addClass('hidden');
+                        $('#form_isian_show_urine').addClass('hidden');
+                        $('#form_isian_show_microbiologi').addClass('hidden');
+                        break;
+                    case 'Hematologi':
+                        $('#form_isian_show_klinik').addClass('hidden');
+                        $('#form_isian_show_hematologi').removeClass('hidden');
+                        $('#form_isian_show_imonologi').addClass('hidden');
+                        $('#form_isian_show_faces').addClass('hidden');
+                        $('#form_isian_show_urine').addClass('hidden');
+                        $('#form_isian_show_microbiologi').addClass('hidden');
+                        break;
+                    case 'Imonologi':
+                        $('#form_isian_show_klinik').addClass('hidden');
+                        $('#form_isian_show_hematologi').addClass('hidden');
+                        $('#form_isian_show_imonologi').removeClass('hidden');
+                        $('#form_isian_show_faces').addClass('hidden');
+                        $('#form_isian_show_urine').addClass('hidden');
+                        $('#form_isian_show_microbiologi').addClass('hidden');
+                        break;
+                    case 'Faces':
+                        $('#form_isian_show_klinik').addClass('hidden');
+                        $('#form_isian_show_hematologi').addClass('hidden');
+
+                        $('#form_isian_show_imonologi').addClass('hidden');
+                        $('#form_isian_show_faces').addClass('hidden');
+                        $('#form_isian_show_urine').removeClass('hidden');
+                        $('#form_isian_show_microbiologi').addClass('hidden');
+                        break;
+                    case 'Urine':
+                        $('#form_isian_show_klinik').addClass('hidden');
+                        $('#form_isian_show_hematologi').addClass('hidden');
+
+                        $('#form_isian_show_imonologi').addClass('hidden');
+                        $('#form_isian_show_faces').addClass('hidden');
+                        $('#form_isian_show_urine').removeClass('hidden');
+                        $('#form_isian_show_microbiologi').addClass('hidden');    
+                        break;
+                    case 'Microbiologi':
+                        $('#form_isian_show_klinik').addClass('hidden');
+                        $('#form_isian_show_hematologi').addClass('hidden');
+
+                        $('#form_isian_show_imonologi').addClass('hidden');
+                        $('#form_isian_show_faces').addClass('hidden');
+                        $('#form_isian_show_urine').addClass('hidden');
+                        $('#form_isian_show_microbiologi').removeClass('hidden');
+                        break;
+                    default:
+                        $('#form_isian_show_klinik').addClass('hidden');
+                        $('#form_isian_show_hematologi').addClass('hidden');
+
+                        $('#form_isian_show_imonologi').addClass('hidden');
+                        $('#form_isian_show_faces').addClass('hidden');
+                        $('#form_isian_show_urine').addClass('hidden');
+                        $('#form_isian_show_microbiologi').addClass('hidden');
+                        break;
+                }
+                // form_isian_show_klinik
+                // form_isian_show_imonologi
+                // form_isian_show_faces
+                // form_isian_show_urine
+                // form_isian_show_microbiologi
+            })
+        })
     </script>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
@@ -1001,6 +1099,101 @@
                                                         </label>
                                                     </div>
                                                 </div>
+                                                <div class="mb-4 hidden" id="jenis_pemeriksaan_show">
+                                                    <div class="mb-3">
+                                                        <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Pemeriksaan</label>
+                                                        <select name="jenis_pemeriksaan" id="jenis_pemeriksaan"  class="w-full border border-gray-300 rounded p-2">
+                                                            <option> -- Pilih -- </option>
+                                                            <option value="Klinik Kimia">Klinik Kimia</option>
+                                                            <option value="Hematologi">Hematologi</option>
+                                                            <option value="Imonologi">Imonologi</option>
+                                                            <option value="Urine">Urinalisa (Urine)</option>
+                                                            <option value="Microbiologi">Microbiologi</option>
+                                                        </select>
+                                                    </div>
+                                                    <div>
+                                                        <label class="block mb-2 text-sm font-semibold text-gray-900">Form Isian</label>
+                                                        <div class="hidden" id="form_isian_show_klinik">
+                                                            <select name="form_isian[]" multiple='multiple'  id="form_isian_klinik" style="width: 100%;" class="w-full border border-gray-300 rounded p-2 js-example-basic-multiple">
+                                                                <option value=""> -- Pilih --</option>
+                                                                <option value="gula_darah-Gula Darah (GDA)">Gula Darah (GDA)</option>
+                                                                <option value="kolesterol_total-Kolesterol Total">Kolesterol Total</option>
+                                                                <option value="trigliserida-Trigliserida">Trigliserida</option>
+                                                                <option value="asam_urat-Asam Urat / Uric Acid">Asam Urat / Uric Acid</option>
+                                                                <option value="sgot-SGOT">SGOT</option>
+                                                                <option value="spgt-SPGT">SPGT</option>
+                                                                <option value="ureum-UREUM">UREUM</option>
+                                                                <option value="bun-BUN">BUN</option>
+                                                                <option value="kreatinin-Kreatinin">Kreatinin</option>
+                                                                <option value="hdl-HDL">HDL</option>
+                                                                <option value="ldl-LDL">LDL</option>
+                                                            </select>
+                                                        </div>
+                                                         <div class="hidden" id="form_isian_show_hematologi">
+                                                            <select name="form_isian[]" multiple='multiple'  id="form_isian_hematologi" style="width: 100%;" class="w-full border border-gray-300 rounded p-2 js-example-basic-multiple">
+                                                                <option value=""> -- Pilih --</option>
+                                                                <option value="darah_lengkap-Darah lengkap">Darah lengkap</option>
+                                                                <option value="eosinofil-Eosinofil">Eosinofil</option>
+                                                                <option value="basofil-Basofil">Basofil</option>
+                                                                <option value="stab-Stab">Stab</option>
+                                                                <option value="segmen-Segmen">Segmen</option>
+                                                                <option value="limfosit-Limfosit">Limfosit</option>
+                                                                <option value="monosit-Monosit">Monosit</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="hidden" id="form_isian_show_imonologi">
+                                                            <select name="form_isian[]" multiple='multiple'  id="form_isian_imonologi" style="width: 100%;" class="w-full border border-gray-300 rounded p-2 js-example-basic-multiple">
+                                                                <option value=""> -- Pilih --</option>
+                                                                <option value="golongan_darah-Golongan Darah">Golongan Darah</option>
+                                                                <option value="tes_kehamilan-Tes Kehamilan">Tes Kehamilan</option>
+                                                                <option value="widal-WIDAL">WIDAL</option>
+                                                                <option value="hbsag-HbsAg">HbsAg</option>
+                                                                <option value="sifilis-Sifilis">Sifilis</option>
+                                                                <option value="hiv-HIV">HIV</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- <div class="hidden" id="form_isian_show_faces">
+                                                            <select name="form_isian[]" multiple='multiple'  id="form_isian_faces" style="width: 100%;" class="w-full border border-gray-300 rounded p-2 js-example-basic-multiple">
+                                                                <option value=""> -- Pilih --</option>
+                                                                <option value="konsistensi-Konsistensi">Konsistensi</option>
+                                                                <option value="warna-Warna">Warna</option>
+                                                                <option value="darah-Darah">Darah</option>
+                                                                <option value="lendir-Lendir">Lendir</option>
+                                                                <option value="eritrosit-Eritrosit">Eritrosit</option>
+                                                                <option value="lekosit-Lekosit">Lekosit</option>
+                                                                <option value="cysta-Cysta">Cysta</option>
+                                                                <option value="amoeba-Amoeba">Amoeba</option>
+                                                                <option value="telur_cacing-Telur Cacing">Telur Cacing</option>
+                                                                <option value="lainnya-Lainnya">Lainnya</option>
+                                                            </select>
+                                                        </div> -->
+                                                        <div class="hidden" id="form_isian_show_urine">
+                                                            <select name="form_isian[]" multiple='multiple'  id="form_isian_urine" style="width: 100%;" class="w-full border border-gray-300 rounded p-2 js-example-basic-multiple">
+                                                                <option value=""> -- Pilih --</option>
+                                                                <option value="warna-Warna">Warna</option>
+                                                                <option value="ph-Ph">Ph</option>
+                                                                <option value="berat_jenis-Berat Jenis">Berat Jenis</option>
+                                                                <option value="protein-Protein">Protein</option>
+                                                                <option value="glukosa-Glukosa">Glukosa</option>
+                                                                <option value="bilirubin-Bilirubin">Bilirubin</option>
+                                                                <option value="urobilin-Urobilin">Urobilin</option>
+                                                                <option value="keton-Keton">Keton</option>
+                                                                <option value="nitrit-Nitrit">Nitrit</option>
+                                                                <option value="leukosit-leukosit">leukosit</option>
+                                                                <option value="sedimen_urin-Sedimen Urin">Sedimen Urin</option>
+
+                                                               
+                                                            </select>
+                                                        </div>
+                                                        <div class="hidden" id="form_isian_show_microbiologi">
+                                                            <select name="form_isian[]" multiple='multiple'  id="form_isian_micro" style="width: 100%;" class="w-full border border-gray-300 rounded p-2 js-example-basic-multiple">
+                                                                <option value=""> -- Pilih --</option>
+                                                                <option value="fases_lengkap-Fases Lengkap">Fases Lengkap</option>
+                                                                <option value="bta-BTA/TCM">BTA/TCM</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div>
                                                     <div class="mb-2">
                                                         <label class="block font-semibold mb-2">TANDA TANGAN PERAWAT</label>
@@ -1013,7 +1206,7 @@
                                                     </div>
                                                     <div class="mt-2">
                                                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file TTD</label>
-                                                        <input name="input_file" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
+                                                        <input name="file_ttd" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
                                                     </div>
                                                 </div>
                                             </div>
@@ -1084,22 +1277,22 @@
                                             <h2 class="font-bold text-lg mb-2">DIAGNOSA</h2>
                                             <hr>
                                         </div>
-                                    <div class="mb-4">
-                                        <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Diagnosa</label>
-                                        <select id="diagnosaSelect10" name="diagnosa_sepluh" class="diagnosaSelect10 w-full border border-gray-300 rounded p-2" style="width: 100%;"></select>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label class="block mb-2 text-sm font-semibold text-gray-900">Kode ICD 10</label>
-                                        <input type="text" name="diagnosa_sepluh_kode" id="diagnosa_sepluh_kode" class="w-full border border-gray-300 rounded p-2" readonly>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Kasus</label>
-                                        <select name="diagnosa_kasus" class="w-full border border-gray-300 rounded p-2">
-                                            <option> -- Pilih -- </option>
-                                            <option value="kasus baru">Kasus Baru</option>
-                                            <option value="kasus lama">Kasus Lama</option>
-                                        </select>
-                                    </div>
+                                        <div class="mb-4">
+                                            <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Diagnosa</label>
+                                            <select id="diagnosaSelect10" name="diagnosa_sepluh" class="diagnosaSelect10 w-full border border-gray-300 rounded p-2" style="width: 100%;"></select>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label class="block mb-2 text-sm font-semibold text-gray-900">Kode ICD 10</label>
+                                            <input type="text" name="diagnosa_sepluh_kode" id="diagnosa_sepluh_kode" class="w-full border border-gray-300 rounded p-2" readonly>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Kasus</label>
+                                            <select name="diagnosa_kasus" class="w-full border border-gray-300 rounded p-2">
+                                                <option> -- Pilih -- </option>
+                                                <option value="kasus baru">Kasus Baru</option>
+                                                <option value="kasus lama">Kasus Lama</option>
+                                            </select>
+                                        </div>
                                     </div>
     
                                     <!-- Tindakan -->

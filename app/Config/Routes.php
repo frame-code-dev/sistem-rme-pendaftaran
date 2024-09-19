@@ -1,6 +1,7 @@
 <?php
 
 use App\Controllers\ApiController;
+use App\Controllers\ApotekController;
 use App\Controllers\DashboardController;
 use App\Controllers\DiagnosaController;
 use App\Controllers\GeneralConsentController;
@@ -79,13 +80,19 @@ $routes->get('pemeriksaan/cetak-kuliah',[PemeriksaanController::class,'cetakKuli
 $routes->get('pemeriksaan/cetak-kerja',[PemeriksaanController::class,'cetakKerja'],['filter' => 'login']);
 // Pemeriksaan Dokter 
 $routes->get('pemeriksaan-lab',[PemeriksaanLabController::class,'index'],['filter' => 'login']);
+$routes->get('pemeriksaan-lab/create/(:any)',[PemeriksaanLabController::class,'create'],['filter' => 'login']);
+$routes->post('pemeriksaan-lab/create/store',[PemeriksaanLabController::class,'store'],['filter' => 'login']);
+$routes->get('pemeriksaan-lab/cetak-pdf/(:any)',[PemeriksaanLabController::class,'pdf'],['filter' => 'login']);
 // import Excel 
 $routes->get('import-excel', [ImportController::class,'importExcel'],['filter' => 'login']);
 $routes->post('import-excel/store', [ImportController::class,'importExcelStore'],['filter' => 'login']);
-
+// Apotek 
+$routes->get('apotek',[ApotekController::class,'index']);
+$routes->get('apotek/detail/(:any)',[ApotekController::class,'detail']);
 // API 
 $routes->get('diagnosa/sepuluh',[ApiController::class,'sepuluh']);
 $routes->get('diagnosa/sembilan',[ApiController::class,'sembilanData']);
+$routes->get('rekam-medis/data-obat',[ApiController::class,'obat']);
 // Riwayat Pelayanan 
 $routes->group('rekam-medis',['filter' => 'login'], static function($routes) {
     // Riwayat Pelayanan

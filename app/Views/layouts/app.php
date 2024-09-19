@@ -24,7 +24,7 @@
     <?=$this->include('layouts/components/sidebar')?>
     <?= $this->renderSection('content') ?>
     <!-- Vite HMR -->
-    <script type="module" src="http://localhost:3479/@vite/client"></script>
+    <!-- <script type="module" src="http://localhost:3479/@vite/client"></script> -->
     <script type="module" src="http://localhost:3479/resources/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
@@ -57,7 +57,18 @@
             });
         }
         // Datatable
-        $('#datatable').DataTable({
+        // $('#datatable').DataTable({
+        //     responsive: true,
+        //     ordering: false,
+        //     "oLanguage": {
+        //         "sEmptyTable": "Maaf data belum tersedia."
+        //     },
+        //     "columnDefs": [{
+        //         // "defaultContent": "",
+        //         // "targets": "_all"
+        //     }]
+        // });
+        $('.datatable').DataTable({
             responsive: true,
             ordering: false,
             "oLanguage": {
@@ -68,6 +79,18 @@
                 // "targets": "_all"
             }]
         });
+    </script>
+    <script>
+        // Create the performance observer.
+        const po = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+            // Logs all server timing data for this response
+            console.log('Server Timing', entry.serverTiming);
+        }
+        });
+
+        // Start listening for `navigation` entries to be dispatched.
+        po.observe({type: 'navigation', buffered: true});
     </script>
 <?= $this->renderSection('js') ?>
     <?php
