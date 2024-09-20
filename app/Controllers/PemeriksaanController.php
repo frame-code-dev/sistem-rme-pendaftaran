@@ -41,7 +41,8 @@ class PemeriksaanController extends BaseController
         $param['title'] = 'Antrian Pasien Poli Umum';
         $param['data'] = $this->kunjunganModel
                         ->join('pasien','pasien.id=kunjungan.id_pasien')
-                        ->select('kunjungan.*,pasien.id as pasien_id, pasien.no_rm, pasien.nik, pasien.nama_lengkap, pasien.tempat_lahir, pasien.tanggal_lahir,
+                        ->select('kunjungan.*,pasien.id as pasien_id, pasien.no_rm, pasien.nik, pasien.nama_lengkap, 
+                        pasien.tempat_lahir, pasien.tanggal_lahir,pasien.desa,pasien.kecamatan,pasien.kabupaten,
                         pasien.jenis_kelamin, pasien.jenis_pasien, pasien.no_bpjs')
                         ->where('poli','Poli Umum')
                         ->findAll();
@@ -60,10 +61,10 @@ class PemeriksaanController extends BaseController
     }
 
     public function store(){
-      
         $rules = [
             'jenis_keluhan' => 'required',
             'jenis_riwayat' => 'required',
+            'alergi' => 'required',
             'merokok' => 'required',
             'stress' => 'required',
             'aktivitas_fisik' => 'required',
@@ -107,6 +108,8 @@ class PemeriksaanController extends BaseController
                 'complaint' => $data['keluhan_text'],
                 'riwayat_text' => $data['riwayat_text'],
                 'smoking' => $data['merokok'],
+                'alergi' => $data['alergi'],
+                'alergi_lainnya' => $data['alergi'] == 'Lain-Lain' ? $data['alergi_lainnya'] : null,
                 'diet' => $data['kurang_makan'],
                 'stress' => $data['stress'],
                 'physical_activity' => $data['aktivitas_fisik'],
@@ -118,6 +121,7 @@ class PemeriksaanController extends BaseController
             $subject->insert($data_subjektif);
             
             $signature_penanggung = $this->request->getPost('signature_perawat');
+            $filename = "";
             if (!empty($signature_penanggung)) {
                 $signature_penanggung = str_replace('data:image/png;base64,', '', $signature_penanggung);
                 $signature_penanggung = str_replace(' ', '+', $signature_penanggung);
@@ -242,7 +246,6 @@ class PemeriksaanController extends BaseController
     }
 
     public function storeDdokter() {
-
         $rules = [
             'signature_dokter' => [
                 'rules' => 'required',
@@ -387,6 +390,7 @@ class PemeriksaanController extends BaseController
                 'intervensi_keperawatan' => $result_intervensi_keperawatan,    
                 'assesment_keperawatan_lainnya' => $this->request->getPost('assesment_keperawatan_lainnya') ?? null, 
                 'assesment_keperawatan' => $result_assesment_keperawatan,
+                'created_at' => date('Y-m-d H:i:s'),
             ];
             $insert_pemeriksaan = new PemeriksaanDokter();
             $insert_pemeriksaan->insert($data);
@@ -398,7 +402,7 @@ class PemeriksaanController extends BaseController
                         'id_kunjungan' => $this->request->getPost('id_kunjungan'),
                         'dosis_obat' => $this->request->getPost('dosis_obat')[$key],
                         'aturan_obat' => $this->request->getPost('aturan_obat')[$key],
-                        'id_obat' => $value,
+                        'id_obat' => $this->request->getPost('obat')[$key],
                     ]);
                 }
             }
@@ -445,5 +449,26 @@ class PemeriksaanController extends BaseController
         $param['pemeriksaan_objective'] = $result_pemeriksaan_objective;
         $param['pasien'] = $result->find($param['request']['id_pasien']);
         return view('pemeriksaan/pdf/cetak-lamar-kerja',$param);
+    }
+
+    public function cetakCPPT($id) {
+        $param['data'] = $this->kunjunganModel
+                            ->select('kunjungan.*,pasien.nama_lengkap, pasien.alamat_lengkap, 
+                            pasien.no_rm, pasien.tanggal_lahir, pasien.jenis_kelamin, 
+                            pemeriksaan_assesment.diagnosa_kasus,pemeriksaan_assesment.diagnosa_sepluh_kode,pemeriksaan_assesment.diagnosa_sepluh,
+                            pemeriksaan_assesment.created_at as tanggal_dokter,
+                            pemeriksaan_assesment.status_pasien_keluar,
+                            pemeriksaan_assesment.signature_dokter as foto_dokter,
+                            pemeriksaan_objective.*,pemeriksaan_assesment.*,pemeriksa.name as nama_pemeriksa, dokter.name as nama_dokter,pemeriksaan_subjective.*')
+                            ->join('pasien','pasien.id=kunjungan.id_pasien')
+                            ->join('pemeriksaan_objective','pemeriksaan_objective.kunjungan_id=kunjungan.id')
+                            ->join('pemeriksaan_subjective','pemeriksaan_subjective.id_kunjungan=kunjungan.id')
+                            ->join('pemeriksaan_assesment','pemeriksaan_assesment.kunjungan_id=kunjungan.id')
+                            ->join('users as pemeriksa','pemeriksa.id=pemeriksaan_subjective.id_user')
+                            ->join('users as dokter','dokter.id=pemeriksaan_assesment.user_id')
+                            ->where('kunjungan.id', $id)
+                            ->first();
+        $param['id_kunjungan'] = $id;
+        return view('pemeriksaan/pdf/cetak-cppt',$param);
     }
 }

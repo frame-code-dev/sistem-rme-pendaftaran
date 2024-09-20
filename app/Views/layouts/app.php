@@ -92,7 +92,7 @@
         // Start listening for `navigation` entries to be dispatched.
         po.observe({type: 'navigation', buffered: true});
     </script>
-<?= $this->renderSection('js') ?>
+    <?= $this->renderSection('js') ?>
     <?php
         $session = \Config\Services::session();
         $status_error = $session->get('status_error');

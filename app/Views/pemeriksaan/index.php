@@ -1,4 +1,35 @@
 <?=$this->extend('layouts/app')?>
+<?=$this->section('js')?>
+    <script>
+        $('.panggil').on('click', function() {
+            let id = $(this).data('id');
+            console.log(id);
+            getSound(id);
+        })
+            let voices = [];
+
+            function loadVoices() {
+                voices = window.speechSynthesis.getVoices();
+                console.log(voices);
+            }
+
+        function getSound(id) {
+                const text = id;
+                const msg = new SpeechSynthesisUtterance();
+                msg.text = text;
+                msg.lang = 'id-ID'; // Kode bahasa untuk Bahasa Indonesia
+                console.log(voices);
+                // Cari suara wanita dalam daftar suara
+                const voice = voices.find(voice => voice.lang === 'id-ID' && voice.name.toLowerCase().includes('female'));
+
+                // Jika tidak ada suara wanita, gunakan suara wanita pertama yang tersedia
+                msg.voice = voice || voices.find(voice => voice.lang === 'id-ID' && voice.name.toLowerCase().includes('female')) || voices[0];
+
+                window.speechSynthesis.cancel();
+                window.speechSynthesis.speak(msg);
+        }
+    </script>
+<?=$this->endSection()?>
 <?=$this->section('content')?>
 <div class="p-4 sm:ml-64 h-screen">
     <div class="p-4 mt-14">
@@ -56,7 +87,13 @@
                                         <td class="px-4 py-3"><?= $row['jenis_pasien'] ?></td>
                                         <td class="px-4 py-3"><?= $row['no_bpjs'] ?? '-' ?></td>
                                         <td class="px-4 py-3">
-                                            
+                                                <?php
+                                                    $antrian = $row['nama_lengkap'];
+                                                    $desa = getVillageById($row['kecamatan'], $row['desa']);
+                                                    $pesan = 'atas nama '.$antrian.'dari kelurahan atau desa '.$desa['nama'];
+                                                    // $pesan = "firdo jatuh cinta anjayyyyy";
+                                                ?>
+                                                <button data-id="<?=$pesan?>" class="text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-teal-600 dark:hover:bg-teal-700 focus:outline-none dark:focus:ring-teal-800 panggil">Panggil</button>
                                                 <?php if(checkPemeriksaanSubject($row['id']) == 0) : ?>
                                                     <?php if(in_groups('perawat')) :?>
                                                         <a href="<?=base_url('pemeriksaan/create/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
@@ -124,7 +161,7 @@
                                         <td class="px-4 py-3"><span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900"><?= $row['status_pemeriksaan'] ?? '-' ?></span></td>
 
                                         <td>
-                                            <a href="" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800">
+                                            <a href="<?=base_url('pemeriksaan/cetak-cppt/'.$row['id'])?>" target="_blank" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800">
                                                 Riwayat CPPT
                                             </a>
                                         </td>

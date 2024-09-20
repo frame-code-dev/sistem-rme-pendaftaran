@@ -547,6 +547,17 @@
                                                         <?=$current_pemeriksaan_subject['riwayat_text']?>
                                                 </td>
                                             </tr>
+                                            <tr class="px-4 py-3 border font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                <td width="20%" class="p-4">Alergi</td>
+                                                <td width="1%">:</td>
+                                                <td class="font-bold">
+                                                    <div class="mb-2">
+                                                        <?=ucwords($current_pemeriksaan_subject['alergi'])?>
+                                                        <hr>
+                                                    </div>
+                                                        <?=$current_pemeriksaan_subject['alergi_lainnya'] ?? '-'?>
+                                                </td>
+                                            </tr>
                                             
                                         </tbody>
                                     </table>

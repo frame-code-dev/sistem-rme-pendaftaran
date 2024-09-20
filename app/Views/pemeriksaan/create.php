@@ -440,6 +440,19 @@
             })
         })
     </script>
+    <script>
+        $(document).ready(function() {
+            $('#alergi').on('change',function(){
+                let value = $(this).val();
+                if (value == 'Lain-Lain') {
+                    $('#alergi_lainnya').removeClass('hidden');
+                }else{
+                    $('#alergi_lainnya').addClass('hidden');
+
+                }
+            })
+        })
+    </script>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 <div class="p-4 sm:ml-64 h-screen">
@@ -568,9 +581,31 @@
                                         </label>
                                     </div>
                                     <textarea name="riwayat_text" class="w-full h-20 border border-gray-300 rounded p-2" placeholder="Masukkan data"></textarea>
-                                
                                 </div>
                             </div>
+                            <div class="mb-4">
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <div class="font-semibold">Alergi</div>
+                                        <div class="flex items-center mt-2">
+                                            <select name="alergi" id="alergi" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                                <option value="0"> -- Pilih Alergi --</option>
+                                                <option value="Obat">Obat</option>
+                                                <option value="Makanan">Makanan</option>
+                                                <option value="Lain-Lain">Lain-Lain</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="alergi_lainnya" class="hidden">
+                                        <div class="font-semibold">Alergi Lainnya</div>
+                                        <input type="text" class="border border-gray-300 rounded p-2 w-full mt-2" name="alergi_lainnya" placeholder="Masukkan Data" />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        
                             <!-- Faktor Resiko Section -->
                             <div class="mb-4">
                                 <div class="bg-blue-900 text-white p-2 w-full">
@@ -631,6 +666,7 @@
                                 </div>
                                 </div>
                             </div>
+
                         </div>
                         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                             <div class="mb-4">

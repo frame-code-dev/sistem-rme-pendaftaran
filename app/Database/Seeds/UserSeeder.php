@@ -43,6 +43,15 @@ class UserSeeder extends Seeder
             'name'        => 'petugaslab',
             'description' => 'Petugas Lab role'
         ]);
+        $groupModel->insert([
+            'name'        => 'penanggung',
+            'description' => 'Penanggung Jawab RM'
+        ]);
+        $groupModel->insert([
+            'name'        => 'kepala',
+            'description' => 'Kepala Rumah Sakit'
+        ]);
+        
 
         // Create users
         $users = [
@@ -88,6 +97,20 @@ class UserSeeder extends Seeder
                 'password' => 'password', // Ensure this meets your password requirements
                 'active'   => 1,
             ],
+            [
+                'name'     => 'Penanggung Jawab RM',
+                'email'    => 'penanggungjawabrm@mail.com',
+                'username' => 'penanggungjawab',
+                'password' => 'password', // Ensure this meets your password requirements
+                'active'   => 1,
+            ],
+            [
+                'name'     => 'Kepala Rumah Sakit',
+                'email'    => 'kepala@mail.com',
+                'username' => 'kepala',
+                'password' => 'password', // Ensure this meets your password requirements
+                'active'   => 1,
+            ],
         ];
         
         foreach ($users as $userData) {
@@ -113,7 +136,12 @@ class UserSeeder extends Seeder
                 $groupModel->addUserToGroup($userId, 5);
             } else if ($userData['username'] === 'petugaslab') {
                 $groupModel->addUserToGroup($userId, 6);
+            } else if ($userData['username'] === 'penanggungjawab') {
+                $groupModel->addUserToGroup($userId, 7);
+            } else if ($userData['username'] === 'kepala') {
+                $groupModel->addUserToGroup($userId, 8);
             }
+            
         }
     }
 }

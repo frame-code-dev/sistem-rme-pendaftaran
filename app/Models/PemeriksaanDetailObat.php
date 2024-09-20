@@ -12,7 +12,7 @@ class PemeriksaanDetailObat extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id','id_kunjungan','dosis_obat','aturan_obat'];
+    protected $allowedFields    = ['id','id_kunjungan','dosis_obat','aturan_obat','id_obat'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

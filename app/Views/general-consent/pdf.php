@@ -73,6 +73,7 @@
             </div>
             <div class="w-1/2 text-end">
                 <span class="font-bold">No Rekam Medis</span>
+                <p class="text-sm font-bold">: <?=$request['no_rm'] ?? '-'?></p>
             </div>
         </div>
         

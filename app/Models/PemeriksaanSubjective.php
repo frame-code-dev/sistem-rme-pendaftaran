@@ -19,6 +19,8 @@ class PemeriksaanSubjective extends Model
         'type',	
         'complaint',
         'riwayat_text',
+        'alergi',
+        'alergi_lainnya',
         'smoking',	
         'diet',	
         'physical_activity',	

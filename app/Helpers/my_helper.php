@@ -2,7 +2,9 @@
 
 use App\Models\Kunjungan;
 use App\Models\Pasien;
+use App\Models\PemeriksaanDetailObat;
 use App\Models\PemeriksaanLab;
+use CodeIgniter\HTTP\Exceptions\HTTPException;
 use CodeIgniter\I18n\Time;
 
     function hitungUmur($tanggalLahir)
@@ -99,5 +101,54 @@ use CodeIgniter\I18n\Time;
 
     function checkInsertPemeriksaanLab() {
         
+    }
+
+    function data_obat($id) {
+        $query_obat = new PemeriksaanDetailObat();
+        $data = $query_obat->join('obat','obat.id=pemeriksaan_detail_obat.id_obat')
+                        ->select('pemeriksaan_detail_obat.*,obat.nama')
+                        ->where('pemeriksaan_detail_obat.id_kunjungan',$id)
+                        ->findAll();
+        return $data;
+    }
+
+    function getVillageById($id_kecamatan, $id_desa)
+    {
+        // URL to the JSON file
+     
+        $url = 'https://ibnux.github.io/data-indonesia/kelurahan/' . $id_kecamatan.'.json';
+
+        // Create a new cURL instance
+        $client = \Config\Services::curlrequest();
+
+        try {
+            // Fetch the data
+            $response = $client->get($url);
+
+            // Decode JSON data
+            $villages = json_decode($response->getBody(), true);
+
+            // Check if decoding was successful
+            if (json_last_error() === JSON_ERROR_NONE) {
+                // Search for the village with the given ID
+                $village = array_filter($villages, function ($village) use ($id_desa) {
+                    return $village['id'] == $id_desa;
+                });
+
+                // Check if the village was found
+                if (!empty($village)) {
+                    // Return the found village
+                    return array_values($village)[0];
+                } else {
+                    // Return an error if no village was found with the given ID
+                    return 'Village not found';
+                }
+            } else {
+                return 'Failed to decode JSON';
+            }
+        } catch (HTTPException $e) {
+            // Handle the exception (e.g., network issues)
+            return 'Failed to retrieve data';
+        }
     }
 ?>

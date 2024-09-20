@@ -71,13 +71,16 @@ $routes->get('kunjungan/create/(:any)', [KunjunganController::class,'create'],['
 $routes->post('kunjungan/create/store/(:any)', [KunjunganController::class,'store'],['filter' => 'login']);
 // Pemeriksaaan 
 $routes->get('pemeriksaan',[PemeriksaanController::class,'index'],['filter' => 'login']);
+// Pemeriksaaan - Perawat 
 $routes->get('pemeriksaan/create/(:any)',[PemeriksaanController::class,'create'],['filter' => 'login']);
 $routes->post('pemeriksaan/store', [PemeriksaanController::class,'store'],['filter' => 'login']);
+// Pemeriksaan Dokter 
 $routes->get('pemeriksaan/create-dokter/(:any)',[PemeriksaanController::class,'createDokter'],['filter' => 'login']);
 $routes->post('pemeriksaan/store-dokter', [PemeriksaanController::class,'storeDdokter'],['filter' => 'login']);
 $routes->get('pemeriksaan/cetak-bpjs',[PemeriksaanController::class,'cetakBPJS'],['filter' => 'login']);
 $routes->get('pemeriksaan/cetak-kuliah',[PemeriksaanController::class,'cetakKuliah'],['filter' => 'login']);
 $routes->get('pemeriksaan/cetak-kerja',[PemeriksaanController::class,'cetakKerja'],['filter' => 'login']);
+$routes->get('pemeriksaan/cetak-cppt/(:any)',[PemeriksaanController::class,'cetakCPPT'],['filter' => 'login']);
 // Pemeriksaan Dokter 
 $routes->get('pemeriksaan-lab',[PemeriksaanLabController::class,'index'],['filter' => 'login']);
 $routes->get('pemeriksaan-lab/create/(:any)',[PemeriksaanLabController::class,'create'],['filter' => 'login']);
