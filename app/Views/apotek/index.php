@@ -18,6 +18,7 @@
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th class="px-4 py-3">No</th>
+                            <th scope="col" class="px-4 py-3">Tanggal Kunjungan</th>
                             <th scope="col" class="px-4 py-3">NO. RM</th>
                             <th scope="col" class="px-4 py-3">NIK</th>
                             <th scope="col" class="px-4 py-3">Nama</th>
@@ -37,6 +38,7 @@
                             <?php if ($row['status_pemeriksaan'] == 'SELESAI') : ?>
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                     <td class="px-4 py-3"><?= $no++ ?></td>
+                                    <td class="px-4 py-3"><?= date('Y-m-d H:i:s', strtotime($row['created_at'])) ?></td>
                                     <td class="px-4 py-3"><?= $row['no_rm'] ?></td>
                                     <td class="px-4 py-3"><?= $row['nik'] ?></td>
                                     <td class="px-4 py-3"><?= ucwords($row['nama_lengkap']) ?></td>
