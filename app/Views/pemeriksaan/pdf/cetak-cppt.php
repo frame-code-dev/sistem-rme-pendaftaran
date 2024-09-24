@@ -121,24 +121,24 @@
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500  px-4 border">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50  border">
                         <tr>
-                            <th class="px-4 py-3 border">Tgl/Jam : Tgl Pelayanan</th>
-                            <th scope="col" class="px-4 py-3 border">PPA (Dokter/Dokter Gigi)</th>
-                            <th scope="col" class="px-4 py-3 border">Hasil Pemeriksaan/Analisa/Rencana Penatalaksanaan dengan SOAP </th>
-                            <th scope="col" class="px-4 py-3 border">Intruksi PPA</th>
-                            <th scope="col" class="px-4 py-3 border">Tgl/Jam</th>
-                            <th scope="col" class="px-4 py-3 border">PPA (Bidan/Perawat)</th>
-                            <th scope="col" class="px-4 py-3 border">Hasil Pemeriksaan/Analisa/Rencana Penatalaksanaan dengan SOAP/ADIME</th>
-                            <th scope="col" class="px-4 py-3 border">Intruksi PPA</th>
-                            <th scope="col" class="px-4 py-3 border">Review / Verifikasi</th>
+                            <th class=border">Tgl/Jam : Tgl Pelayanan</th>
+                            <th scope="col" class=border">PPA (Dokter/Dokter Gigi)</th>
+                            <th scope="col" class=border">Hasil Pemeriksaan/Analisa/Rencana Penatalaksanaan dengan SOAP </th>
+                            <th scope="col" class=border">Intruksi PPA</th>
+                            <th scope="col" class=border">Tgl/Jam</th>
+                            <th scope="col" class=border">PPA (Bidan/Perawat)</th>
+                            <th scope="col" class=border">Hasil Pemeriksaan/Analisa/Rencana Penatalaksanaan dengan SOAP/ADIME</th>
+                            <th scope="col" class=border">Intruksi PPA</th>
+                            <th scope="col" class=border">Review / Verifikasi</th>
                             
                         </tr>
                         <tbody>
-                            <tr class="bg-white border-b">
-                                <td class="px-4 py-3 border"><?=date('d-m-Y', strtotime($data['tanggal_dokter'])).'/'.date('H:i:s', strtotime($data['tanggal_dokter'])) ?></td>
-                                <td class="px-4 py-3 border">
+                            <tr class="bg-white border">
+                                <td class="border"><?=date('d-m-Y', strtotime($data['tanggal_dokter'])).'/'.date('H:i:s', strtotime($data['tanggal_dokter'])) ?></td>
+                                <td class="border">
                                     <?=$data['nama_dokter']?>
                                 </td>
-                                <td class="px-4 py-3 border">
+                                <td class="border">
                                     A : <?=$data['diagnosa_sepluh_kode'] ?> - <?=$data['diagnosa_sepluh'] ?>
                                     <div class="flex w-full">
                                         P : <?php 
@@ -150,20 +150,20 @@
 
                                     </div>
                                 </td>
-                                <td class="px-4 py-3 border">
+                                <td class="border">
                                     <img class="border" src="<?=base_url('signature/'.$data['foto_dokter'])?>" alt="">
                                     <?=$data['nama_dokter']?>
                                 </td>
-                                <td class="px-4 py-3 border">
+                                <td class="border">
                                     <?=date('d-m-Y', strtotime($data['created_at'])).'/'.date('H:i:s', strtotime($data['created_at'])) ?>
                                 </td>
-                                <td class="px-4 py-3 border">
+                                <td class="border">
                                     <?=$data['nama_pemeriksa']?>
                                 </td>
-                                <td class="px-4 py-3 border">
+                                <td class="border">
                                     S : <?=$data['jenis_keluhan']?> <br>
                                     O : 
-                                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+                                    <table class="">
                                         <tbody class="border w-full">
                                             <tr class=" border font-medium text-gray-900 whitespace-nowrap">
                                                 <td width="20%" class="">Tekanan Darah</td>
@@ -214,11 +214,11 @@
                                         </tbody>
                                     </table>
                                 </td>
-                                <td class="px-4 py-3 border">
+                                <td class="border">
                                     <img class="border" src="<?=base_url('signature/'.$data['ttd_name'])?>" alt="">
                                     <?=$data['nama_pemeriksa']?>
                                 </td>
-                                <td class="px-4 py-3 border">
+                                <td class="border">
                                 </td>
                             </tr>
                             

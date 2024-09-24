@@ -143,7 +143,17 @@
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Pemeriksaan Penunjang</td>
                     <td width="1%">:</td>
-                    <td class="font-bold"><?=isset($pemeriksaan_penunjang) ? $pemeriksaan_penunjang['detail'] : '-'?></td>
+                    <td class="font-bold">
+                        <?php if(isset($pemeriksaan_penunjang)): ?>
+                        <?php $no = 1;
+                            foreach ($detail_pemeriksaan as $row) : ?>
+                                <span><?= $row['nama'] ?> : <?= $row['nilai_normal'] != null ? $row['nilai_normal'] : $row['nilai_normal'] ?> </span>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <span>-</span>
+                        <?php endif; ?>
+
+                    </td>
                 </tr>
                 <tr class="font-medium text-gray-900 whitespace-nowrap">
                     <td width="20%" class="">Diagnosa (ICD 10)</td>

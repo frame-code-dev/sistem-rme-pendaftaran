@@ -20,6 +20,9 @@ class PemeriksaanLabController extends BaseController
     }
     public function index()
     {
+        if (in_groups('perawat')) {
+            return redirect()->to('/pemeriksaan');
+        }
         $param['title'] = 'ANTRIAN PEMERIKSAAN LABORATORIUM';
         $param['data'] = $this->kunjunganModel
                         ->join('pasien','pasien.id=kunjungan.id_pasien')
@@ -159,6 +162,7 @@ class PemeriksaanLabController extends BaseController
                             ->select('pemeriksaan_lab_detail.*,pemeriksaan_lab.status,pemeriksaan_lab.jenis_pemeriksaan')
                             ->where('kunjungan.id', $id)
                             ->findAll();
+        // dd($param['detail_pemeriksaan']);
         return view('pemeriksaan-lab/pdf',$param);
     }
 }

@@ -427,6 +427,12 @@ class PemeriksaanController extends BaseController
         $current_pemeriksaan_subject = new PemeriksaanSubjective();
         $current_pemeriksaan_penunjang = new PemeriksaanLab();
         $param['pemeriksaan_penunjang'] = $current_pemeriksaan_penunjang->where('id_kunjungan', $param['request']['id_kunjungan'])->first();
+        $param['detail_pemeriksaan'] = $this->kunjunganModel
+                                    ->join('pemeriksaan_lab_detail','pemeriksaan_lab_detail.kunjungan_id=kunjungan.id')
+                                    ->join('pemeriksaan_lab','pemeriksaan_lab.id_kunjungan=kunjungan.id')
+                                    ->select('pemeriksaan_lab_detail.*,pemeriksaan_lab.status,pemeriksaan_lab.jenis_pemeriksaan')
+                                    ->where('kunjungan.id', $param['request']['id_kunjungan'])
+                                    ->findAll();
         $param['pemeriksaan_objective'] = $current_pemeriksaan_object->where('kunjungan_id', $param['request']['id_kunjungan'])->first();
         $param['pemeriksaan_subject'] = $current_pemeriksaan_subject->where('id_kunjungan', $param['request']['id_kunjungan'])->first();
         return view('pemeriksaan/pdf/cetak-rujukan',$param);

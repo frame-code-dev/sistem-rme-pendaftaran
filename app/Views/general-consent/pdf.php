@@ -1,3 +1,7 @@
+<?php
+
+use Config\Auth;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,15 +44,15 @@
         }
     </style>
     <script>
-        // print();
-        // window.onafterprint = function() {
-        //     window.location.href = "<?= base_url('consent/create/'.$pasien['id']) ?>";
-        // };
+        print();
+        window.onafterprint = function() {
+            window.close();
+        };
     </script>
 </head>
 
 <body class="">
-    <div class="w-full mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <div class="w-full mx-auto bg-white p-6">
         <div class="flex justify-between content-center items-center">
             <div>
                 <img src="<?=base_url('img/logo.jpg')?>" class="w-full" alt="">
@@ -174,23 +178,23 @@
             <div class="flex justify-between py-5 my-5">
                 <div>
                     <h1>Pasien/Keluarga/Penanggung Jawab *</h1>
-                    <div class="my-5 py-5"></div>
+                    <img class="border" src="<?=$request['signature_penanggung']?>" alt="">
                     <div>
-                        <p class="mt-8">...............................................................</p>
+                        <p class="mt-8"><?=$request['nama_lengkap']?></p>
                     </div>
                 </div>
                 <div>
                     <h1>Saksi</h1>
-                    <div class="my-5 py-5"></div>
+                    <img class="border" src="<?=$request['signature_penanggung']?>" alt="">
                     <div>
-                        <p class="mt-8">...............................................................</p>
+                        <p class="mt-8"><?=$request['nama_lengkap']?></p>
                     </div>
                 </div>
                 <div>
                     <h1>Petugas Puskesmas Besuki</h1>
-                    <div class="my-5 py-5"></div>
+                    <img class="border" src="<?=$request['signature_petugas']?>" alt="">
                     <div>
-                        <p class="mt-8">...............................................................</p>
+                        <p class="mt-8"><?=user()->name?></p>
                     </div>
                 </div>
             </div>

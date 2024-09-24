@@ -1287,12 +1287,12 @@
                                             <select name="rujukan_eksternal_detail" class="w-full border border-gray-300 rounded p-2 mt-2">
                                                 <option value=""> -- Pilih -- </option>
                                                 <option value="RS Besuki">RS Besuki</option>
-                                                <option value="RSUD Abd Rahem">RSUD Abd</option> 
+                                                <option value="RSUD dr Abdoer Rahem">RSUD dr Abdoer Rahem</option> 
                                                 <option value="RS Elizabet">RS Elizabet</option>
                                                 <option value="RS Waluyojati">RS Waluyojati</option>
                                                 <option value="RS Rizani">RS Rizani</option>
                                                 <option value="RS Bayangkara bws">RS Bayangkara bws</option>
-                                                <option value="RS Mata">RS Mata</option>
+                                                <option value="RS Mata Situbondo">RS Mata Situbondo</option>
                                             </select>
                                             <input type="text" name="alasan_rujukan" placeholder="Alasan Rujukan" class="w-full border border-gray-300 rounded p-2 mt-2">
                                         </div>
@@ -1314,7 +1314,7 @@
                                     </div>
                                     <!-- Tanda Tangan Dokter -->
                                     <div class="border p-3 rounded-md shadow-md mt-3">
-                                        <h2 class="text-lg font-bold mb-4">Tanda Tangan Dokter</h2>
+                                        <h2 class="text-lg font-bold mb-4">Tanda Tangan Petugas</h2>
                                         <div class="border border-gray-300 p-4 bg-white rounded-lg">
                                             <canvas id="signature-pad-dokter" class="signature-pad w-full h-48 border"></canvas>
                                             <input type="hidden" name="signature_dokter" id="signature_dokter">

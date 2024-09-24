@@ -82,6 +82,7 @@
                             <div class="col-span-2 gap-3 mb-3 border p-3">
                                 <div class="mb-4">
                                     <h1 class="text-lg font-semibold">Gula Darah (GDA)</h1>
+                                   
                                     <hr>
                                 </div>
                                 <div class="grid grid-cols-3 gap-3">
@@ -93,6 +94,7 @@
                                             name="gda" id="gda" 
                                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
                                             value="<?= set_value('gda') ?>">
+                                        <small class="text-red-500">Nilai Normal : < 150</small>
                                         <div class="text-red-500 text-xs italic font-semibold">
                                             <?php if (session("errors.gda")) : ?>
                                                 <div class="text-red-500 text-sm">
@@ -595,7 +597,7 @@
                 <?php endif; ?>
                 <!-- Tanda Tangan Dokter -->
                 <div class="border p-3 rounded-md shadow-md mt-3">
-                    <h2 class="text-lg font-bold mb-4">Tanda Tangan Dokter</h2>
+                    <h2 class="text-lg font-bold mb-4">Tanda Tangan Petugas Lab</h2>
                     <div class="border border-gray-300 p-4 bg-white rounded-lg">
                         <canvas id="signature-pad-dokter" class="signature-pad w-full h-48 border"></canvas>
                         <input type="hidden" name="signature_dokter" id="signature_dokter">
