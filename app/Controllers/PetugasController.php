@@ -250,6 +250,7 @@ class PetugasController extends BaseController
             if ($password != '' || $password != null) {
                 $users = model(UserModel::class);
                 $user = $users->where('id', $id) ->first();
+                $user->name         = $nama;
                 $user->password         = $this->request->getPost('password');
                 $user->reset_hash       = null;
                 $user->reset_at         = date('Y-m-d H:i:s');
@@ -263,7 +264,7 @@ class PetugasController extends BaseController
                     "username" => $username,
                     "active" => 1,
                 ];
-                $this->userModel->update($id,$data);
+                $this->userModel->updateUser($id,$data);
             }
             $data = [
                 'user_id' => user()->id,

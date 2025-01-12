@@ -10,15 +10,38 @@
                 </button>
                 <a href="<?=site_url('dashboard')?>" class="flex ms-2 md:me-5">
                     <img src="<?=base_url('img/logo.jpg')?>" class="h-8 me-3" alt="FlowBite Logo" />
-                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white dark:text-white">Loket Pendaftaran</span>
+                    <?php
+                        $title = 'Loket Pendaftaran';
+                        if (in_groups('penanggung')) {
+                            $title = "Puskesmas Besuki Admin";
+                        }else if(in_groups('pendaftaran')){
+                            $title = "Puskesmas Besuki-Pendaftaran";
+                        }else if(in_groups('perawat')){
+                            $title = "Puskesmas Besuki-Pemeriksaan Perawat";
+                        }else if(in_groups('dokter')){
+                            $title = "Puskesmas Besuki-Pemeriksaan Dokter";
+                        }else if(in_groups('petugaslab')){
+                            $title = "Puskesmas Besuki-Pemeriksaan Laboratorium";
+                        }else if(in_groups('farmasi')){
+                            $title = "Puskesmas Besuki-Farmasi";
+                        }
+                    ?>
+                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-white dark:text-white"><?=$title?></span>
                 </a>
-                <div class="flex items-center">
+                <div class="flex items-center mx-4">
                     <div>
-                        <span class="text-sm text-white font-bold dark:text-gray-400">Hari : <?=date('D')?></span>
+                    <?php
+                        // Set locale ke bahasa Indonesia
+                        setlocale(LC_TIME, 'id_ID.UTF-8', 'Indonesian_indonesia.1252');
+
+                        // Ambil nama hari dalam bahasa Indonesia
+                        $hari = strftime('%A');
+                    ?>
+                        <span class="text-sm text-white font-bold dark:text-gray-400">Hari : <?=$hari?></span>
                     </div>
                     <div class="h-8 border-l border-gray-300 mx-4"></div>
                     <div>
-                        <span class="text-sm text-white font-bold dark:text-gray-400"><?=date('Y-m-d H:i:s')?></span>
+                    <span class="text-sm text-white font-bold dark:text-gray-400" id="tanggal-waktu"></span>
                     </div>
                 </div>
             </div>

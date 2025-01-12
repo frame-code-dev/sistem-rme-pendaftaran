@@ -30,6 +30,31 @@ class GeneralConsentController extends BaseController
     {
         $param['title'] = 'Tambah General Consent';
         $param['pasien'] = $this->pasienModel->find($id);
+        //  Periksa apakah pasien_id sudah ada di tabel general_consent
+        $existingConsent = $this->generalModel->where('pasien_id', $id)->first();
+        if ($existingConsent) {
+            // Jika data sudah ada, insert data baru dengan informasi yang ada
+            $data = [
+                'pasien_id' => $existingConsent['pasien_id'],
+                'nama_lengkap' => $existingConsent['nama_lengkap'],
+                'tempat_lahir' => $existingConsent['tempat_lahir'],
+                'tanggal_lahir' => $existingConsent['tanggal_lahir'],
+                'alamat_lengkap' => $existingConsent['alamat_lengkap'],
+                'no_hp' => $existingConsent['no_hp'],
+                'status_hubungan_pasien' => $existingConsent['status_hubungan_pasien'],
+                'privasi_khusus' => $existingConsent['privasi_khusus'],
+                'permintaan_privasi_khusus' => $existingConsent['permintaan_privasi_khusus'],
+                'akses_keluarga' => $existingConsent['akses_keluarga'],
+                'cara_bayar' => $existingConsent['cara_bayar'],
+                'jenis_perawatan' => $existingConsent['jenis_perawatan'],
+                'signature_penanggung' => $existingConsent['signature_penanggung'],
+                'signature_petugas' => $existingConsent['signature_petugas'],
+                'created_at' => date("Y-m-d H:i:s"),
+            ];
+            // Insert data ke tabel general_consent
+            $id_general = $this->generalModel->insert($data);
+            return redirect()->to('kunjungan/create/'.$id_general);
+        }
         return view('general-consent/create', $param);
         
     }

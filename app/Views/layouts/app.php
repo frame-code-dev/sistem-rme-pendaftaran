@@ -11,8 +11,7 @@
     <!-- Tailwind CSS -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.tailwindcss.css">
-    <link rel="stylesheet" href="http://localhost:3479/resources/app.css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
     <!-- select 2 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <!-- FONT AWESOME  -->
@@ -23,12 +22,10 @@
     <?=$this->include('layouts/components/topbar')?>
     <?=$this->include('layouts/components/sidebar')?>
     <?= $this->renderSection('content') ?>
-    <!-- Vite HMR -->
-    <!-- <script type="module" src="http://localhost:3479/@vite/client"></script> -->
-    <script type="module" src="http://localhost:3479/resources/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script> -->
     <script src="https://cdn.datatables.net/2.0.1/js/dataTables.tailwindcss.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -140,6 +137,42 @@
             })
         </script>
     <?php endif ?>
+    <script>
+        $(document).ready(function () {
+            // Nama bulan dalam bahasa Indonesia
+            const bulanIndonesia = [
+                "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+                "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+            ];
+
+            function updateTanggalWaktu() {
+                const sekarang = new Date();
+
+                // Ambil bagian tanggal
+                const hari = sekarang.getDate();
+                const bulan = bulanIndonesia[sekarang.getMonth()];
+                const tahun = sekarang.getFullYear();
+
+                // Ambil bagian waktu
+                const jam = String(sekarang.getHours()).padStart(2, '0');
+                const menit = String(sekarang.getMinutes()).padStart(2, '0');
+                const detik = String(sekarang.getSeconds()).padStart(2, '0');
+
+                // Format akhir
+                const formatTanggal = `${hari}-${bulan}-${tahun}`;
+                const formatWaktu = `${jam}:${menit}:${detik}`;
+
+                // Tampilkan ke elemen
+                $('#tanggal-waktu').text(`Tanggal: ${formatTanggal}, Jam: ${formatWaktu}`);
+            }
+
+            // Jalankan fungsi setiap detik
+            setInterval(updateTanggalWaktu, 1000);
+
+            // Panggil fungsi pertama kali saat halaman dimuat
+            updateTanggalWaktu();
+        });
+    </script>
 </body>
 
 </html>

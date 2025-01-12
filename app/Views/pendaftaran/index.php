@@ -54,7 +54,7 @@
                                 <?php 
                                     helper(['my_helper']);
                                 ?>
-                                <td class="px-4 py-3"><?= hitungUmur($row['tanggal_lahir']) ?></td>
+                                <td class="px-4 py-3"><?= hitungUmur($row['tanggal_lahir']) ?> Tahun</td>
                                 <td class="px-4 py-3"><?= $row['no_kk'] ?? '-' ?></td>
                                 <td class="px-4 py-3"><?= $row['alamat_lengkap'] ?? '-' ?></td>
                                 <td class="px-4 py-3">

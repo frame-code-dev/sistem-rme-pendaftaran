@@ -13,7 +13,12 @@ class LaporanPenyakitController extends BaseController
         $result_data = new Kunjungan();
         $query = $result_data
                 ->join('pemeriksaan_assesment', 'kunjungan.id = pemeriksaan_assesment.kunjungan_id')
-                ->select('pemeriksaan_assesment.diagnosa_sepluh_kode AS kode_penyakit, pemeriksaan_assesment.diagnosa_sepluh AS nama_penyakit, COUNT(pemeriksaan_assesment.diagnosa_sepluh_kode) AS jumlah')
+                ->join('diagnosa','pemeriksaan_assesment.diagnosa_sepluh = diagnosa.diagnosa_kode')
+                ->select('pemeriksaan_assesment.diagnosa_sepluh_kode AS kode_penyakit, 
+                    pemeriksaan_assesment.diagnosa_sepluh AS nama_penyakit, 
+                    COUNT(pemeriksaan_assesment.diagnosa_sepluh_kode) AS jumlah,
+                    diagnosa.diagnosa_nama
+                    ')
                 ->where('kunjungan.status_pemeriksaan', 'SELESAI')
                 ->groupBy('pemeriksaan_assesment.diagnosa_sepluh_kode, pemeriksaan_assesment.diagnosa_sepluh') // Group by diagnosis code and name
                 ->orderBy('jumlah', 'DESC') // Optional: Order by the count
@@ -21,5 +26,24 @@ class LaporanPenyakitController extends BaseController
         $param['data'] = $query;
         $param['title'] = 'Tabel 10 Besar Penyakit';
         return view('rekam-medis/penyakit', $param);
+    }
+    public function pdf()
+    {
+        $result_data = new Kunjungan();
+        $query = $result_data
+                ->join('pemeriksaan_assesment', 'kunjungan.id = pemeriksaan_assesment.kunjungan_id')
+                ->join('diagnosa','pemeriksaan_assesment.diagnosa_sepluh = diagnosa.diagnosa_kode')
+                ->select('pemeriksaan_assesment.diagnosa_sepluh_kode AS kode_penyakit, 
+                    pemeriksaan_assesment.diagnosa_sepluh AS nama_penyakit, 
+                    COUNT(pemeriksaan_assesment.diagnosa_sepluh_kode) AS jumlah,
+                    diagnosa.diagnosa_nama
+                    ')
+                ->where('kunjungan.status_pemeriksaan', 'SELESAI')
+                ->groupBy('pemeriksaan_assesment.diagnosa_sepluh_kode, pemeriksaan_assesment.diagnosa_sepluh') // Group by diagnosis code and name
+                ->orderBy('jumlah', 'DESC') // Optional: Order by the count
+                ->findAll();
+        $param['data'] = $query;
+        $param['title'] = 'Tabel 10 Besar Penyakit';
+        return view('rekam-medis/pdf-penyakit', $param);
     }
 }

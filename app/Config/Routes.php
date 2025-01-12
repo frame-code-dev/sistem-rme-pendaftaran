@@ -106,5 +106,6 @@ $routes->group('rekam-medis',['filter' => 'login'], static function($routes) {
     $routes->get('kunjungan-laporan/pdf',[KunjunganLaporanController::class,'pdf'],['filter' => 'login']);
     // Laporan Penyakit 
     $routes->get('laporan-penyakit',[LaporanPenyakitController::class,'index'],['filter' => 'login']);
+    $routes->get('laporan-penyakit/pdf',[LaporanPenyakitController::class,'pdf'],['filter' => 'login']);
     
 });

@@ -13,7 +13,6 @@
         "php": "^8.1",
         "codeigniter4/framework": "^4.0",
         "dompdf/dompdf": "^3.0",
-        "mihatori/codeignitervite": "^1.1",
         "myth/auth": "^1.2"
     },
     "require-dev": {

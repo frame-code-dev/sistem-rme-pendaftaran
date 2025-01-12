@@ -15,7 +15,6 @@ class DashboardController extends BaseController
         $query = $result_data
                 ->join('pemeriksaan_assesment', 'kunjungan.id = pemeriksaan_assesment.kunjungan_id')
                 ->select('pemeriksaan_assesment.diagnosa_sepluh_kode AS kode_penyakit, pemeriksaan_assesment.diagnosa_sepluh AS nama_penyakit, COUNT(pemeriksaan_assesment.diagnosa_sepluh_kode) AS jumlah')
-                ->where('kunjungan.status_pemeriksaan', 'SELESAI')
                 ->groupBy('pemeriksaan_assesment.diagnosa_sepluh_kode, pemeriksaan_assesment.diagnosa_sepluh') // Group by diagnosis code and name
                 ->orderBy('jumlah', 'DESC') // Optional: Order by the count
                 ->findAll();
@@ -39,7 +38,12 @@ class DashboardController extends BaseController
                 ->where('kunjungan.status_pemeriksaan', 'SELESAI')
                 ->groupBy('bulan, kunjungan.status_kunjungan')
                 ->findAll();
-                // Format data untuk chart
+        $result_data_belum = new Kunjungan();
+        $result_data_selesai = new Kunjungan();
+
+        $param['pasien_belum'] =  $result_data_belum->where('kunjungan.status_pemeriksaan', 'PENDING')->countAllResults(true);
+        $param['pasien_selesai'] =  $result_data_selesai->where('kunjungan.status_pemeriksaan', 'SELESAI')->countAllResults(true);
+        // Format data untuk chart
         $data_baru = [];
         $data_lama = [];
         $categories = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

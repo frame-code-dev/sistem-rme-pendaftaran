@@ -34,11 +34,11 @@
         </div>
 
         <div class="card bg-white p-5 mt-4 border rounded-md w-full relative">
-        <form action="<?= base_url('dashboard/petugas/update-password/store/') ?>" method="POST" class="w-full mx-auto space-y-4" enctype="multipart/form-data">
+        <form action="<?= base_url('master-data/petugas/update-password/store') ?>" method="POST" class="w-full mx-auto space-y-4" enctype="multipart/form-data">
 				<div class="grid grid-cols-4 gap-3">
 					<div class="col-span-4">
 						<label for="" class="block mb-2 text-sm font-semibold text-gray-900">Nama<span class="me-2 text-red-500">*</span></label>
-						<input type="text" placeholder="Masukkan Nama" name="nama" id="nama" value="<?= set_value("nama", $data->nama) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" >
+						<input type="text" placeholder="Masukkan Nama" name="nama" id="nama" value="<?= set_value("nama", $data->name) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" >
 						<div class="text-red-500 text-xs italic font-semibold">
 							<?php if (session("errors.nama")) : ?>
 								<div class="text-red-500 text-sm">

@@ -99,9 +99,9 @@ class PendaftaranController extends BaseController
             $ket_wilayah = $this->request->getPost('ket_wilayah');
             $tanggal_lahir = date("Y-m-d", strtotime($tgl_lahir));
             $data = [
-                'nik' => $no_nik,
+                'nik' => (int)$no_nik,
                 'no_rm' => $no_rm,
-                'no_bpjs' => $no_bpjs,
+                'no_bpjs' => (int)$no_bpjs,
                 'nama_lengkap' => $nama_lengkap,
                 'tempat_lahir' => $tempat_lahir,
                 'tanggal_lahir' => $tanggal_lahir,
@@ -124,7 +124,6 @@ class PendaftaranController extends BaseController
                 'nama_ayah' => $nama_ayah,
                 'nama_ibu' => $nama_ibu,
             ];
-
             $id = $this->pasienModel->insert($data);
             session()->setFlashdata("status_success", true);
             session()->setFlashdata('message', 'Data Pendaftaran berhasil ditambahkan.');
