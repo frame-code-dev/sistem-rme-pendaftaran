@@ -336,7 +336,7 @@
                                     <div>
                                         <label class="block font-semibold mb-2">TANDA TANGAN PETUGAS</label>
                                         <div class="border border-gray-300 p-4 bg-white rounded-lg">
-                                            <canvas id="signature-pad-petugas" class="signature-pad w-full h-48 border"></canvas>
+                                            <canvas id="signature-pad-petugas" class="signature-pad border"></canvas>
                                             <input type="hidden" name="signature_petugas" id="signature_petugas">
                                             <button type="button" id="clear-petugas" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Clear</button>
                                         </div>

@@ -110,7 +110,7 @@
                                 <td width="20%" class="p-4">Alergi</td>
                                 <td width="1%">:</td>
                                 <td class="font-bold">
-                                    <?=$data['alergi']?> <?=$data['alergi_lainnya'] ?? '-'?>  
+                                    <?=$data['alergi'] == "Lain-Lain" ? $data['alergi'] : "Seperti : "?> <?=$data['alergi_lainnya'] ?? '-'?>  
                                 </td>
                             </tr>
                         </tbody>
@@ -118,8 +118,8 @@
                 </div>
             </div>
             <div class="mt-5">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500  px-4 border">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50  border">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-900 border">
+                    <thead class="text-xs text-gray-900 uppercase bg-gray-50  border">
                         <tr>
                             <th class=border">Tgl/Jam : Tgl Pelayanan</th>
                             <th scope="col" class=border">PPA (Dokter/Dokter Gigi)</th>
@@ -134,25 +134,48 @@
                         </tr>
                         <tbody>
                             <tr class="bg-white border">
-                                <td class="border"><?=date('d-m-Y', strtotime($data['tanggal_dokter'])).'/'.date('H:i:s', strtotime($data['tanggal_dokter'])) ?></td>
                                 <td class="border">
+                                <?php if(array_key_exists('tanggal_dokter',$data)) :?>
+                                    <?=date('d-m-Y', strtotime($data['tanggal_dokter'])).'/'.date('H:i:s', strtotime($data['tanggal_dokter'])) ?></td>
+                                <?php else : ?>
+                                    -
+                                <?php endif; ?>    
+                                <td class="border">
+                                <?php if(array_key_exists('nama_dokter',$data)) :?>
                                     <?=$data['nama_dokter']?>
+                                <?php else : ?>
+                                    -
+                                <?php endif; ?>   
                                 </td>
                                 <td class="border">
-                                    A : <?=$data['diagnosa_sepluh_kode'] ?> - <?=$data['diagnosa_sepluh'] ?>
+                                    A : 
+                                    <?php if(array_key_exists('diagnosa_sepluh_kode',$data)) :?>
+                                        <?=$data['diagnosa_sepluh_kode'] ?> - <?=$data['diagnosa_sepluh'] ?>
+                                    <?php else : ?>
+                                        -
+                                    <?php endif; ?>   
                                     <div class="flex w-full">
                                         P : <?php 
                                             $obat = data_obat($id_kunjungan);
                                             foreach ($obat as $key => $value) {
                                                 echo $value['nama'];
                                             }
-                                        ?> + <?= $data['status_pasien_keluar'] ?>
+                                        ?> + 
+                                        <?php if(array_key_exists('status_pasien_keluar',$data)) :?>
+                                            <?= $data['status_pasien_keluar'] ?>
+                                        <?php else : ?>
+                                            -
+                                        <?php endif; ?> 
 
                                     </div>
                                 </td>
                                 <td class="border">
-                                    <img class="border" src="<?=base_url('signature/'.$data['foto_dokter'])?>" alt="">
-                                    <?=$data['nama_dokter']?>
+                                    <?php if(array_key_exists('nama_dokter',$data)) :?>
+                                        <img class="border" src="<?=base_url('signature/'.$data['foto_dokter'])?>" alt="">
+                                        <?=$data['nama_dokter']?>
+                                    <?php else : ?>
+                                        -
+                                    <?php endif; ?> 
                                 </td>
                                 <td class="border">
                                     <?=date('d-m-Y', strtotime($data['created_at'])).'/'.date('H:i:s', strtotime($data['created_at'])) ?>

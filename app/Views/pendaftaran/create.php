@@ -241,6 +241,19 @@
             }
         });
     </script>
+    <script>
+        $('#jenis_pasien').on("change",function() {
+            let jenis = $(this).val();
+            if (jenis == "BPJS") {
+                $('.jenis_pasien_form').removeClass("hidden");
+            }else{
+                $('.jenis_pasien_form').addClass("hidden");
+
+            }
+
+            
+        })
+    </script>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
     <div class="p-4 sm:ml-64 h-screen">
@@ -334,12 +347,13 @@
                                         <?php endif ?>
                                     </div>
                                 </div>
-                                <div class="col-span-2">
+                                <div class="col-span-2 jenis_pasien_form hidden">
                                     <label for="" class="block mb-2 text-sm font-semibold text-gray-900">NO. BPJS<span class="me-2 text-red-500">*</span></label>
                                     <input type="text" maxlength="11" placeholder="Masukkan No BPJS" name="no_bpjs" id="no_bpjs" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" value="<?= set_value("no_bpjs") ?>">
+                                    <span class="text-xs text-gray-800">No. BPJS hanya bisa terdiri dari 13 digit angka</span>
                                     <div class="text-red-500 text-xs italic font-semibold">
                                         <?php if (session("errors.no_bpjs")) : ?>
-                                            <div class="text-red-500 text-sm">
+                                            <div class="text-red-7 text-sm">
                                                 <?= session("errors.no_bpjs") ?>
                                             </div>
                                         <?php endif ?>

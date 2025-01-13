@@ -20,7 +20,7 @@ class ApotekController extends BaseController
         $param['title'] = 'DATA LIST APOTEK';
         $param['data'] = $this->kunjunganModel
                         ->join('pasien','pasien.id=kunjungan.id_pasien')
-                        ->select('kunjungan.*,pasien.id as pasien_id, pasien.no_rm, pasien.nik, pasien.nama_lengkap, pasien.tempat_lahir, pasien.tanggal_lahir,
+                        ->select('kunjungan.*,pasien.id as pasien_id,pasien.kecamatan,pasien.kabupaten,pasien.desa, pasien.no_rm, pasien.nik, pasien.nama_lengkap, pasien.tempat_lahir, pasien.tanggal_lahir,
                             pasien.jenis_kelamin, pasien.jenis_pasien, pasien.no_bpjs')
                         ->where('poli','Poli Umum')
                         ->where('kunjungan.status_pemeriksaan','SELESAI')

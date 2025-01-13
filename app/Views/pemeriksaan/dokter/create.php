@@ -45,7 +45,7 @@
 <?=$this->endSection()?>
 <?=$this->section('js')?>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad/dist/signature_pad.umd.min.js"></script>
     <script>
         $(document).ready(function() {
             if ($('input[name="skala_nyeri"]:checked').val() == 'anak') {
@@ -208,12 +208,23 @@
         var canvasDokter = document.getElementById('signature-pad-dokter');
 
         var signaturePadDokter = new SignaturePad(canvasDokter);
-        document.getElementById('clear-dokter').addEventListener('click', function () {
-            signaturePadDokter.clear();
+        const clearButton = document.getElementById('clearButton');
+        const saveButton = document.getElementById('saveButton');
+        const signatureInput = document.getElementById('signatureInput')
+        clearButton.addEventListener('click', () => {
+            signaturePad.clear();
         });
-
-        var DokterDataUrl = signaturePadDokter.toDataURL();
-        $('#signature_dokter').val(DokterDataUrl);
+        saveButton.addEventListener('click', () => {
+            if (!signaturePadDokter.isEmpty()) {
+                // Ambil data URL dari canvas
+                const dataURL = signaturePadDokter.toDataURL('image/png');
+                // Simpan data ke input tersembunyi
+                signatureInput.value = dataURL;
+                alert("Tanda tangan telah disimpan!");
+            } else {
+                alert("Tanda tangan masih kosong!");
+            }
+        });
     </script>
     <script>
         $(document).ready(function() {
@@ -414,6 +425,18 @@
             });
         });
         
+    </script>
+    <script>
+        const toggleCetak = document.getElementById('toggleCetak');
+        const additionalFields = document.getElementById('additionalFields');
+
+        toggleCetak.addEventListener('change', () => {
+            if (toggleCetak.checked) {
+            additionalFields.classList.remove('hidden');
+            } else {
+            additionalFields.classList.add('hidden');
+            }
+        });
     </script>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
@@ -992,13 +1015,13 @@
                             </div>
                             <div class="flex justify-between mt-4">
                                 <button type="button" id="prevBtn" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800" style="display:none;">Previous</button>
-                                <button type="button" id="nextBtn" class="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Next</button>
+                                <button type="button" id="nextBtn" class="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center me-2">Next</button>
                             </div>
                         </div>
                     <form action="<?=base_url('pemeriksaan/store-dokter')?>" id="form" method="POST" enctype="multipart/form-data">
                         <input type="hidden" value="<?= $pasien['pasien_id'] ?>" name="id_pasien" >
                         <input type="hidden" value="<?= $pasien['id'] ?>" name="id_kunjungan" >
-                        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
+                        <div class="hidden p-4 rounded-lg bg-gray-50 " id="styled-settings" role="tabpanel" aria-labelledby="settings-tab">
                             <div class="grid grid-cols-2 gap-4 mb-3">
                                 <!-- Assessment Keperawatan -->
                                 <div class="border p-2">
@@ -1102,7 +1125,7 @@
                                         <h2 class="font-bold text-lg mb-2">PENGOBATAN/TERAPI</h2>
                                         <div>
 											<button type="button" 
-													class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" 
+													class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center me-2  -700 -800" 
 													id="addBtn">
 												<svg class="w-3.5 h-3.5 me-2 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
 													<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
@@ -1117,7 +1140,7 @@
 										<div class="row form-row my-3 grid grid-cols-4 content-center gap-3">
 											<div class="form-group col-md-4">
 												<label for="" class="block mb-2 text-sm font-semibold text-gray-900">Nama Obat<span class="me-2 text-red-500">*</span></label>
-												<select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 obat-select" name="obat[]" required>
+												<select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5    -500 -500 obat-select" name="obat[]" required>
 													<option value="">Pilih Obat</option>
 													<?php foreach ($obat as $item): ?>
 														<option value="<?= $item['id'] ?>"><?= $item['nama'] ?></option>
@@ -1127,7 +1150,7 @@
 											</div>
 											<div class="form-group col-md-3">
 												<label for="" class="block mb-2 text-sm font-semibold text-gray-900">Dosis Obat<span class="me-2 text-red-500">*</span></label>
-												<input type="text" placeholder="Masukkan Data" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" name="dosis_obat[]">
+												<input type="text" placeholder="Masukkan Data" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" name="dosis_obat[]">
 											</div>
 											<div class="form-group col-md-3">
 												<label for="" class="block mb-2 text-sm font-semibold text-gray-900">Aturan Minuman Obat<span class="me-2 text-red-500">*</span></label>
@@ -1189,15 +1212,7 @@
                                         </div>
                                     </div>
     
-                                    <div class="grid grid-cols-2 gap-4">
-                                        <div class="mb-2">
-                                            <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Keperluan</label>
-                                            <select name="jenis_keperluan" id="jenis_keperluan" class="w-full border border-gray-300 rounded p-2">
-                                                <option value=""> -- Pilih -- </option>
-                                                <option value="Daftar kuliah">Daftar kuliah</option>
-                                                <option value="Melamar Pekerjaan">Melamar Pekerjaan</option>
-                                            </select>
-                                        </div>
+                                    <div class="grid grid-cols-1 gap-4">
                                         <div class="mb-2">
                                             <label class="block mb-2 text-sm font-semibold text-gray-900">Dokter Pemeriksa</label>
                                             <select name="dokter_pemeriksa" id="dokter_pemeriksa" class="w-full border border-gray-300 rounded p-2">
@@ -1205,6 +1220,28 @@
                                                 <?php foreach ($dokter as $item): ?>
                                                     <option value="<?= $item->id ?>"><?= $item->name ?></option>
                                                 <?php endforeach; ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="mb-2">
+                                            <label class="block mb-2 text-sm font-semibold text-gray-900">
+                                                <input 
+                                                    type="checkbox" 
+                                                    id="toggleCetak" 
+                                                    class="mr-2"
+                                                />
+                                                Cetak Surat Keterangan Sehat
+                                            </label> 
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4 hidden" id="additionalFields">
+                                        <div class="mb-2">
+                                            <label class="block mb-2 text-sm font-semibold text-gray-900">Jenis Keperluan</label>
+                                            <select name="jenis_keperluan" id="jenis_keperluan" class="w-full border border-gray-300 rounded p-2">
+                                                <option value=""> -- Pilih -- </option>
+                                                <option value="Daftar kuliah">Daftar kuliah</option>
+                                                <option value="Melamar Pekerjaan">Melamar Pekerjaan</option>
                                             </select>
                                         </div>
                                         <div class="mb-2">
@@ -1317,8 +1354,9 @@
                                         <h2 class="text-lg font-bold mb-4">Tanda Tangan Petugas</h2>
                                         <div class="border border-gray-300 p-4 bg-white rounded-lg">
                                             <canvas id="signature-pad-dokter" class="signature-pad w-full h-48 border"></canvas>
-                                            <input type="hidden" name="signature_dokter" id="signature_dokter">
-                                            <button type="button" id="clear-dokter" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Clear</button>
+                                            <input type="hidden" name="signature_dokter" id="signatureInput" >
+                                        <button type="button" class="mt-3 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" id="clearButton">Hapus Tanda Tangan</button>
+                                        <button id="saveButton" type="button" class="px-4 py-2 bg-green-500 text-white rounded-md">Simpan</button>
                                         </div>
                                         <div class="border mt-3">
                                             <input type="file" name="tanda_tangan_dokter" class="w-full border border-gray-300 rounded p-2 mt-2">

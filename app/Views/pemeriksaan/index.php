@@ -76,53 +76,109 @@
                         <tbody>
                             <?php $no = 1;
                             foreach ($data as $row) : ?>
-                                <?php if ($row['status_pemeriksaan'] == 'PENDING' || $row['status_pemeriksaan'] == 'DILAYANIN' ) : ?>
-                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                        <td class="px-4 py-3"><?= $no++ ?></td>
-                                        <td class="px-4 py-3"><?= $row['no_rm'] ?></td>
-                                        <td class="px-4 py-3"><?= $row['nik'] ?></td>
-                                        <td class="px-4 py-3"><?= ucwords($row['nama_lengkap']) ?></td>
-                                        <td class="px-4 py-3"><?= $row['tanggal_lahir'] ?></td>
-                                        <td class="px-4 py-3"><?= $row['jenis_kelamin'] == 'L' ? 'Laki-laki' : 'Perempuan' ?></td>
-                                        <td class="px-4 py-3"><?= $row['jenis_pasien'] ?></td>
-                                        <td class="px-4 py-3"><?= $row['no_bpjs'] ?? '-' ?></td>
-                                        <td class="px-4 py-3">
-                                                <?php
-                                                    $antrian = $row['nama_lengkap'];
-                                                    $desa = getVillageById($row['kecamatan'], $row['desa']);
-                                                    $pesan = 'atas nama '.$antrian.'dari kelurahan atau desa '.$desa['nama'];
-                                                    // $pesan = "firdo jatuh cinta anjayyyyy";
-                                                ?>
-                                                <button data-id="<?=$pesan?>" class="text-white bg-teal-700 hover:bg-teal-800 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-teal-600 dark:hover:bg-teal-700 focus:outline-none dark:focus:ring-teal-800 panggil">Panggil</button>
-                                                <?php if(checkPemeriksaanSubject($row['id']) == 0) : ?>
-                                                    <?php if(in_groups('perawat')) :?>
-                                                        <a href="<?=base_url('pemeriksaan/create/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                                            Tambahkan Pemeriksaaan Perawat
-                                                        </a>
-                                                    <?php endif; ?>
-                                                <?php else : ?>
-                                                    <?php if(checkPemeriksaanLab($row['id']) == 'ya') : ?>
-                                                        <?php if(checkPemeriksaanLabData($row['id']) == 0) : ?>
-                                                            <span class="text-xs p-1 rounded-md bg-gray-500 text-white">Pemeriksaan LAB</span>
+                                <?php if(in_groups(['perawat','pendaftaran'])) :?>
+                                    <?php if(checkPemeriksaanSubject($row['id']) == 0) : ?>
+                                        <?php if ($row['status_pemeriksaan'] == 'PENDING' || $row['status_pemeriksaan'] == 'DILAYANIN' ) : ?>
+                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                <td class="px-4 py-3"><?= $no++ ?></td>
+                                                <td class="px-4 py-3"><?= $row['no_rm'] ?></td>
+                                                <td class="px-4 py-3"><?= $row['nik'] ?></td>
+                                                <td class="px-4 py-3"><?= ucwords($row['nama_lengkap']) ?></td>
+                                                <td class="px-4 py-3"><?= $row['tanggal_lahir'] ?></td>
+                                                <td class="px-4 py-3"><?= $row['jenis_kelamin'] == 'L' ? 'Laki-laki' : 'Perempuan' ?></td>
+                                                <td class="px-4 py-3"><?= $row['jenis_pasien'] ?></td>
+                                                <td class="px-4 py-3"><?= $row['no_bpjs'] ?? '-' ?></td>
+                                                <td class="px-4 py-3">
+                                                        <?php
+                                                            $antrian = $row['nama_lengkap'];
+                                                            $desa = getVillageById($row['kecamatan'], $row['desa']);
+                                                            $pesan = 'atas nama '.$antrian.'dari kelurahan atau desa '.$desa['nama'];
+                                                            // $pesan = "firdo jatuh cinta anjayyyyy";
+                                                        ?>
+                                                        <button data-id="<?=$pesan?>" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none  panggil">Panggil</button>
+                                                        <?php if(checkPemeriksaanSubject($row['id']) == 0) : ?>
+                                                            <?php if(in_groups('perawat')) :?>
+                                                                <a href="<?=base_url('pemeriksaan/create/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none ">
+                                                                    Tambahkan Pemeriksaaan Perawat
+                                                                </a>
+                                                            <?php endif; ?>
                                                         <?php else : ?>
-                                                            <a href="<?=base_url('pemeriksaan/create-dokter/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                                                Tambahkan Pemeriksaaan Dokter
+                                                            <?php if(checkPemeriksaanLab($row['id']) == 'ya') : ?>
+                                                                <?php if(checkPemeriksaanLabData($row['id']) == 0) : ?>
+                                                                    <span class="text-xs p-1 rounded-md bg-gray-500 text-white">Pemeriksaan LAB</span>
+                                                                <?php else : ?>
+                                                                    <a href="<?=base_url('pemeriksaan/create-dokter/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none ">
+                                                                        Tambahkan Pemeriksaaan Dokter
+                                                                    </a>
+                                                                <?php endif; ?>
+                                                            <?php else : ?>
+                                                                <?php if(in_groups('perawat')) :?>
+                                                                    <span class="text-xs p-1 rounded-md bg-orange-500 text-white">Pemeriksaan Dokter</span>
+                                                                <?php else : ?>
+                                                                    <a href="<?=base_url('pemeriksaan/create-dokter/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none dark:focus:ring-blue-800">
+                                                                        Tambahkan Pemeriksaaan Dokter
+                                                                    </a>
+                                                                <?php endif; ?>
+                                                            <?php endif; ?>
+                                                        <?php endif; ?>
+                                                    
+                                                </td>
+                                            </tr>
+                                        <?php endif; ?>
+                                    <?php else : ?>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                                <?php if(in_groups('dokter')) :?>
+                                    <?php if(checkPemeriksaanSubject($row['id']) != 0) : ?>
+                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                            <td class="px-4 py-3"><?= $no++ ?></td>
+                                            <td class="px-4 py-3"><?= $row['no_rm'] ?></td>
+                                            <td class="px-4 py-3"><?= $row['nik'] ?></td>
+                                            <td class="px-4 py-3"><?= ucwords($row['nama_lengkap']) ?></td>
+                                            <td class="px-4 py-3"><?= $row['tanggal_lahir'] ?></td>
+                                            <td class="px-4 py-3"><?= $row['jenis_kelamin'] == 'L' ? 'Laki-laki' : 'Perempuan' ?></td>
+                                            <td class="px-4 py-3"><?= $row['jenis_pasien'] ?></td>
+                                            <td class="px-4 py-3"><?= $row['no_bpjs'] ?? '-' ?></td>
+                                            <td class="px-4 py-3">
+                                                    <?php
+                                                        $antrian = $row['nama_lengkap'];
+                                                        $desa = getVillageById($row['kecamatan'], $row['desa']);
+                                                        $pesan = 'atas nama '.$antrian.'dari kelurahan atau desa '.$desa['nama'];
+                                                    ?>
+                                                    <?php if(in_groups('perawat')) :?>
+                                                    <button data-id="<?=$pesan?>" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none  panggil">Panggil</button>
+                                                    <?php endif; ?>
+                                                    <?php if(checkPemeriksaanSubject($row['id']) == 0) : ?>
+                                                        <?php if(in_groups('perawat')) :?>
+                                                            <a href="<?=base_url('pemeriksaan/create/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none ">
+                                                                Tambahkan Pemeriksaaan Perawat
                                                             </a>
                                                         <?php endif; ?>
                                                     <?php else : ?>
-                                                        <?php if(in_groups('perawat')) :?>
-                                                            <span class="text-xs p-1 rounded-md bg-orange-500 text-white">Pemeriksaan Dokter</span>
+                                                        <?php if(checkPemeriksaanLab($row['id']) == 'ya') : ?>
+                                                            <?php if(checkPemeriksaanLabData($row['id']) == 0) : ?>
+                                                                <span class="text-xs p-1 rounded-md bg-gray-500 text-white">Pemeriksaan LAB</span>
+                                                            <?php else : ?>
+                                                                <a href="<?=base_url('pemeriksaan/create-dokter/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none ">
+                                                                    Tambahkan Pemeriksaaan Dokter
+                                                                </a>
+                                                            <?php endif; ?>
                                                         <?php else : ?>
-                                                            <a href="<?=base_url('pemeriksaan/create-dokter/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                                                                Tambahkan Pemeriksaaan Dokter
-                                                            </a>
+                                                            <?php if(in_groups('perawat')) :?>
+                                                                <span class="text-xs p-1 rounded-md bg-orange-500 text-white">Pemeriksaan Dokter</span>
+                                                            <?php else : ?>
+                                                                <a href="<?=base_url('pemeriksaan/create-dokter/'.$row['id'])?>" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none dark:focus:ring-blue-800">
+                                                                    Tambahkan Pemeriksaaan Dokter
+                                                                </a>
+                                                            <?php endif; ?>
                                                         <?php endif; ?>
                                                     <?php endif; ?>
-                                                <?php endif; ?>
-                                            
-                                        </td>
-                                    </tr>
+                                                
+                                            </td>
+                                        </tr>
+                                    <?php endif; ?>
                                 <?php endif; ?>
+
                             <?php endforeach; ?>
                         </tbody>
                     </table>
@@ -148,7 +204,7 @@
                         <tbody>
                             <?php $no = 1;
                             foreach ($data as $row) : ?>
-                                <?php if ($row['status_pemeriksaan'] == 'SELESAI') : ?>
+                                <?php if ($row['status_pemeriksaan'] != 'BATAL' ) : ?>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <td class="px-4 py-3"><?= $no++ ?></td>
                                         <td class="px-4 py-3"><?= $row['no_rm'] ?></td>
@@ -159,7 +215,6 @@
                                         <td class="px-4 py-3"><?= $row['jenis_pasien'] ?></td>
                                         <td class="px-4 py-3"><?= $row['no_bpjs'] ?? '-' ?></td>
                                         <td class="px-4 py-3"><span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900"><?= $row['status_pemeriksaan'] ?? '-' ?></span></td>
-
                                         <td>
                                             <a href="<?=base_url('pemeriksaan/cetak-cppt/'.$row['id'])?>" target="_blank" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800">
                                                 Riwayat CPPT

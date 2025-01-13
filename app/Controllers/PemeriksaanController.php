@@ -253,36 +253,6 @@ class PemeriksaanController extends BaseController
                     'required' => 'Signature dokter harap diisi.'
                 ]
             ],
-            'alasan_rujukan' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Alasan rujukan harap diisi.'
-                ]
-            ],
-            'rujukan_eksternal_detail' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Detail rujukan eksternal harap diisi.'
-                ]
-            ],
-            'rujukan_eksternal' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Rujukan eksternal harap diisi.'
-                ]
-            ],
-            'rujukan_internal_poli' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Rujukan internal poli harap diisi.'
-                ]
-            ],
-            'rujukan_internal' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Rujukan internal harap diisi.'
-                ]
-            ],
             'kesadaran' => [
                 'rules' => 'required',
                 'errors' => [
@@ -295,8 +265,6 @@ class PemeriksaanController extends BaseController
                     'required' => 'Status pasien keluar harap diisi.'
                 ]
             ],
-           
-           
             'tindakan_kasus' => [
                 'rules' => 'required',
                 'errors' => [
@@ -348,7 +316,6 @@ class PemeriksaanController extends BaseController
                 ]
             ],
         ];
-        
         if (!$this->validate($rules))
         {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
@@ -461,6 +428,22 @@ class PemeriksaanController extends BaseController
         $param['data'] = $this->kunjunganModel
                             ->select('kunjungan.*,pasien.nama_lengkap, pasien.alamat_lengkap, 
                             pasien.no_rm, pasien.tanggal_lahir, pasien.jenis_kelamin, 
+                            pemeriksaan_objective.*,pemeriksaan_subjective.*,pemeriksa.name as nama_pemeriksa')
+                            ->join('pasien','pasien.id=kunjungan.id_pasien')
+                            ->join('pemeriksaan_objective','pemeriksaan_objective.kunjungan_id=kunjungan.id')
+                            ->join('pemeriksaan_subjective','pemeriksaan_subjective.id_kunjungan=kunjungan.id')
+                            ->join('users as pemeriksa','pemeriksa.id=pemeriksaan_subjective.id_user')
+                            ->where('kunjungan.id', $id)
+                            ->first();
+        if ($param['data']['status_pemeriksaan'] == "PENDING" || $param['data']['status_pemeriksaan'] == "DILAYANIN") {
+            if ($param['data']['tindak_lanjut'] == "tidak") {
+                $param['id_kunjungan'] = $id;
+                return view('pemeriksaan/pdf/cetak-cppt',$param);
+            }
+        }else{
+            $param['data'] = $this->kunjunganModel
+                            ->select('kunjungan.*,pasien.nama_lengkap, pasien.alamat_lengkap, 
+                            pasien.no_rm, pasien.tanggal_lahir, pasien.jenis_kelamin, 
                             pemeriksaan_assesment.diagnosa_kasus,pemeriksaan_assesment.diagnosa_sepluh_kode,pemeriksaan_assesment.diagnosa_sepluh,
                             pemeriksaan_assesment.created_at as tanggal_dokter,
                             pemeriksaan_assesment.status_pasien_keluar,
@@ -474,7 +457,8 @@ class PemeriksaanController extends BaseController
                             ->join('users as dokter','dokter.id=pemeriksaan_assesment.user_id')
                             ->where('kunjungan.id', $id)
                             ->first();
-        $param['id_kunjungan'] = $id;
-        return view('pemeriksaan/pdf/cetak-cppt',$param);
+            $param['id_kunjungan'] = $id;
+            return view('pemeriksaan/pdf/cetak-cppt',$param);
+        }
     }
 }
