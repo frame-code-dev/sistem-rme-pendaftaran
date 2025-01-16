@@ -72,7 +72,7 @@ class KunjunganController extends BaseController
             $this->kunjunganModel->insert($data);
             session()->setFlashdata("status_success", true);
             session()->setFlashdata('message', 'Data kunjungan ditambahkan.');
-            return redirect()->to('pemeriksaan');
+            return redirect()->to('pendaftaran');
         } catch (\Exception $e) {
             dd($e);
         } 
