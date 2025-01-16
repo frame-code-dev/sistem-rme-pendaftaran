@@ -22,28 +22,26 @@ use CodeIgniter\I18n\Time;
     }
     function generateNoRM()
     {
-        // Prefiks untuk No RM
-        $prefix = 'KP';
-
         // Ambil nomor urut terakhir dari database
         $pasien = new Pasien();
 
-        // Mengambil nomor urut terakhir yang menggunakan prefix 'kp'
+        // Mengambil nomor urut terakhir yang sesuai dengan format '00-00-XXX'
         $pasien->selectMax('no_rm');
-        $pasien->like('no_rm', $prefix, 'after');
+        $pasien->like('no_rm', '-', 'both'); // Pastikan mencocokkan nomor yang mengandung '-'
         $lastNoRM = $pasien->get()->getRow()->no_rm;
 
         if ($lastNoRM) {
             // Jika ada nomor RM, ambil nomor urut terakhir dan tambahkan 1
-            $lastNo = (int) substr($lastNoRM, strlen($prefix)); // Mengambil bagian nomor urut
+            $lastNo = (int) str_replace('-', '', $lastNoRM); // Hapus '-' dan ubah menjadi angka
             $newNo = $lastNo + 1;
         } else {
             // Jika tidak ada, nomor urut dimulai dari 1
             $newNo = 1;
         }
 
-        // Membuat nomor RM baru dengan format kpXXX (XXX adalah nomor urut)
-        $newNoRM = $prefix . sprintf('%03d', $newNo); // Menambahkan leading zeroes
+        // Format nomor RM baru menjadi 00-00-XXX
+        $newNoFormatted = str_pad($newNo, 7, '0', STR_PAD_LEFT); // Tambahkan leading zero hingga 7 digit
+        $newNoRM = substr($newNoFormatted, 0, 2) . '-' . substr($newNoFormatted, 2, 2) . '-' . substr($newNoFormatted, 4, 3);
 
         return $newNoRM;
     }
