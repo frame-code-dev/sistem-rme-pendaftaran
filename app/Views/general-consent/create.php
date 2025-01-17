@@ -396,11 +396,11 @@
     })
     document.addEventListener('DOMContentLoaded', function () {
         // Initialize Signature Pads
-        var canvasPenanggung = document.getElementById('signature-pad-penanggung');
-        var signaturePadPenanggung = new SignaturePad(canvasPenanggung);
+        const canvasPenanggung = document.getElementById('signature-pad-penanggung');
+        const signaturePadPenanggung = new SignaturePad(canvasPenanggung);
 
-        var canvasPetugas = document.getElementById('signature-pad-petugas');
-        var signaturePadPetugas = new SignaturePad(canvasPetugas);
+        const canvasPetugas = document.getElementById('signature-pad-petugas');
+        const signaturePadPetugas = new SignaturePad(canvasPetugas);
 
         // Clear Button for Penanggung Jawab
         document.getElementById('clear-penanggung').addEventListener('click', function () {
@@ -414,10 +414,10 @@
 
         // Save Button
         document.getElementById('save').addEventListener('click', function () {
-            // if (signaturePadPenanggung.isEmpty() || signaturePadPetugas.isEmpty()) {
-            //     alert('Tanda tangan belum lengkap.');
-            //     return;
-            // }
+            if (signaturePadPenanggung.isEmpty() || signaturePadPetugas.isEmpty()) {
+                alert('Tanda tangan belum lengkap.');
+                return;
+            }
 
             // Convert signatures to data URLs
             var penanggungDataUrl = signaturePadPenanggung.toDataURL();

@@ -48,6 +48,7 @@
                             <tbody>
                                 <?php $no = 1;
                                 foreach ($data as $row) : ?>
+                                 <?php if(checkPemeriksaanLabData($row['id']) == 0) : ?>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                         <td class="px-4 py-3"><?= $no++ ?></td>
                                         <td class="px-4 py-3"><?= $row['no_rm'] ?></td>
@@ -66,6 +67,9 @@
                                             </a>
                                         </td>
                                     </tr>
+                                 <?php else : ?>
+                                 <?php endif; ?>
+
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
@@ -93,34 +97,37 @@
                             <tbody>
                                 <?php $no = 1;
                                 foreach ($data_selesai as $row) : ?>
-                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                        <td class="px-4 py-3"><?= $no++ ?></td>
-                                        <td class="px-4 py-3"><?= $row['no_rm'] ?></td>
-                                        <td class="px-4 py-3"><?= $row['nik'] ?></td>
-                                        <td class="px-4 py-3"><?= $row['nama_lengkap'] ?></td>
-                                        <td class="px-4 py-3"><?= hitungUmur($row['tanggal_lahir']) ?></td>
-                                        <td class="px-4 py-3"><?= $row['jenis_kelamin'] ?></td>
-                                        <td class="px-4 py-3"><?= $row['alamat_lengkap'] ?></td>
-                                        <td class="px-4 py-3"><?= $row['poli'] ?></td>
-                                        <td class="px-4 py-3"><?= $row['name'] ?></td>
-                                        <td class="px-4 py-3"><?= $row['jenis_pemeriksaan'] ?></td>
-                                        <td class="px-4 py-3"><?= $row['jenis_pasien'] ?></td>
-                                        <td class="px-4 py-3">
-                                            <div class="flex justify-end items-center content-center gap-3">
-                                                <div>
-                                                    <span class="text-xs text-green-800 bg-green-100 p-2"><?=$row['status']?></span>
+                                    <?php if(checkPemeriksaanLabData($row['id']) != 0) : ?>
+                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                            <td class="px-4 py-3"><?= $no++ ?></td>
+                                            <td class="px-4 py-3"><?= $row['no_rm'] ?></td>
+                                            <td class="px-4 py-3"><?= $row['nik'] ?></td>
+                                            <td class="px-4 py-3"><?= $row['nama_lengkap'] ?></td>
+                                            <td class="px-4 py-3"><?= hitungUmur($row['tanggal_lahir']) ?></td>
+                                            <td class="px-4 py-3"><?= $row['jenis_kelamin'] ?></td>
+                                            <td class="px-4 py-3"><?= $row['alamat_lengkap'] ?></td>
+                                            <td class="px-4 py-3"><?= $row['poli'] ?></td>
+                                            <td class="px-4 py-3"><?= $row['name'] ?></td>
+                                            <td class="px-4 py-3"><?= $row['jenis_pemeriksaan'] ?></td>
+                                            <td class="px-4 py-3"><?= $row['jenis_pasien'] ?></td>
+                                            <td class="px-4 py-3">
+                                                <div class="flex justify-end items-center content-center gap-3">
+                                                    <div>
+                                                        <span class="text-xs text-green-800 bg-green-100 p-2"><?=$row['status']?></span>
+                                                    </div>
+                                                    <div>
+                                                        <a href="<?=base_url('pemeriksaan-lab/cetak-pdf/'.$row['id'])?>"  target="_blank" type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+                                                            <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 17v-5h1.5a1.5 1.5 0 1 1 0 3H5m12 2v-5h2m-2 3h2M5 10V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1v6M5 19v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1M10 3v4a1 1 0 0 1-1 1H5m6 4v5h1.375A1.627 1.627 0 0 0 14 15.375v-1.75A1.627 1.627 0 0 0 12.375 12H11Z"/>
+                                                            </svg>
+                                                            Cetak PDF
+                                                        </a>
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <a href="<?=base_url('pemeriksaan-lab/cetak-pdf/'.$row['id'])?>"  target="_blank" type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-                                                        <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 17v-5h1.5a1.5 1.5 0 1 1 0 3H5m12 2v-5h2m-2 3h2M5 10V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1v6M5 19v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1M10 3v4a1 1 0 0 1-1 1H5m6 4v5h1.375A1.627 1.627 0 0 0 14 15.375v-1.75A1.627 1.627 0 0 0 12.375 12H11Z"/>
-                                                        </svg>
-                                                        Cetak PDF
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
+                                    <?php else : ?>
+                                    <?php endif; ?>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>

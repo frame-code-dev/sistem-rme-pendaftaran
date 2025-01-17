@@ -17,6 +17,13 @@
     <!-- FONT AWESOME  -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <?= $this->renderSection('css') ?>
+    <style>
+        #signatureCanvas {
+            border: 1px solid #000;
+            width: 100%;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
     <?=$this->include('layouts/components/topbar')?>
@@ -29,6 +36,8 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/datepicker.min.js"></script> -->
     <script src="https://cdn.datatables.net/2.0.1/js/dataTables.tailwindcss.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <?= $this->renderSection('js') ?>
+
     <script>
         // update status
         $(document).ready(function() {
@@ -89,7 +98,6 @@
         // Start listening for `navigation` entries to be dispatched.
         po.observe({type: 'navigation', buffered: true});
     </script>
-    <?= $this->renderSection('js') ?>
     <?php
         $session = \Config\Services::session();
         $status_error = $session->get('status_error');
