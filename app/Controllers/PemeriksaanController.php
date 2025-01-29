@@ -166,9 +166,8 @@ class PemeriksaanController extends BaseController
                 'skala_nyeri' => $data['skala_nyeri'] == 'Anak' ? 'Anak Usia > 3 Tahun' : 'Dewasa',
                 'lokasi_nyeri' => $data['lokasi_nyeri'],
                 'rasa_nyeri' => $data['rasa_nyeri'],
-                'bb' => $data['bb'],
-                'appetite' => $data['appetite'],
-                'condition' => $data['condition'],
+                'appetite' => array_key_exists('appetite',$data) ? $data['appetite'] : 0,
+                'condition' => array_key_exists('condition',$data) ? $data['condition'] : 0,
                 'kepala' => $data['kepala'],
                 'thorax' => $data['thorax'],
                 'abdomen' => $data['abdomen'],
@@ -191,6 +190,7 @@ class PemeriksaanController extends BaseController
                 $dataObjective['bb'] = $data['bb_anak'];
                 $dataObjective['bb_penurunan_anak'] = $data['bb_penurunan_anak'];
             } else {
+                $dataObjective['bb'] = array_key_exists('bb',$data) ? $data['bb'] : 0; 
                 $dataObjective['tingkat_nyeri_dewasa'] = $data['tingkat_nyeri_dewasa'];
                 $dataObjective['jenis_nyeri_dewasa'] = $data['jenis_nyeri_dewasa'];
             }

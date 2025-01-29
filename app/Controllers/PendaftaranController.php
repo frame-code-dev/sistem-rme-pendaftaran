@@ -37,7 +37,7 @@ class PendaftaranController extends BaseController
     public function create() {
         helper(['my_helper']);
         $param['title'] = 'Tambah Pendaftaran Pasien';
-        $param['no_rm'] = generateNoRm();
+        $param['no_rm'] = generateNoRM();
         return view('pendaftaran/create',$param);
     }
 

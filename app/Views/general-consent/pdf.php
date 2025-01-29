@@ -185,14 +185,14 @@ use Config\Auth;
                 </div>
                 <div>
                     <h1>Saksi</h1>
-                    <img class="border" src="<?=$request['signature_penanggung']?>" alt="">
+                    <img class="border" src="data:image/png;base64,<?=$request['signature_penanggung']?>" alt="Signature">
                     <div>
                         <p class="mt-8"><?=$request['nama_lengkap']?></p>
                     </div>
                 </div>
                 <div>
                     <h1>Petugas Puskesmas Besuki</h1>
-                    <img class="border" src="<?=$request['signature_petugas']?>" alt="">
+                    <img class="border" src="<?=$signature_petugas_url?>" alt="">
                     <div>
                         <p class="mt-8"><?=user()->name?></p>
                     </div>

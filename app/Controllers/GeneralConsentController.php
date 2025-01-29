@@ -161,6 +161,23 @@ class GeneralConsentController extends BaseController
         // Get the GET parameters
         $param['request'] = $this->request->getGet();
         $param['pasien'] = $this->pasienModel->find($param['request']['id']);
+        // Assuming $param['request']['signature_petugas'] contains the base64 string
+        $signature_petugas = $param['request']['signature_petugas'];
+
+        // Remove the base64 prefix and clean up the string
+        $signature_petugas = str_replace('data:image/png;base64,', '', $signature_petugas);
+        $signature_petugas = str_replace(' ', '+', $signature_petugas);
+
+        // Decode the base64 image
+        $signature_petugasData = base64_decode($signature_petugas);
+
+        // Generate a unique file name and save the image
+        $filename_petugasData = uniqid() . '.png';
+        $filePath = WRITEPATH . 'uploads/' . $filename_petugasData; // Save in writable/uploads
+        file_put_contents($filePath, $signature_petugasData);
+
+        // Pass the file URL to the view
+        $param['signature_petugas_url'] = base_url('writable/uploads/' . $filename_petugasData);
         // Your logic here...
         return view('general-consent/pdf', $param);
     }
