@@ -63,14 +63,12 @@ class PemeriksaanController extends BaseController
     public function store(){
         $rules = [
             'jenis_keluhan' => 'required',
-            'jenis_riwayat' => 'required',
             'alergi' => 'required',
             'merokok' => 'required',
             'stress' => 'required',
             'aktivitas_fisik' => 'required',
             'alkohol' => 'required',
             'kondisi_umum' => 'required',
-            'tipe_kesadaran' => 'required',
             'tekanan_darah' => 'required',
             'nadi' => 'required',
             'suhu' => 'required',
@@ -96,6 +94,7 @@ class PemeriksaanController extends BaseController
         ];
         if (!$this->validate($rules))
         {
+            dd($this->validator->getErrors());
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
         try {
@@ -104,12 +103,15 @@ class PemeriksaanController extends BaseController
                 'id_kunjungan' => $data['id_kunjungan'],
                 'id_user' => user()->id,
                 'jenis_keluhan' => $data['jenis_keluhan'],
-                'type' => strtolower($data['jenis_riwayat']),
+                'type' => strtolower($data['jenis_keluhan']),
                 'complaint' => $data['keluhan_text'],
-                'riwayat_text' => $data['riwayat_text'],
+                'dahulu' => $data['dahulu'],
+                'sekarang' => $data['sekarang'],
+                'keluarga' => $data['keluarga'],
+                'pengobatan' => $data['pengobatan'],
                 'smoking' => $data['merokok'],
                 'alergi' => $data['alergi'],
-                'alergi_lainnya' => $data['alergi'] == 'Lain-Lain' ? $data['alergi_lainnya'] : null,
+                'alergi_lainnya' => $data['alergi_lainnya'],
                 'diet' => $data['kurang_makan'],
                 'stress' => $data['stress'],
                 'physical_activity' => $data['aktivitas_fisik'],
@@ -133,10 +135,11 @@ class PemeriksaanController extends BaseController
                     throw new \RuntimeException('Gagal menyimpan gambar penanggung.');
                 }
             }
-
-            $files = $this->request->getFiles();
+            
+            $files = $this->request->getFiles('tanda_tangan_dokter');
+            $has_file = $this->request->getPost('tanda_tangan_dokter');
             $newName = '';
-            if (count($files) > 0) {
+            if ($has_file != null) {
                 $uploadPath = FCPATH . 'signature/';
                 foreach ($files as $key => $value) {
                     if ($value->isValid() && !$value->hasMoved()) {
@@ -146,14 +149,15 @@ class PemeriksaanController extends BaseController
                 }
             }
             $simpanObjective = new PemeriksaanObjective();
-
+            
             $dataObjective = [
                 'kunjungan_id' => $data['id_kunjungan'],
                 'user_id' => user()->id,
-                'ttd_name' => count($files) > 0 ? $newName : $filename,
+                'ttd_name' => $has_file != null ? $newName : $filename,
                 'kondisi_umum' => $data['kondisi_umum'],
-                'kesadaran_e' => $data['tipe_kesadaran'],
-                'tingkat_kesadaran' => $data['tingkat_kesadaran'],
+                'kesadaran_e' => $data['kesadaran_e'],
+                'kesadaran_v' => $data['kesadaran_v'],
+                'kesadaran_m' => $data['kesadaran_m'],
                 'tekanan_darah' => $data['tekanan_darah'],
                 'respiratory_rate' => $data['respitory_rate'],
                 'nadi' => $data['nadi'],

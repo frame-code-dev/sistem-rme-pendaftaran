@@ -440,19 +440,6 @@
             })
         })
     </script>
-    <script>
-        $(document).ready(function() {
-            $('#alergi').on('change',function(){
-                let value = $(this).val();
-                if (value == 'Lain-Lain') {
-                    $('#alergi_lainnya').removeClass('hidden');
-                }else{
-                    $('#alergi_lainnya').addClass('hidden');
-
-                }
-            })
-        })
-    </script>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 <div class="p-4 sm:ml-64 h-screen">
@@ -551,13 +538,13 @@
                                     <div class="mb-2">
                                         <span class="font-semibold">Jenis Keluhan</span>
                                     </div>
-                                    <div class="flex items-center mb-2 space-x-4">
-                                        <label class="flex items-center">
-                                        <input type="radio" value="Utama" name="jenis_keluhan" class="mr-2"> Utama
-                                        </label>
-                                        <label class="flex items-center">
-                                        <input type="radio" value="Tambahan" name="jenis_keluhan" class="mr-2"> Tambahan
-                                        </label>
+                                    <hr>
+                                    <div class="mb-2">
+                                        <span class="font-semibold">Utama</span>
+                                    </div>
+                                    <textarea name="jenis_keluhan" class="w-full h-20 border border-gray-300 rounded p-2" placeholder="Masukkan data"></textarea>
+                                    <div class="mb-2">
+                                        <span class="font-semibold">Tambahan</span>
                                     </div>
                                     <textarea name="keluhan_text" class="w-full h-20 border border-gray-300 rounded p-2" placeholder="Masukkan data"></textarea>
                                 
@@ -566,21 +553,23 @@
                                     <div class="mb-2">
                                         <span class="font-semibold">Jenis Riwayat Penyakit</span>
                                     </div>
-                                    <div class="flex items-center mb-2 space-x-4">
-                                        <label class="flex items-center">
-                                        <input type="radio" name="jenis_riwayat" value="Dahulu" class="mr-2"> Dahulu
-                                        </label>
-                                        <label class="flex items-center">
-                                        <input type="radio" name="jenis_riwayat" value="Sekarang" class="mr-2"> Sekarang
-                                        </label>
-                                        <label class="flex items-center">
-                                        <input type="radio" name="jenis_riwayat" value="Keluarga" class="mr-2"> Keluarga
-                                        </label>
-                                        <label class="flex items-center">
-                                        <input type="radio" name="jenis_riwayat" value="Pengobatan" class="mr-2"> Pengobatan
-                                        </label>
+                                    <hr>
+                                    <div class="mb-2">
+                                        <span class="font-semibold">Dahulu</span>
                                     </div>
-                                    <textarea name="riwayat_text" class="w-full h-20 border border-gray-300 rounded p-2" placeholder="Masukkan data"></textarea>
+                                    <textarea name="dahulu" class="w-full h-20 border border-gray-300 rounded p-2" placeholder="Masukkan data"></textarea>
+                                    <div class="mb-2">
+                                        <span class="font-semibold">Sekarang</span>
+                                    </div>
+                                    <textarea name="sekarang" class="w-full h-20 border border-gray-300 rounded p-2" placeholder="Masukkan data"></textarea>
+                                    <div class="mb-2">
+                                        <span class="font-semibold">Keluarga</span>
+                                    </div>
+                                    <textarea name="keluarga" class="w-full h-20 border border-gray-300 rounded p-2" placeholder="Masukkan data"></textarea>
+                                    <div class="mb-2">
+                                        <span class="font-semibold">Pengobatan</span>
+                                    </div>
+                                    <textarea name="pengobatan" class="w-full h-20 border border-gray-300 rounded p-2" placeholder="Masukkan data"></textarea>
                                 </div>
                             </div>
                             <div class="mb-4">
@@ -596,8 +585,8 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div id="alergi_lainnya" class="hidden">
-                                        <div class="font-semibold">Alergi Lainnya</div>
+                                    <div id="alergi_lainnya">
+                                        <div class="font-semibold">Alergi Catatan</div>
                                         <input type="text" class="border border-gray-300 rounded p-2 w-full mt-2" name="alergi_lainnya" placeholder="Masukkan Data" />
 
                                     </div>
@@ -690,23 +679,24 @@
                                             </div>
                                         </div>
                                         <!-- Kesadaran -->
-                                        <div class="mb-3">
-                                            <div class="font-semibold">Kesadaran</div>
-                                            <div class="flex items-center mt-2">
-                                                <select name="tipe_kesadaran" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                                    <option value="0"> -- Pilih Kesadaran --</option>
-                                                    <option value="A">A</option>
-                                                    <option value="V">V</option>
-                                                    <option value="M">M</option>
-                                                    <option value="C">C</option>
-                                                </select>
-                                            </div>
+                                        <div class="font-semibold">Kesadaran (GSC)</div>
+                                        <hr>
+                                        <div class="mb-3 mt-3">
+                                            <div class="font-semibold">E (Respon Mata)</div>
+                                            <input type="text" class="border border-gray-300 rounded p-2 w-full" name="kesadaran_e" placeholder="Masukkan Data" />
+                                           
                                         </div>
                                         <!-- Tingkat Kesadaran -->
                                         <div class="mb-3">
-                                            <div class="font-semibold">Tingkat Kesadaran</div>
+                                            <div class="font-semibold">V (Respon Verbal)</div>
                                             <div class="flex items-center mt-2">
-                                            <input type="text" class="border border-gray-300 rounded p-2 w-full" name="tingkat_kesadaran" placeholder="Masukkan Data" />
+                                            <input type="text" class="border border-gray-300 rounded p-2 w-full" name="kesadaran_v" placeholder="Masukkan Data" />
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="font-semibold">M (Respon Motorik)</div>
+                                            <div class="flex items-center mt-2">
+                                            <input type="text" class="border border-gray-300 rounded p-2 w-full" name="kesadaran_m" placeholder="Masukkan Data" />
                                             </div>
                                         </div>
                                     </div>

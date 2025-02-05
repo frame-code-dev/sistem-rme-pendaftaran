@@ -97,6 +97,13 @@ class PendaftaranController extends BaseController
             $desa = $this->request->getPost('desa');
             $kode_pos = $this->request->getPost('kode_pos');
             $ket_wilayah = $this->request->getPost('ket_wilayah');
+            $status_lainnya = $this->request->getPost('status_lainnya');
+            $nomor_identitas_kitas = $this->request->getPost('nomor_identitas_kitas');
+            $nomor_identitas_paspor = $this->request->getPost('nomor_identitas_paspor');
+            $kode_rt = $this->request->getPost('kode_rt');
+            $kode_rw = $this->request->getPost('kode_rw');
+            $kode_rw = $this->request->getPost('kode_rw');
+            $kode_rw = $this->request->getPost('kode_rw');
             $tanggal_lahir = date("Y-m-d", strtotime($tgl_lahir));
             $data = [
                 'nik' => (int)$no_nik,
@@ -123,6 +130,13 @@ class PendaftaranController extends BaseController
                 'status_nikah' => $status_kawin,
                 'nama_ayah' => $nama_ayah,
                 'nama_ibu' => $nama_ibu,
+                'status_lainnya' => $status_lainnya,
+                'nomor_identitas_kitas' => $nomor_identitas_kitas,
+                'nomor_identitas_paspor' => $nomor_identitas_paspor,
+                'kode_rt' => $kode_rt,
+                'kode_rw' => $kode_rw,
+                'kode_rw' => $kode_rw,
+                'kode_rw' => $kode_rw,
             ];
             $id = $this->pasienModel->insert($data);
             session()->setFlashdata("status_success", true);
