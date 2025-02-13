@@ -217,25 +217,26 @@
         }
     </script>
     <script>
-        var canvasPerawat = document.getElementById('signature-pad-perawat');
-        var canvasDokter = document.getElementById('signature-pad-dokter');
-
-        var signaturePadPerawat = new SignaturePad(canvasPerawat);
-        document.getElementById('clear-perawat').addEventListener('click', function () {
-            signaturePadPerawat.clear();
-        });
+        var canvasDokter = document.getElementById('signature-pad-perawat');
 
         var signaturePadDokter = new SignaturePad(canvasDokter);
-        document.getElementById('clear-dokter').addEventListener('click', function () {
-            signaturePadDokter.clear();
+        const clearButton = document.getElementById('clearButton');
+        const saveButton = document.getElementById('saveButton');
+        const signatureInput = document.getElementById('signature_perawat')
+        clearButton.addEventListener('click', () => {
+            signaturePad.clear();
         });
-
-
-        var PerawatDataUrl = signaturePadPerawat.toDataURL();
-        $('#signature_perawat').val(PerawatDataUrl);
-
-        var DokterDataUrl = signaturePadDokter.toDataURL();
-        $('#signature_dokter').val(DokterDataUrl);
+        saveButton.addEventListener('click', () => {
+            if (!signaturePadDokter.isEmpty()) {
+                // Ambil data URL dari canvas
+                const dataURL = signaturePadDokter.toDataURL('image/png');
+                // Simpan data ke input tersembunyi
+                signatureInput.value = dataURL;
+                alert("Tanda tangan telah disimpan!");
+            } else {
+                alert("Tanda tangan masih kosong!");
+            }
+        });
     </script>
     <script>
         $(document).ready(function() {
@@ -1153,12 +1154,14 @@
                                                                 <option value="kreatinin-Kreatinin">Kreatinin</option>
                                                                 <option value="hdl-HDL">HDL</option>
                                                                 <option value="ldl-LDL">LDL</option>
+                                                                <option value="diff_count-Diff Count">Diff Count</option>
                                                             </select>
                                                         </div>
-                                                         <div class="hidden" id="form_isian_show_hematologi">
+                                                        <div class="hidden" id="form_isian_show_hematologi">
                                                             <select name="form_isian[]" multiple='multiple'  id="form_isian_hematologi" style="width: 100%;" class="w-full border border-gray-300 rounded p-2 js-example-basic-multiple">
                                                                 <option value=""> -- Pilih --</option>
                                                                 <option value="darah_lengkap-Darah lengkap">Darah lengkap</option>
+                                                                <option value="darah_lengkap-Diff Count">Diff Count</option>
                                                                 <option value="eosinofil-Eosinofil">Eosinofil</option>
                                                                 <option value="basofil-Basofil">Basofil</option>
                                                                 <option value="stab-Stab">Stab</option>
@@ -1225,7 +1228,19 @@
                                                         <label class="block font-semibold mb-2">TANDA TANGAN PERAWAT</label>
                                                         <hr>
                                                     </div>
-                                                    <div class="border border-gray-300 p-4 bg-white rounded-lg">
+                                                    <div class="border p-3 rounded-md shadow-md mt-3">
+                                                        <div class="border border-gray-300 p-4 bg-white rounded-lg">
+                                                            <canvas id="signature-pad-perawat" class="signature-pad w-full h-48 border"></canvas>
+                                                            <input type="hidden" name="signature_perawat" id="signature_perawat" >
+                                                        <button type="button" class="mt-3 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" id="clearButton">Hapus Tanda Tangan</button>
+                                                        <button id="saveButton" type="button" class="px-4 py-2 bg-green-500 text-white rounded-md">Simpan</button>
+                                                        </div>
+                                                        <div class="border mt-3">
+                                                            <input type="file" name="file_ttd" class="w-full border border-gray-300 rounded p-2 mt-2">
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <!-- <div class="border border-gray-300 p-4 bg-white rounded-lg">
                                                         <canvas id="signature-pad-perawat" class="signature-pad w-full h-48 border"></canvas>
                                                         <input type="hidden" name="signature_perawat" id="signature_perawat">
                                                         <button type="button" id="clear-perawat" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Clear</button>
@@ -1233,7 +1248,7 @@
                                                     <div class="mt-2">
                                                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file TTD</label>
                                                         <input name="file_ttd" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>

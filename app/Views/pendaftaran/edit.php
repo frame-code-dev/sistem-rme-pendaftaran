@@ -197,6 +197,34 @@
             }
         });
     </script>
+    <script>
+         $(document).ready(function () {
+            function toggleIdentityFields() {
+                let jenis = $('#status_lainnya').val();
+                console.log(jenis);
+                
+                if (jenis === "kitas") {
+                    $('#content_nomor_identitas').removeClass('hidden');
+                    $('#content_nomor_identitas_kitas').removeClass("hidden");
+                    $('#content_nomor_identitas_paspor').addClass("hidden");
+                } else if (jenis === "paspor") {
+                    $('#content_nomor_identitas').removeClass('hidden');
+                    $('#content_nomor_identitas_kitas').addClass("hidden");
+                    $('#content_nomor_identitas_paspor').removeClass("hidden");
+                } else {
+                    $('#content_nomor_identitas').addClass('hidden');
+                    $('#content_nomor_identitas_kitas').addClass("hidden");
+                    $('#content_nomor_identitas_paspor').addClass("hidden");
+                }
+            }
+
+            // Run the function on change
+            $('#status_lainnya').on("change", toggleIdentityFields);
+
+            // Run on page load (for edit case)
+            toggleIdentityFields();
+        });
+    </script>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
     <div class="p-4 sm:ml-64 h-screen">
@@ -476,6 +504,47 @@
                                         <?php endif ?>
                                     </div>
                                 </div>
+                                <div class="col-span-2">
+                                    <label for="" class="block mb-2 text-sm font-semibold text-gray-900">Nomor Identitas Lainnya (Khusus WNA)<span class="me-2 text-red-500">*</span></label>
+                                    <select id="status_lainnya" name="status_lainnya" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <option value="0" <?= set_value('status_lainnya',$pasien['status_lainnya']) == '0' ? 'selected' : '' ?>> -- Pilih Status -- </option>
+                                        <option value="kitas" <?= set_value('status_lainnya',$pasien['status_lainnya']) == 'kitas' ? 'selected' : ''?>> KITAS</option>
+                                        <option value="paspor" <?= set_value('status_lainnya',$pasien['status_lainnya']) == 'paspor' ? 'selected' : ''?>> PASPOR</option>
+                                    </select>
+                                    <div class="text-red-500 text-xs italic font-semibold">
+                                        <?php if (session("errors.status_lainnya")) : ?>
+                                            <div class="text-red-500 text-sm">
+                                                <?= session("errors.status_lainnya") ?>
+                                            </div>
+                                        <?php endif ?>
+                                    </div>
+                                </div>
+                                <div class="col-span-2" id="content_nomor_identitas">
+                                    <div id="content_nomor_identitas_kitas" class="hidden">
+                                        <label for="" class="block mb-2 text-sm font-semibold text-gray-900">Nomor Identitas<span class="me-2 text-red-500">*</span></label>
+                                        <input type="text" placeholder="Masukkan Nomor Identitas KIS" maxlength="11" name="nomor_identitas_kitas" id="nomor_identitas_kitas" class="nomor_identitas_kitas bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                            value="<?= set_value("nomor_identitas_kitas",$pasien['nomor_identitas_kitas']) ?>">
+                                        <div class="text-red-500 text-xs italic font-semibold">
+                                            <?php if (session("errors.nomor_identitas_kitas")) : ?>
+                                                <div class="text-red-500 text-sm">
+                                                    <?= session("errors.nomor_identitas_kitas") ?>
+                                                </div>
+                                            <?php endif ?>
+                                        </div>
+                                    </div>
+                                    <div id="content_nomor_identitas_paspor" class="hidden">
+                                        <label for="" class="block mb-2 text-sm font-semibold text-gray-900">Nomor Identitas<span class="me-2 text-red-500">*</span></label>
+                                        <input type="text" placeholder="Masukkan Nomor Identitas PASPOR" name="nomor_identitas_paspor" id="nomor_identitas_paspor" class="nomor_identitas_paspor bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                            value="<?= set_value("nomor_identitas_paspor",$pasien['nomor_identitas_paspor']) ?>">
+                                        <div class="text-red-500 text-xs italic font-semibold">
+                                            <?php if (session("errors.nomor_identitas_paspor")) : ?>
+                                                <div class="text-red-500 text-sm">
+                                                    <?= session("errors.nomor_identitas_paspor") ?>
+                                                </div>
+                                            <?php endif ?>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="bg-blue-800 p-3 my-4 border rounded-md">
                                 <span class="font-semibold text-white uppercase">Identitas keluarga</span>
@@ -512,6 +581,45 @@
                                 <span class="font-semibold text-white uppercase">Identitas Alamat Pasien</span>
                             </div>
                             <div class="grid grid-cols-2 gap-3">
+                                <div class="">
+                                    <label for="" class="block mb-2 text-sm font-semibold text-gray-900">RT<span class="me-2 text-red-500">*</span></label>
+                                    <input type="text" placeholder="Masukkan Kode RT" maxlength="3" name="kode_rt" id="kode_rt" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                        value="<?= set_value("kode_rt",$pasien['kode_rt']) ?>">
+                                    <div class="text-red-500 text-xs italic font-semibold">
+                                        <?php if (session("errors.kode_rt")) : ?>
+                                            <div class="text-red-500 text-sm">
+                                                <?= session("errors.kode_rt") ?>
+                                            </div>
+                                        <?php endif ?>
+                                    </div>
+                                    <div id="error_kode_rt" class="text-red-500 mt-2 text-xs"></div>
+                                </div>
+                                <div class="">
+                                    <label for="" class="block mb-2 text-sm font-semibold text-gray-900">RW<span class="me-2 text-red-500">*</span></label>
+                                    <input type="text" placeholder="Masukkan Kode RW" maxlength="3" name="kode_rw" id="kode_rw" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                        value="<?= set_value("kode_rw",$pasien['kode_rw']) ?>">
+                                    <div class="text-red-500 text-xs italic font-semibold">
+                                        <?php if (session("errors.kode_rw")) : ?>
+                                            <div class="text-red-500 text-sm">
+                                                <?= session("errors.kode_rw") ?>
+                                            </div>
+                                        <?php endif ?>
+                                    </div>
+                                    <div id="error_kode_rw" class="text-red-500 mt-2 text-xs"></div>
+                                </div>
+                                <div class="col-span-2">
+                                    <label for="" class="block mb-2 text-sm font-semibold text-gray-900">SUKU<span class="me-2 text-red-500">*</span></label>
+                                    <input type="text" placeholder="Masukkan Kode Suku" name="kode_suku" id="kode_suku" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                        value="<?= set_value("kode_suku",$pasien['kode_suku']) ?>">
+                                    <div class="text-red-500 text-xs italic font-semibold">
+                                        <?php if (session("errors.kode_suku")) : ?>
+                                            <div class="text-red-500 text-sm">
+                                                <?= session("errors.kode_suku") ?>
+                                            </div>
+                                        <?php endif ?>
+                                    </div>
+                                    <div id="error_kode_suku" class="text-red-500 mt-2 text-xs"></div>
+                                </div>
                                 <div class="col-span-2">
                                     <label for="" class="block mb-2 text-sm font-semibold text-gray-900">Alamat Lengkap<span class="me-2 text-red-500">*</span></label>
                                     <textarea name="alamat_lengkap" id="" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan Alamat Lengkap"><?=$pasien['alamat_lengkap']?></textarea>

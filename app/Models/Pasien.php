@@ -37,6 +37,12 @@ class Pasien extends Model
         'status_nikah',
         'nama_ayah',
         'nama_ibu',
+        'status_lainnya',
+        'nomor_identitas_kitas',
+        'nomor_identitas_paspor',
+        'kode_rt',
+        'kode_rw',
+        'kode_suku',
         'created_at',
         'updated_at'
     ];

@@ -67,8 +67,9 @@ class PendaftaranController extends BaseController
             'kode_pos' => 'required',
             'ket_wilayah' => 'required',
         ];
-        if (! $this->validate($rules))
+        if (!$this->validate($rules))
         {
+            dd($this->validator->getErrors());
             return redirect()->to('pendaftaran')->withInput()->with('errors', $this->validator->getErrors());
         }
 
@@ -102,8 +103,7 @@ class PendaftaranController extends BaseController
             $nomor_identitas_paspor = $this->request->getPost('nomor_identitas_paspor');
             $kode_rt = $this->request->getPost('kode_rt');
             $kode_rw = $this->request->getPost('kode_rw');
-            $kode_rw = $this->request->getPost('kode_rw');
-            $kode_rw = $this->request->getPost('kode_rw');
+            $kode_suku = $this->request->getPost('kode_suku');
             $tanggal_lahir = date("Y-m-d", strtotime($tgl_lahir));
             $data = [
                 'nik' => (int)$no_nik,
@@ -135,8 +135,7 @@ class PendaftaranController extends BaseController
                 'nomor_identitas_paspor' => $nomor_identitas_paspor,
                 'kode_rt' => $kode_rt,
                 'kode_rw' => $kode_rw,
-                'kode_rw' => $kode_rw,
-                'kode_rw' => $kode_rw,
+                'kode_suku' => $kode_suku,
             ];
             $id = $this->pasienModel->insert($data);
             session()->setFlashdata("status_success", true);
@@ -215,6 +214,12 @@ class PendaftaranController extends BaseController
             $kode_pos = $this->request->getPost('kode_pos');
             $ket_wilayah = $this->request->getPost('ket_wilayah');
             $tanggal_lahir = date("Y-m-d", strtotime($tgl_lahir));
+            $status_lainnya = $this->request->getPost('status_lainnya');
+            $nomor_identitas_kitas = $this->request->getPost('nomor_identitas_kitas');
+            $nomor_identitas_paspor = $this->request->getPost('nomor_identitas_paspor');
+            $kode_rt = $this->request->getPost('kode_rt');
+            $kode_rw = $this->request->getPost('kode_rw');
+            $kode_suku = $this->request->getPost('kode_suku');
             $data = [
                 'nik' => $no_nik,
                 'no_rm' => $no_rm,
@@ -240,6 +245,12 @@ class PendaftaranController extends BaseController
                 'status_nikah' => $status_kawin,
                 'nama_ayah' => $nama_ayah,
                 'nama_ibu' => $nama_ibu,
+                'status_lainnya' => $status_lainnya,
+                'nomor_identitas_kitas' => $nomor_identitas_kitas,
+                'nomor_identitas_paspor' => $nomor_identitas_paspor,
+                'kode_rt' => $kode_rt,
+                'kode_rw' => $kode_rw,
+                'kode_suku' => $kode_suku,
             ];
 
             $this->pasienModel->update($id,$data);

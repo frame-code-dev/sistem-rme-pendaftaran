@@ -120,7 +120,9 @@
                         <tr class="font-medium text-gray-900 whitespace-nowrap">
                             <td width="20%" class="">Dokter Pengirim</td>
                             <td width="1%">:</td>
-                            <td class="font-bold"><?=$current_data['nama_dokter_pemeriksa']?></td>
+                            <td class="font-bold">
+                            <img class="border" src="data:image/png;base64,<?=$current_data['nama_dokter_pemeriksa']?>" alt="Signature">    
+                            </td>
                         </tr>
                         <tr class="font-medium text-gray-900 whitespace-nowrap">
                             <td width="20%" class="">Poli Pengirim</td>

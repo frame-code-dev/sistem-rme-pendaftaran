@@ -2,14 +2,27 @@
 <?=$this->section('js')?>
 <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
 <script>
-    var canvasDokter = document.getElementById('signature-pad-dokter');
-    var signaturePadDokter = new SignaturePad(canvasDokter);
-    document.getElementById('clear-dokter').addEventListener('click', function () {
-        signaturePadDokter.clear();
-    });
-    var DokterDataUrl = signaturePadDokter.toDataURL();
-    $('#signature_dokter').val(DokterDataUrl);
-</script>
+        var canvasDokter = document.getElementById('signature-pad-perawat');
+
+        var signaturePadDokter = new SignaturePad(canvasDokter);
+        const clearButton = document.getElementById('clearButton');
+        const saveButton = document.getElementById('saveButton');
+        const signatureInput = document.getElementById('signature_perawat')
+        clearButton.addEventListener('click', () => {
+            signaturePad.clear();
+        });
+        saveButton.addEventListener('click', () => {
+            if (!signaturePadDokter.isEmpty()) {
+                // Ambil data URL dari canvas
+                const dataURL = signaturePadDokter.toDataURL('image/png');
+                // Simpan data ke input tersembunyi
+                signatureInput.value = dataURL;
+                alert("Tanda tangan telah disimpan!");
+            } else {
+                alert("Tanda tangan masih kosong!");
+            }
+        });
+    </script>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 <div class="p-4 sm:ml-64 h-screen">
@@ -572,6 +585,111 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php elseif($row['value'] == "Diff Count") :?>
+                            <div class="col-span-2 gap-3 mb-3 border p-3">
+                                <div class="mb-4">
+                                    <h1 class="text-lg font-semibold">DIFF COUNT</h1>
+                                    <hr>
+                                </div>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div class="">
+                                        <label for="GDA" class="block mb-2 text-sm font-semibold text-gray-900">
+                                         Hitung Basofil<span class="me-2 text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Masukkan Basofil" 
+                                            name="basofil" id="basofil" 
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                            value="<?= set_value('basofil') ?>">
+                                        <div class="text-red-500 text-xs italic font-semibold">
+                                            <?php if (session("errors.basofil")) : ?>
+                                                <div class="text-red-500 text-sm">
+                                                    <?= session("errors.basofil") ?>
+                                                </div>
+                                            <?php endif ?>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <label for="Eosinofil" class="block mb-2 text-sm font-semibold text-gray-900">
+                                            Eosinofil<span class="me-2 text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Masukkan Eosinofil" 
+                                            name="eosinofil" id="eosinofil" 
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                            value="<?= set_value('eosinofil') ?>">
+                                        <div class="text-red-500 text-xs italic font-semibold">
+                                            <?php if (session("errors.eosinofil")) : ?>
+                                                <div class="text-red-500 text-sm">
+                                                    <?= session("errors.eosinofil") ?>
+                                                </div>
+                                            <?php endif ?>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <label for="Hitung Stab" class="block mb-2 text-sm font-semibold text-gray-900">
+                                        Hitung Stab<span class="me-2 text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Masukkan Hitung Stab" 
+                                            name="hitung_stab" id="hitung_stab" 
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                            value="<?= set_value('hitung_stab') ?>">
+                                        <div class="text-red-500 text-xs italic font-semibold">
+                                            <?php if (session("errors.hitung_stab")) : ?>
+                                                <div class="text-red-500 text-sm">
+                                                    <?= session("errors.hitung_stab") ?>
+                                                </div>
+                                            <?php endif ?>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <label for="Hitung Segmen" class="block mb-2 text-sm font-semibold text-gray-900">
+                                        Hitung Segmen<span class="me-2 text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Masukkan Hitung Segmen" 
+                                            name="hitung_segmen" id="hitung_segmen" 
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                            value="<?= set_value('hitung_segmen') ?>">
+                                        <div class="text-red-500 text-xs italic font-semibold">
+                                            <?php if (session("errors.hitung_segmen")) : ?>
+                                                <div class="text-red-500 text-sm">
+                                                    <?= session("errors.hitung_segmen") ?>
+                                                </div>
+                                            <?php endif ?>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <label for="Hitung Limfosit" class="block mb-2 text-sm font-semibold text-gray-900">
+                                        Hitung Limfosit<span class="me-2 text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Masukkan Hitung Limfosit" 
+                                            name="hitung_limfosit" id="hitung_limfosit" 
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                            value="<?= set_value('hitung_limfosit') ?>">
+                                        <div class="text-red-500 text-xs italic font-semibold">
+                                            <?php if (session("errors.hitung_limfosit")) : ?>
+                                                <div class="text-red-500 text-sm">
+                                                    <?= session("errors.hitung_limfosit") ?>
+                                                </div>
+                                            <?php endif ?>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <label for="Hitung Monosit" class="block mb-2 text-sm font-semibold text-gray-900">
+                                        Hitung Monosit<span class="me-2 text-red-500">*</span>
+                                        </label>
+                                        <input type="text" placeholder="Masukkan Hitung Monosit" 
+                                            name="hitung_monosit" id="hitung_limfosit" 
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                                            value="<?= set_value('hitung_monosit') ?>">
+                                        <div class="text-red-500 text-xs italic font-semibold">
+                                            <?php if (session("errors.hitung_monosit")) : ?>
+                                                <div class="text-red-500 text-sm">
+                                                    <?= session("errors.hitung_monosit") ?>
+                                                </div>
+                                            <?php endif ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <?php else :?>
                                 <div class="">
                                     <label for="<?=$row['nama']?>" class="block mb-2 text-sm font-semibold text-gray-900">
@@ -598,14 +716,16 @@
                 <!-- Tanda Tangan Dokter -->
                 <div class="border p-3 rounded-md shadow-md mt-3">
                     <h2 class="text-lg font-bold mb-4">Tanda Tangan Petugas Lab</h2>
-                    <div class="border border-gray-300 p-4 bg-white rounded-lg">
-                        <canvas id="signature-pad-dokter" class="signature-pad w-full h-48 border"></canvas>
-                        <input type="hidden" name="signature_dokter" id="signature_dokter">
-                        <button type="button" id="clear-dokter" class="mt-2 bg-red-500 text-white px-4 py-2 rounded">Clear</button>
-                    </div>
-                    <div class="border mt-3">
-                        <input type="file" name="tanda_tangan_dokter" class="w-full border border-gray-300 rounded p-2 mt-2">
-                        <button class="bg-orange-500 text-white rounded p-2 mt-4 w-full">Upload</button>
+                    <div class="border p-3 rounded-md shadow-md mt-3">
+                        <div class="border border-gray-300 p-4 bg-white rounded-lg">
+                            <canvas id="signature-pad-perawat" class="signature-pad w-full h-48 border"></canvas>
+                            <input type="hidden" name="signature_perawat" id="signature_perawat" >
+                        <button type="button" class="mt-3 focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" id="clearButton">Hapus Tanda Tangan</button>
+                        <button id="saveButton" type="button" class="px-4 py-2 bg-green-500 text-white rounded-md">Simpan</button>
+                        </div>
+                        <div class="border mt-3">
+                            <input type="file" name="file_ttd" class="w-full border border-gray-300 rounded p-2 mt-2">
+                        </div>
                     </div>
                 </div>
                 <div class="flex justify-end align-middle content-center bg-gray-100 p-3 rounded-md mt-4">

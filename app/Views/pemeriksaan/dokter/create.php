@@ -552,11 +552,58 @@
                                                 <td width="20%" class="p-4">Jenis Keluhan</td>
                                                 <td width="1%">:</td>
                                                 <td class="font-bold">
-                                                    <div class="mb-2">
-                                                        <?=ucwords($current_pemeriksaan_subject['jenis_keluhan'] ?? '-')?>
-                                                        <hr>
-                                                    </div>
-                                                    <?=$current_pemeriksaan_subject['complaint']?>
+                                                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                                        <tr class="px-4 py-3 border font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            <td width="20%" class="p-4">Utama</td>
+                                                            <td width="1%">:</td>
+                                                            <td>
+                                                            <?=ucwords($current_pemeriksaan_subject['jenis_keluhan'])?>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="px-4 py-3 border font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            <td width="20%" class="p-4">Tambahan</td>
+                                                            <td width="1%">:</td>
+                                                            <td>
+                                                            <?=ucwords($current_pemeriksaan_subject['riwayat_text'])?>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr class="px-4 py-3 border font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                <td width="20%" class="p-4">Jenis Riwayat Penyakit</td>
+                                                <td width="1%">:</td>
+                                                <td class="font-bold">
+                                                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                                        <tr class="px-4 py-3 border font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            <td width="20%" class="p-4">Dahulu</td>
+                                                            <td width="1%">:</td>
+                                                            <td>
+                                                            <?=ucwords($current_pemeriksaan_subject['dahulu'])?>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="px-4 py-3 border font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            <td width="20%" class="p-4">Sekarang</td>
+                                                            <td width="1%">:</td>
+                                                            <td>
+                                                            <?=ucwords($current_pemeriksaan_subject['sekarang'])?>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="px-4 py-3 border font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            <td width="20%" class="p-4">Keluarga</td>
+                                                            <td width="1%">:</td>
+                                                            <td>
+                                                            <?=ucwords($current_pemeriksaan_subject['keluarga'])?>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="px-4 py-3 border font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            <td width="20%" class="p-4">Pengobatan</td>
+                                                            <td width="1%">:</td>
+                                                            <td>
+                                                            <?=ucwords($current_pemeriksaan_subject['pengobatan'])?>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
                                                 </td>
                                             </tr>
                                             <tr class="px-4 py-3 border font-medium text-gray-900 whitespace-nowrap dark:text-white">

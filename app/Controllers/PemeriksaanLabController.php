@@ -73,7 +73,7 @@ class PemeriksaanLabController extends BaseController
         try {
             $data = $this->request->getPost();
 
-            $signature_dokter = $this->request->getPost('signature_dokter');
+            $signature_dokter = $this->request->getPost('signature_perawat');
             $signature_dokter = str_replace('data:image/png;base64,', '', $signature_dokter);
             $signature_dokter = str_replace(' ', '+', $signature_dokter);
             $signature_dokterData = base64_decode($signature_dokter);
@@ -94,6 +94,9 @@ class PemeriksaanLabController extends BaseController
             ]);
             if ($this->request->getPost('jenis_pemeriksaan') === 'Hematologi' || $this->request->getPost('jenis_pemeriksaan') === 'Klinik Kimia') {
                 foreach ($data as $key => $value) {
+                    if ($key == 'signature_perawat') {
+                        continue;
+                    }
                     // Skip the specific keys we don't want to process
                     if (!in_array($key, ['id_kunjungan', 'jenis_pemeriksaan', 'signature_dokter', 'honeypot'])) {
                             // If 'jenis_pemeriksaan' is 'Hematologi' or 'Klinik Kimia', store in 'nilai_normal'
